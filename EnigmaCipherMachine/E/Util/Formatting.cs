@@ -124,10 +124,13 @@ namespace WizardNet.Enigma.Util
 
                 if (groupCounter == groupSize)
                 {
-                    sb.Append(delimiter);
                     groupCounter = 0;
-
                     rowCounter++;
+
+                    if (rowCounter != perRow)
+                    {
+                        sb.Append(delimiter);
+                    }
                 }
 
                 if (rowCounter == perRow)
