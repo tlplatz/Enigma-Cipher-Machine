@@ -43,6 +43,16 @@ namespace Test
             Assert.AreEqual(m.Encipher("A"), "O");
 
             //BDZGO
+
+            m.SteckerSettings = "BQ  DU  ZI  GC  OK";
+            m.RotorSettings = "AAA";
+
+            Assert.AreEqual(m.Encipher("A"), "Q");
+            Assert.AreEqual(m.Encipher("A"), "U");
+            Assert.AreEqual(m.Encipher("A"), "I");
+            Assert.AreEqual(m.Encipher("A"), "C");
+            Assert.AreEqual(m.Encipher("A"), "K");
+
         }
 
         [Test]
@@ -65,6 +75,16 @@ namespace Test
             Assert.AreEqual(m.Encipher("A"), "X");
 
             //EWTYX
+
+            m.SteckerSettings = "EQ  WU  TI  YC  XK";
+
+            m.RotorSettings = "AAA";
+
+            Assert.AreEqual(m.Encipher("A"), "Q");
+            Assert.AreEqual(m.Encipher("A"), "U");
+            Assert.AreEqual(m.Encipher("A"), "I");
+            Assert.AreEqual(m.Encipher("A"), "C");
+            Assert.AreEqual(m.Encipher("A"), "K");
         }
 
         [Test]
