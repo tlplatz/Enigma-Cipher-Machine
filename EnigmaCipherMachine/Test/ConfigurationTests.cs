@@ -23,13 +23,55 @@ namespace Test
         public const string EXPECTED_M3 = "EMMUM  GDOSC  VKCUU  QDQVE  KJTYX  \r\nODITX  RVCHM  G";
         public const string EXPECTED_M3K = "IVNY  XQID  IJER  JJBS  PXXG  \r\nKSAZ  XQAZ  BGYD  CNEZ";
 
+        [Test]
+        public void TestAAA1()
+        {
+            Settings s = new Settings(MachineType.M3, ReflectorType.B);
 
+            s.Rotors.Add(new RotorSetting(RotorName.I, 0));
+            s.Rotors.Add(new RotorSetting(RotorName.II, 0));
+            s.Rotors.Add(new RotorSetting(RotorName.III, 0));
+
+            Machine m = new Machine(s);
+
+            m.RotorSettings = "AAA";
+
+            Assert.AreEqual(m.Encipher("A"), "B");
+            Assert.AreEqual(m.Encipher("A"), "D");
+            Assert.AreEqual(m.Encipher("A"), "Z");
+            Assert.AreEqual(m.Encipher("A"), "G");
+            Assert.AreEqual(m.Encipher("A"), "O");
+
+            //BDZGO
+        }
+
+        [Test]
+        public void TestAAA2()
+        {
+            Settings s = new Settings(MachineType.M3, ReflectorType.B);
+
+            s.Rotors.Add(new RotorSetting(RotorName.I, 1));
+            s.Rotors.Add(new RotorSetting(RotorName.II, 1));
+            s.Rotors.Add(new RotorSetting(RotorName.III, 1));
+
+            Machine m = new Machine(s);
+
+            m.RotorSettings = "AAA";
+
+            Assert.AreEqual(m.Encipher("A"), "E");
+            Assert.AreEqual(m.Encipher("A"), "W");
+            Assert.AreEqual(m.Encipher("A"), "T");
+            Assert.AreEqual(m.Encipher("A"), "Y");
+            Assert.AreEqual(m.Encipher("A"), "X");
+
+            //EWTYX
+        }
 
         [Test]
         public void TestM3MessageOutput()
         {
             /*
-                M3K
+                M3
                 LOT
                  00 | C | I      III    IV            | 19 06 24     | CQ DV ES FO GT IU JR KM LY NW
                 EMMUM  GDOSC  VKCUU  QDQVE  KJTYX
