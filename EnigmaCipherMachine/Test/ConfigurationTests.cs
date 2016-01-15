@@ -19,9 +19,9 @@ namespace Test
         public const string PLAIN_TEXT = "The quick brown fox jumps over the lazy dog x";
         public const string DECRYPTED_TEXT = "THEQUICKBROWNFOXJUMPSOVERTHELAZYDOGX";
 
-        public const string EXPECTED_M4 = "ZBHG  VBNW  OZZZ  FXGZ  ITXN  \r\nBQWG  QGLQ  FPQD  CTCP";
-        public const string EXPECTED_M3 = "EMMUM  GDOSC  VKCUU  QDQVE  KJTYX  \r\nODITX  RVCHM  G";
-        public const string EXPECTED_M3K = "IVNY  XQID  IJER  JJBS  PXXG  \r\nKSAZ  XQAZ  BGYD  CNEZ";
+        public const string EXPECTED_M4 = "ZBHG  VBNW  OZZZ  FXGZ  ITXN\r\nBQWG  QGLQ  FPQD  CTCP";
+        public const string EXPECTED_M3 = "EMMUM  GDOSC  VKCUU  QDQVE  KJTYX\r\nODITX  RVCHM  G";
+        public const string EXPECTED_M3K = "IVNY  XQID  IJER  JJBS  PXXG\r\nKSAZ  XQAZ  BGYD  CNEZ";
 
         [Test]
         public void TestAAA1()
