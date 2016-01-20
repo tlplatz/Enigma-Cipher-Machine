@@ -3,7 +3,7 @@
 
 ------------------------------------------------------------------------------------
 Tag |UKW|         Walzenlage          | Ringstellung |     Steckerverbindungen
-------------------------------------------------------------------------------------
+----+---+-----------------------------+--------------+------------------------------
  31 | B | Beta   VI     IV     III    | 25 10 19 24  | AW CP DJ EM HT IU LQ NY RX VZ
  30 | B | Beta   II     IV     III    | 14 05 22 03  | AL BX CW DR EF GO HS IQ JT UZ
  29 | B | Beta   VII    II     VI     | 06 04 04 10  | AJ DT EW GN IV KM LO PU RS YZ

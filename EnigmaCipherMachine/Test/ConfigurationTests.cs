@@ -23,8 +23,12 @@ namespace Test
         public const string EXPECTED_M3 = "EMMUM  GDOSC  VKCUU  QDQVE  KJTYX\r\nODITX  RVCHM  G";
         public const string EXPECTED_M3K = "IVNY  XQID  IJER  JJBS  PXXG\r\nKSAZ  XQAZ  BGYD  CNEZ";
 
+        public const string M3_SETTING_LINE = " 00 | C | I      III    IV            | 19 06 24     | CQ DV ES FO GT IU JR KM LY NW";
+        public const string M3K_SETTING_LINE = " 00 | B | VIII   VII    II            | 12 12 13     | AG BI CU ES FT HZ JP KO MX RW";
+        public const string M4K_SETTING_LINE = " 00 | B | Beta   II     V      I      | 08 20 19 09  | BI CQ DK EU FY JS LT NP RZ VX";
+
         [Test]
-        public void TestAAA1()
+        public void AAA1()
         {
             Settings s = new Settings(MachineType.M3, ReflectorType.B);
 
@@ -56,7 +60,7 @@ namespace Test
         }
 
         [Test]
-        public void TestAAA2()
+        public void AAA2()
         {
             Settings s = new Settings(MachineType.M3, ReflectorType.B);
 
@@ -88,7 +92,7 @@ namespace Test
         }
 
         [Test]
-        public void TestM3MessageOutput()
+        public void M3MessageOutput()
         {
             /*
                 M3
@@ -125,7 +129,7 @@ namespace Test
         }
 
         [Test]
-        public void TestM3KMessageOutput()
+        public void M3KMessageOutput()
         {
             /*
                 M3K
@@ -162,7 +166,7 @@ namespace Test
         }
 
         [Test]
-        public void TestM4MessageOutput()
+        public void M4MessageOutput()
         {
             /*
                 M4
@@ -201,7 +205,7 @@ namespace Test
         }
 
         [Test]
-        public void TestEmptySettingsHaveExpectedValues()
+        public void EmptySettingsHaveExpectedValues()
         {
             Settings s = Settings.Empty();
 
@@ -222,7 +226,7 @@ namespace Test
         }
 
         [Test]
-        public void TestRandomSettingsContainValidReflector()
+        public void RandomSettingsContainValidReflector()
         {
             Settings s = Settings.Random(MachineType.M3);
 
@@ -231,7 +235,7 @@ namespace Test
         }
 
         [Test]
-        public void TestRandomSettingsContainValidRotors()
+        public void RandomSettingsContainValidRotors()
         {
             Settings s = Settings.Random(MachineType.M3);
 
@@ -241,7 +245,7 @@ namespace Test
         }
 
         [Test]
-        public void TestRandomSettingsAreValid()
+        public void RandomSettingsAreValid()
         {
             Settings s = Settings.Random(MachineType.M3);
             List<BrokenRule> brokenRules;
@@ -250,7 +254,7 @@ namespace Test
         }
 
         [Test]
-        public void TestInvalidReflectorIsInvalid()
+        public void InvalidReflectorIsInvalid()
         {
             Settings s = Settings.Empty();
             s.ReflectorType = ReflectorType.B_Dunn;
@@ -261,7 +265,7 @@ namespace Test
         }
 
         [Test]
-        public void TestInvalidRotorCountIsInvalid()
+        public void InvalidRotorCountIsInvalid()
         {
             Settings s = Settings.Empty();
             s.Rotors.RemoveAt(0);
@@ -272,7 +276,7 @@ namespace Test
         }
 
         [Test]
-        public void TestInvalidRotorIsInvalid()
+        public void InvalidRotorIsInvalid()
         {
             Settings s = Settings.Empty();
             s.Rotors[0].Name = RotorName.Gamma;
@@ -283,7 +287,7 @@ namespace Test
         }
 
         [Test]
-        public void TestInvalidRotorRingSettingIsInvalid()
+        public void InvalidRotorRingSettingIsInvalid()
         {
             Settings s = Settings.Empty();
 
@@ -295,7 +299,7 @@ namespace Test
         }
 
         [Test]
-        public void TestMissingThinRotor()
+        public void MissingThinRotor()
         {
             Settings s = Settings.Empty();
             s.MachineType = MachineType.M4K;
@@ -306,7 +310,7 @@ namespace Test
         }
 
         [Test]
-        public void TestTooManyPlugs()
+        public void TooManyPlugs()
         {
             Settings s = Settings.Random(MachineType.M3);
             List<BrokenRule> rules = new List<BrokenRule>();
@@ -320,7 +324,7 @@ namespace Test
         }
 
         [Test]
-        public void TestNonUniquePlugLinks()
+        public void NonUniquePlugLinks()
         {
             Settings s = Settings.Random(MachineType.M3);
             List<BrokenRule> rules = new List<BrokenRule>();
@@ -331,7 +335,7 @@ namespace Test
         }
 
         [Test]
-        public void TestDuplicatePlugs()
+        public void DuplicatePlugs()
         {
             Settings s = Settings.Random(MachineType.M3);
             List<BrokenRule> rules = new List<BrokenRule>();
@@ -343,7 +347,7 @@ namespace Test
         }
 
         [Test]
-        public void TestSerializationAndSave()
+        public void SerializationAndSave()
         {
             string folderName = Path.GetTempPath();
             string fileName = Path.GetTempFileName();
@@ -361,7 +365,7 @@ namespace Test
         }
 
         [Test]
-        public void TestThatMonthlySettingsHaveCorrectNumberOfDays()
+        public void MonthlySettingsHaveCorrectNumberOfDays()
         {
             int days = DateTime.DaysInMonth(2015, 12);
             MonthlySettings ms = MonthlySettings.Random(2015, 12, MachineType.M4K, ReflectorType.B_Dunn);
@@ -369,14 +373,14 @@ namespace Test
         }
 
         [Test]
-        public void TestMonthlyRotorSettingsInCompatibilityMode()
+        public void MonthlyRotorSettingsInCompatibilityMode()
         {
             MonthlySettings ms = MonthlySettings.Random(2015, 12, MachineType.M4K, ReflectorType.B_Dunn, true);
             Assert.AreEqual(true, ms.DailySettings.All(s => s.Rotors[0].Name == RotorName.Beta && s.Rotors[0].RingSetting == 0));
         }
 
         [Test]
-        public void TestMonthlySettingsSerializationAndSave()
+        public void MonthlySettingsSerializationAndSave()
         {
             string folderName = Path.GetTempPath();
             string fileName = Path.GetTempFileName();
@@ -392,5 +396,147 @@ namespace Test
 
             File.Delete(filePath);
         }
+
+        [Test]
+        public void ParseSettingLineM3()
+        {
+            Settings s = Settings.ParseSettingLine(M3_SETTING_LINE);
+
+            Assert.AreEqual(s.MachineType, MachineType.M3);
+            Assert.AreEqual(s.ReflectorType, ReflectorType.C);
+
+            Assert.AreEqual(s.Rotors[0].Name, RotorName.I);
+            Assert.AreEqual(s.Rotors[1].Name, RotorName.III);
+            Assert.AreEqual(s.Rotors[2].Name, RotorName.IV);
+
+            Assert.AreEqual(s.Rotors[0].RingSetting, 18);
+            Assert.AreEqual(s.Rotors[1].RingSetting, 5);
+            Assert.AreEqual(s.Rotors[2].RingSetting, 23);
+
+            Assert.AreEqual(s.Plugs[0].ToString(), "CQ");
+            Assert.AreEqual(s.Plugs[1].ToString(), "DV");
+            Assert.AreEqual(s.Plugs[2].ToString(), "ES");
+            Assert.AreEqual(s.Plugs[3].ToString(), "FO");
+            Assert.AreEqual(s.Plugs[4].ToString(), "GT");
+            Assert.AreEqual(s.Plugs[5].ToString(), "IU");
+            Assert.AreEqual(s.Plugs[6].ToString(), "JR");
+            Assert.AreEqual(s.Plugs[7].ToString(), "KM");
+            Assert.AreEqual(s.Plugs[8].ToString(), "LY");
+            Assert.AreEqual(s.Plugs[9].ToString(), "NW");
+
+        }
+
+        [Test]
+        public void ParseSettingLineM3K()
+        {
+            Settings s = Settings.ParseSettingLine(M3K_SETTING_LINE);
+
+            Assert.AreEqual(s.MachineType, MachineType.M3K);
+            Assert.AreEqual(s.ReflectorType, ReflectorType.B);
+
+            Assert.AreEqual(s.Rotors[0].Name, RotorName.VIII);
+            Assert.AreEqual(s.Rotors[1].Name, RotorName.VII);
+            Assert.AreEqual(s.Rotors[2].Name, RotorName.II);
+
+            Assert.AreEqual(s.Rotors[0].RingSetting, 11);
+            Assert.AreEqual(s.Rotors[1].RingSetting, 11);
+            Assert.AreEqual(s.Rotors[2].RingSetting, 12);
+
+            Assert.AreEqual(s.Plugs[0].ToString(), "AG");
+            Assert.AreEqual(s.Plugs[1].ToString(), "BI");
+            Assert.AreEqual(s.Plugs[2].ToString(), "CU");
+            Assert.AreEqual(s.Plugs[3].ToString(), "ES");
+            Assert.AreEqual(s.Plugs[4].ToString(), "FT");
+            Assert.AreEqual(s.Plugs[5].ToString(), "HZ");
+            Assert.AreEqual(s.Plugs[6].ToString(), "JP");
+            Assert.AreEqual(s.Plugs[7].ToString(), "KO");
+            Assert.AreEqual(s.Plugs[8].ToString(), "MX");
+            Assert.AreEqual(s.Plugs[9].ToString(), "RW");
+        }
+
+        [Test]
+        public void ParseSettingLineM4K()
+        {
+            Settings s = Settings.ParseSettingLine(M4K_SETTING_LINE);
+
+            Assert.AreEqual(s.MachineType, MachineType.M4K);
+            Assert.AreEqual(s.ReflectorType, ReflectorType.B_Dunn);
+
+            Assert.AreEqual(s.Rotors[0].Name, RotorName.Beta);
+            Assert.AreEqual(s.Rotors[1].Name, RotorName.II);
+            Assert.AreEqual(s.Rotors[2].Name, RotorName.V);
+            Assert.AreEqual(s.Rotors[3].Name, RotorName.I);
+
+            Assert.AreEqual(s.Rotors[0].RingSetting, 7);
+            Assert.AreEqual(s.Rotors[1].RingSetting, 19);
+            Assert.AreEqual(s.Rotors[2].RingSetting, 18);
+            Assert.AreEqual(s.Rotors[3].RingSetting, 8);
+
+            Assert.AreEqual(s.Plugs[0].ToString(), "BI");
+            Assert.AreEqual(s.Plugs[1].ToString(), "CQ");
+            Assert.AreEqual(s.Plugs[2].ToString(), "DK");
+            Assert.AreEqual(s.Plugs[3].ToString(), "EU");
+            Assert.AreEqual(s.Plugs[4].ToString(), "FY");
+            Assert.AreEqual(s.Plugs[5].ToString(), "JS");
+            Assert.AreEqual(s.Plugs[6].ToString(), "LT");
+            Assert.AreEqual(s.Plugs[7].ToString(), "NP");
+            Assert.AreEqual(s.Plugs[8].ToString(), "RZ");
+            Assert.AreEqual(s.Plugs[9].ToString(), "VX");
+        }
+
+        [Test]
+        public void M4KCompatibility()
+        {
+            Settings s = new Settings(MachineType.M4K, ReflectorType.B_Dunn);
+
+            s.Rotors.Add(new RotorSetting(RotorName.Beta, 0));
+            s.Rotors.Add(new RotorSetting(RotorName.I, 12));
+            s.Rotors.Add(new RotorSetting(RotorName.II, 13));
+            s.Rotors.Add(new RotorSetting(RotorName.VII, 22));
+
+            s.Plugs.Add(new PlugSetting("CN"));
+            s.Plugs.Add(new PlugSetting("DI"));
+            s.Plugs.Add(new PlugSetting("EQ"));
+            s.Plugs.Add(new PlugSetting("FL"));
+            s.Plugs.Add(new PlugSetting("GV"));
+            s.Plugs.Add(new PlugSetting("KR"));
+            s.Plugs.Add(new PlugSetting("MS"));
+            s.Plugs.Add(new PlugSetting("OY"));
+            s.Plugs.Add(new PlugSetting("PX"));
+            s.Plugs.Add(new PlugSetting("WZ"));
+
+            Message msg = new Message(s);
+            string encrypted = msg.Encrypt(PLAIN_TEXT, "ALOT");
+
+            s.MachineType = MachineType.M3K;
+            s.ReflectorType = ReflectorType.B;
+
+            s.Rotors.Clear();
+
+            s.Rotors.Add(new RotorSetting(RotorName.I, 12));
+            s.Rotors.Add(new RotorSetting(RotorName.II, 13));
+            s.Rotors.Add(new RotorSetting(RotorName.VII, 22));
+
+            s.Plugs.Clear();
+
+            s.Plugs.Add(new PlugSetting("CN"));
+            s.Plugs.Add(new PlugSetting("DI"));
+            s.Plugs.Add(new PlugSetting("EQ"));
+            s.Plugs.Add(new PlugSetting("FL"));
+            s.Plugs.Add(new PlugSetting("GV"));
+            s.Plugs.Add(new PlugSetting("KR"));
+            s.Plugs.Add(new PlugSetting("MS"));
+            s.Plugs.Add(new PlugSetting("OY"));
+            s.Plugs.Add(new PlugSetting("PX"));
+            s.Plugs.Add(new PlugSetting("WZ"));
+
+            msg = new Message(s);
+
+            string encrypted2 = msg.Encrypt(PLAIN_TEXT, "LOT");
+
+            Assert.AreEqual(encrypted, encrypted2);
+
+        }
+
     }
 }
