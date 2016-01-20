@@ -127,6 +127,10 @@ namespace WizardNet.Enigma.Configuration
 
             return result;
         }
+        public static Settings ParseSettingLine(string line)
+        {
+            return Formatting.ParseSettingLine(line);
+        }
 
         public override string ToString()
         {

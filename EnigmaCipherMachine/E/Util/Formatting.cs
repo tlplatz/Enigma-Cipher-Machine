@@ -146,5 +146,72 @@ namespace WizardNet.Enigma.Util
         {
             return string.Concat(input.ToUpper().Where(c => Constants.ALPHABET.Contains(c)));
         }
+
+        public static Settings ParseSettingLine(string line)
+        {
+            string[] tokens = line.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries);
+
+            Settings result = new Settings();
+
+            string ukw = tokens[1].Trim();
+            string rotors = tokens[2].Trim();
+            string rings = tokens[3].Trim();
+            string plugs = tokens[4].Trim();
+
+            string[] rotorNames = rotors.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            string[] ringSettings = rings.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            string[] plugSettings = plugs.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (rotorNames.Length == 4)
+            {
+                result.MachineType = MachineType.M4K;
+
+                if (ukw == "B")
+                {
+                    result.ReflectorType = ReflectorType.B_Dunn;
+                }
+                else
+                {
+                    result.ReflectorType = ReflectorType.C_Dunn;
+                }
+            }
+            else
+            {
+                result.MachineType = MachineType.M3;
+
+                if (ukw == "B")
+                {
+                    result.ReflectorType = ReflectorType.B;
+                }
+                else
+                {
+                    result.ReflectorType = ReflectorType.C;
+                }
+            }
+
+            result.Rotors.Clear();
+            result.Rotors.AddRange(rotorNames.Select(n => new RotorSetting((RotorName)Enum.Parse(typeof(RotorName), n), 0)));
+
+            for (int i = 0; i < ringSettings.Length; i++)
+            {
+                result.Rotors[i].RingSetting = int.Parse(ringSettings[i]) - 1;
+            }
+
+            foreach (string s in plugSettings)
+            {
+                result.Plugs.Add(new PlugSetting(s));
+            }
+
+            if (result.Rotors.Any(r => r.Name == RotorName.VI ||
+                r.Name == RotorName.VII ||
+                r.Name == RotorName.VIII ||
+                r.Name == RotorName.Beta ||
+                r.Name == RotorName.Gamma) && result.Rotors.Count == 3)
+            {
+                result.MachineType = MachineType.M3K;
+            }
+
+            return result;
+        }
     }
 }
