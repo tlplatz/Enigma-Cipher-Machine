@@ -16,10 +16,7 @@ namespace Enigma
         {
             List<BrokenRule> brokenRules = new List<BrokenRule>();
 
-            if (!Validation.Validate(s, out brokenRules))
-            {
-                throw new ValidationException(string.Join("\r\n", brokenRules.Select(b => b.Message)));
-            }
+            s.Validate();
 
             _settings = s;
             _machine = new Machine(_settings);
@@ -46,22 +43,47 @@ namespace Enigma
             return sb.ToString();
         }
 
-        public string Encrypt(string plainText, string rotorSettings)
+        private void ValidateRotorSettings(string rotorSettings)
         {
-            if(_settings.MachineType == MachineType.M4K)
+            if (_settings.MachineType == MachineType.M4K)
             {
                 if (rotorSettings.Length != 4)
                 {
-                    throw new ValidationException("Invalid rotor setting count, 4 values are required");
+                    throw new ValidationException("Invalid rotor setting count, 4 values are required")
+                    {
+                        BrokenRules = new List<BrokenRule>
+                        {
+                            new BrokenRule
+                            {
+                                Message = "Invalid rotor setting count, 4 values are required",
+                                FailureType = ValidationFailureType.InvalidRotorSettings
+                            }
+                        }
+                    };
                 }
             }
             else
             {
                 if (rotorSettings.Length != 3)
                 {
-                    throw new ValidationException("Invalid rotor setting count, 3 values are required");
+                    throw new ValidationException("Invalid rotor setting count, 3 values are required")
+                    {
+                        BrokenRules = new List<BrokenRule>
+                        {
+                            new BrokenRule
+                            {
+                                Message = "Invalid rotor setting count, 3 values are required",
+                                FailureType = ValidationFailureType.InvalidRotorSettings
+                            }
+                        }
+                    };
                 }
             }
+        }
+
+        public string Encrypt(string plainText, string rotorSettings)
+        {
+            ValidateRotorSettings(rotorSettings);
 
             _machine.RotorSettings = rotorSettings;
 
@@ -78,20 +100,7 @@ namespace Enigma
         }
         public string Decrypt(string cipherText, string rotorSettings)
         {
-            if (_settings.MachineType == MachineType.M4K)
-            {
-                if (rotorSettings.Length != 4)
-                {
-                    throw new ValidationException("Invalid rotor setting count, 4 values are required");
-                }
-            }
-            else
-            {
-                if (rotorSettings.Length != 3)
-                {
-                    throw new ValidationException("Invalid rotor setting count, 3 values are required");
-                }
-            }
+            ValidateRotorSettings(rotorSettings);
 
             _machine.RotorSettings = rotorSettings;
 

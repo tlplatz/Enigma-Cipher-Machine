@@ -540,7 +540,7 @@ namespace ConvertedTests
         [ExpectedException(typeof(ValidationException))]
         public void InvalidSettingsOnMessageThrowsExpectedException()
         {
-            //setting is purposely invalid
+            //settings are purposely invalid
             Settings s = new Settings(MachineType.M4K, ReflectorType.B);
             Message msg = new Message(s);
         }
@@ -554,6 +554,22 @@ namespace ConvertedTests
 
             //not enough rotor settings specified
             string cipherText = msg.Encrypt(PLAIN_TEXT, "AAA");
+        }
+
+        [TestMethod]
+        public void ExceptionIncludesBrokenRules()
+        {
+            try
+            {
+                Settings s = new Settings(MachineType.M4K, ReflectorType.B);
+                s.Validate();
+            }
+            catch (ValidationException valEx)
+            {
+                Assert.IsTrue(valEx.BrokenRules.Any());
+                return;
+            }
+            Assert.Fail("No exception thrown");
         }
     }
 }

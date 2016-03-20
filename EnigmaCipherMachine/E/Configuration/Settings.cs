@@ -136,5 +136,14 @@ namespace Enigma.Configuration
         {
             return Formatting.SettingLine(this, Day);
         }
+
+        public void Validate()
+        {
+            List<BrokenRule> brokenRules = new List<BrokenRule>();
+            if (!Validation.Validate(this, out brokenRules))
+            {
+                throw new ValidationException(string.Join("\r\n", brokenRules.Select(r => r.Message))) { BrokenRules = brokenRules };
+            }
+        }
     }
 }
