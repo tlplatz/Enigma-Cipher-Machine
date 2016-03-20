@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Enigma.UKW
 {
-    public class ReflectorList : List<Reflector>
+    internal class ReflectorList : List<Reflector>
     {
         public ReflectorList(MachineType m)
         {

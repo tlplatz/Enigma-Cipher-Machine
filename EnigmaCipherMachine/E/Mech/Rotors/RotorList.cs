@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Enigma.Rotors
 {
-    public class RotorList : List<Rotor>
+    internal class RotorList : List<Rotor>
     {
         public RotorList(MachineType m)
         {

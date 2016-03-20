@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Enigma.Util
 {
-    public class RandomUtil
+    internal class RandomUtil
     {
         internal static Random _rand = new Random();
 

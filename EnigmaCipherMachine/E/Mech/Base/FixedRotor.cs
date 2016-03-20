@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Enigma.Base
 {
-    public abstract class FixedRotor
+    internal abstract class FixedRotor
     {
         protected List<Contact> _contacts;
 

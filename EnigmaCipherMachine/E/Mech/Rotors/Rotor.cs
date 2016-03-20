@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Enigma.Rotors
 {
-    public class Rotor : FixedRotor
+    internal class Rotor : FixedRotor
     {
         public Rotor(RotorName name, params int[] notches)
             : base(name.ToString(), Constants.Rotors[(int)name])

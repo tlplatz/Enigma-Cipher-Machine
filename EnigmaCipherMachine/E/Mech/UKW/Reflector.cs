@@ -3,7 +3,7 @@ using Enigma.Enums;
 
 namespace Enigma.UKW
 {
-    public class Reflector : FixedRotor
+    internal class Reflector : FixedRotor
     {
         public Reflector(ReflectorType r)
             : base(r.ToString(), Constants.Reflectors[(int)r])

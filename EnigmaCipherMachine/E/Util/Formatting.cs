@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Enigma.Util
 {
-    public class Formatting
+    internal class Formatting
     {
         public static string SettingLine(Settings s, int day)
         {

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Enigma.PlugBoard
 {
-    public class Stecker : FixedRotor
+    internal class Stecker : FixedRotor
     {
         public Stecker()
             : base("Stecker", Constants.ALPHABET)
