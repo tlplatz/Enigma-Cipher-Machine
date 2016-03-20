@@ -5,16 +5,14 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("E")]
+[assembly: AssemblyTitle("ConvertedTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("tlplatz")]
-[assembly: AssemblyProduct("E")]
-[assembly: AssemblyCopyright("Copyright © tlplatz 2015")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ConvertedTests")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: InternalsVisibleTo("Test")]
-[assembly: InternalsVisibleTo("ConvertedTests")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -22,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f5f6d95e-e28e-4136-9934-8d65f7d743fd")]
+[assembly: Guid("2623eeae-a2e3-4ca4-9d5a-c32a0ce8cf4d")]
 
 // Version information for an assembly consists of the following four values:
 //
