@@ -13,5 +13,7 @@ namespace Enigma.Configuration
         public ValidationException() : base() { }
         public ValidationException(string message) : base(message) { }
         public ValidationException(string message, Exception innerException) : base() { }
+
+        public List<BrokenRule> BrokenRules { get; internal set; }
     }
 }
