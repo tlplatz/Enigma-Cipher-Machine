@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Configuration\BrokenRule.cs" />
     <Compile Include="Configuration\Validation.cs" />
+    <Compile Include="Configuration\ValidationException.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Mech\Base\ValidationFailureType.cs" />
     <Compile Include="Mech\Base\Contact.cs" />

@@ -536,5 +536,24 @@ namespace ConvertedTests
 
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ValidationException))]
+        public void InvalidSettingsOnMessageThrowsExpectedException()
+        {
+            //setting is purposely invalid
+            Settings s = new Settings(MachineType.M4K, ReflectorType.B);
+            Message msg = new Message(s);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ValidationException))]
+        public void InvalidRotorSettingsOnMessageEncryptDecryptThrowsExpectedException()
+        {
+            Settings s = Settings.Random(MachineType.M4K);
+            Message msg = new Message(s);
+
+            //not enough rotor settings specified
+            string cipherText = msg.Encrypt(PLAIN_TEXT, "AAA");
+        }
     }
 }
