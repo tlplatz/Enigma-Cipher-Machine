@@ -13,7 +13,6 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCopyright("Copyright © tlplatz 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: InternalsVisibleTo("Test")]
 [assembly: InternalsVisibleTo("ConvertedTests")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
