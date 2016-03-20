@@ -1,8 +1,8 @@
-﻿using System.Linq;
-using WizardNet.Enigma.Base;
-using WizardNet.Enigma.Enums;
+﻿using Enigma.Base;
+using Enigma.Enums;
+using System.Linq;
 
-namespace WizardNet.Enigma.Rotors
+namespace Enigma.Rotors
 {
     public class Rotor : FixedRotor
     {

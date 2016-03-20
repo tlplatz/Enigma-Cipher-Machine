@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Enigma.Enums;
+using Enigma.Rotors;
+using Enigma.UKW;
+using System.Collections.Generic;
 using System.Linq;
-using WizardNet.Enigma.Enums;
-using WizardNet.Enigma.Rotors;
-using WizardNet.Enigma.UKW;
 
-namespace WizardNet.Enigma.Configuration
+namespace Enigma.Configuration
 {
     public static class Validation
     {

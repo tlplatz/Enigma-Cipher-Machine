@@ -29,7 +29,7 @@
 
 */
 
-namespace WizardNet.Enigma
+namespace Enigma
 {
     public class Constants
     {

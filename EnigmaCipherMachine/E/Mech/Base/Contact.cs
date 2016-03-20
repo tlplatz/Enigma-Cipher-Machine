@@ -1,5 +1,5 @@
 ﻿
-namespace WizardNet.Enigma.Base
+namespace Enigma.Base
 {
     public class Contact
     {

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Enigma.Configuration;
+using Enigma.Enums;
+using System;
 using System.IO;
-using WizardNet.Enigma.Configuration;
-using WizardNet.Enigma.Enums;
 
-namespace WizardNet.Enigma.Util
+namespace Enigma.Util
 {
     public class IoUtil
     {

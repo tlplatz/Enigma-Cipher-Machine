@@ -1,7 +1,7 @@
-﻿using WizardNet.Enigma.Base;
-using WizardNet.Enigma.Enums;
+﻿using Enigma.Base;
+using Enigma.Enums;
 
-namespace WizardNet.Enigma.UKW
+namespace Enigma.UKW
 {
     public class Reflector : FixedRotor
     {

@@ -1,12 +1,12 @@
-﻿using System;
+﻿using Enigma.Enums;
+using Enigma.Util;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
-using WizardNet.Enigma.Enums;
-using WizardNet.Enigma.Util;
 
-namespace WizardNet.Enigma.Configuration
+namespace Enigma.Configuration
 {
     [Serializable]
     public class Settings

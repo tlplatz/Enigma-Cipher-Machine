@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Enigma.Enums;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Xml.Serialization;
-using WizardNet.Enigma.Enums;
 
-namespace WizardNet.Enigma.Configuration
+namespace Enigma.Configuration
 {
     [Serializable]
     public class MonthlySettings

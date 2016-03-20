@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace WizardNet.Enigma.Util
+namespace Enigma.Util
 {
     public class RandomUtil
     {

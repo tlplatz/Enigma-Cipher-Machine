@@ -1,5 +1,5 @@
 ﻿
-namespace WizardNet.Enigma.Enums
+namespace Enigma.Enums
 {
     public enum ValidationFailureType
     {

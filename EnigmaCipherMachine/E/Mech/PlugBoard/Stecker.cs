@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Enigma.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using WizardNet.Enigma.Base;
 
 
-namespace WizardNet.Enigma.PlugBoard
+namespace Enigma.PlugBoard
 {
     public class Stecker : FixedRotor
     {

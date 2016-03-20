@@ -1,7 +1,7 @@
-﻿using System;
-using WizardNet.Enigma.Enums;
+﻿using Enigma.Enums;
+using System;
 
-namespace WizardNet.Enigma.Configuration
+namespace Enigma.Configuration
 {
     [Serializable]
     public class RotorSetting

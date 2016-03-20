@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Enigma;
+using Enigma.Configuration;
+using Enigma.Enums;
+using Enigma.Rotors;
+using Enigma.UKW;
 using NUnit.Framework;
-using WizardNet.Enigma.Configuration;
-using WizardNet.Enigma.Enums;
-using WizardNet.Enigma.UKW;
-using WizardNet.Enigma.Rotors;
+using System;
+using System.Collections.Generic;
 using System.IO;
-using WizardNet.Enigma;
+using System.Linq;
 
 namespace Test
 {

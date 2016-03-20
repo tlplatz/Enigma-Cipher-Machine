@@ -1,6 +1,6 @@
-﻿using WizardNet.Enigma.Enums;
+﻿using Enigma.Enums;
 
-namespace WizardNet.Enigma.Configuration
+namespace Enigma.Configuration
 {
     public class BrokenRule
     {

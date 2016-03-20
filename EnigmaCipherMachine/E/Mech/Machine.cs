@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using Enigma.Configuration;
+using Enigma.Enums;
+using Enigma.PlugBoard;
+using Enigma.Rotors;
+using Enigma.UKW;
+using System.Collections.Generic;
 using System.Linq;
-using WizardNet.Enigma.Configuration;
-using WizardNet.Enigma.Enums;
-using WizardNet.Enigma.PlugBoard;
-using WizardNet.Enigma.Rotors;
-using WizardNet.Enigma.UKW;
 
-namespace WizardNet.Enigma
+namespace Enigma
 {
     public class Machine
     {

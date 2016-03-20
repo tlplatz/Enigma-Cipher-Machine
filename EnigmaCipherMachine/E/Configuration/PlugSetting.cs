@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WizardNet.Enigma.Configuration
+namespace Enigma.Configuration
 {
     [Serializable]
     public class PlugSetting

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Enigma.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using WizardNet.Enigma.Enums;
 
-namespace WizardNet.Enigma.UKW
+namespace Enigma.UKW
 {
     public class ReflectorList : List<Reflector>
     {
