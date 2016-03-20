@@ -1,7 +1,7 @@
 ﻿
 namespace Enigma.Base
 {
-    public class Contact
+    internal class Contact
     {
         public int WireRight { get; set; }
         public int WireLeft { get; set; }

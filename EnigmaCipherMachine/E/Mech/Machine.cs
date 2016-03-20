@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace Enigma
 {
-    public class Machine
+    internal class Machine
     {
         private List<Rotor> _rotors;
         private Reflector _reflector;

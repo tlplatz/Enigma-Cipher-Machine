@@ -2,7 +2,7 @@
 
 namespace Enigma.PlugBoard
 {
-    public class Plug : IComparable<Plug>
+    internal class Plug : IComparable<Plug>
     {
         public Plug(string a, string b)
         {
