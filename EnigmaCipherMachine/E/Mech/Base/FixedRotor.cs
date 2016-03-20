@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace WizardNet.Enigma.Base
+namespace Enigma.Base
 {
     public abstract class FixedRotor
     {

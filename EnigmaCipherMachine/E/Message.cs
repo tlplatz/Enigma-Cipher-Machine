@@ -1,10 +1,10 @@
-﻿using System.Linq;
+﻿using Enigma.Configuration;
+using Enigma.Enums;
+using Enigma.Util;
+using System.Linq;
 using System.Text;
-using WizardNet.Enigma.Configuration;
-using WizardNet.Enigma.Enums;
-using WizardNet.Enigma.Util;
 
-namespace WizardNet.Enigma
+namespace Enigma
 {
     public class Message
     {

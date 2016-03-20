@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WizardNet.Enigma.PlugBoard
+namespace Enigma.PlugBoard
 {
     public class Plug : IComparable<Plug>
     {

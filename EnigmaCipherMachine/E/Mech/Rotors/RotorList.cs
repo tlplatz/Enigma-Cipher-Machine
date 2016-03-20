@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Enigma.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using WizardNet.Enigma.Enums;
 
-namespace WizardNet.Enigma.Rotors
+namespace Enigma.Rotors
 {
     public class RotorList : List<Rotor>
     {
