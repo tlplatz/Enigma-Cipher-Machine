@@ -10,7 +10,7 @@ namespace Enigma.Enums
         ThinRotorMissing,
         TooManyPlugs,
         PlugsLinksNotUnique,
-        DuplicatePlugs
-
+        DuplicatePlugs,
+        InvalidRotorSettings
     }
 }

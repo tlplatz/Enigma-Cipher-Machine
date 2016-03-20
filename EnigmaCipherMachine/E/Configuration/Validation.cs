@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Enigma.Configuration
 {
-    public static class Validation
+    internal static class Validation
     {
         public static bool Validate(Settings s, out List<BrokenRule> rules)
         {
@@ -50,9 +50,12 @@ namespace Enigma.Configuration
 
             if (s.MachineType == MachineType.M4K)
             {
-                if (s.Rotors[0].Name != RotorName.Beta && s.Rotors[0].Name != RotorName.Gamma)
+                if (s.Rotors.Count == 4)
                 {
-                    rules.Add(new BrokenRule { FailureType = ValidationFailureType.ThinRotorMissing, Message = string.Format("A thin Gamma or Beta rotor needs to be next to the reflector for machine type {0}", s.MachineType) });
+                    if (s.Rotors[0].Name != RotorName.Beta && s.Rotors[0].Name != RotorName.Gamma)
+                    {
+                        rules.Add(new BrokenRule { FailureType = ValidationFailureType.ThinRotorMissing, Message = string.Format("A thin Gamma or Beta rotor needs to be next to the reflector for machine type {0}", s.MachineType) });
+                    }
                 }
             }
 
