@@ -21,6 +21,7 @@ namespace Enigma.Util
 
             return sb.ToString();
         }
+
         public static string MonthlySettings(string title, int year, int month, MachineType t, ReflectorType r, bool compatibilityMode = false)
         {
             StringBuilder sb = new StringBuilder();
@@ -83,6 +84,26 @@ namespace Enigma.Util
 
             return sb.ToString();
         }
+        public static string MonthlySettings(string title, int year, int month, MachineType t, IEnumerable<Settings> settings)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine();
+            sb.AppendLine(TitleLine(title, year, month));
+            sb.AppendLine();
+            sb.AppendLine(DashedLine());
+            sb.AppendLine(HeaderLine());
+            sb.AppendLine(DashedLine());
+
+            foreach (var s in settings)
+            {
+                sb.AppendLine(SettingLine(s, s.Day));
+
+            }
+            sb.AppendLine(DashedLine());
+
+            return sb.ToString();
+        }
+
         public static string HeaderLine()
         {
             return "Tag |UKW|         Walzenlage          | Ringstellung |     Steckerverbindungen";
