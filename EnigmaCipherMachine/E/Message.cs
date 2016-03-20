@@ -62,5 +62,13 @@ namespace Enigma
             return PlainText;
         }
 
+        public string RotorPositions
+        {
+            get
+            {
+                return _machine.RotorSettings;
+            }
+        }
     }
 }
+
