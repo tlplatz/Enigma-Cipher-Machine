@@ -36,6 +36,23 @@ namespace Enigma.Configuration
                 return (MonthlySettings)ser.Deserialize(stm);
             }
         }
+
+        public static MonthlySettings Random(int year, int month, MachineType t)
+        {
+            MonthlySettings result = new MonthlySettings();
+
+            result.Month = month;
+            result.Year = year;
+
+            for (int i = DateTime.DaysInMonth(year, month); i > 0; i--)
+            {
+                Settings s = Settings.Random(t);
+                s.Day = i;
+                result.DailySettings.Add(s);
+            }
+
+            return result;
+        }
         public static MonthlySettings Random(int year, int month, MachineType t, ReflectorType r, bool compatibilityMode = false)
         {
             MonthlySettings result = new MonthlySettings();
