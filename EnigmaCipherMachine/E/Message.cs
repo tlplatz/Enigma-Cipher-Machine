@@ -14,8 +14,6 @@ namespace Enigma
 
         public Message(Settings s)
         {
-            List<BrokenRule> brokenRules = new List<BrokenRule>();
-
             s.Validate();
 
             _settings = s;
@@ -42,7 +40,6 @@ namespace Enigma
             }
             return sb.ToString();
         }
-
         private void ValidateRotorSettings(string rotorSettings)
         {
             if (_settings.MachineType == MachineType.M4K)
