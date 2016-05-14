@@ -1,7 +1,9 @@
 ﻿using Enigma.Enums;
+using Enigma.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Serialization;
 
 namespace Enigma.Configuration
@@ -92,6 +94,15 @@ namespace Enigma.Configuration
             }
 
             return result;
+        }
+
+        public override string ToString()
+        {
+            if (DailySettings.Any())
+                return Formatting.MonthlySettings("Settings", Year, Month, DailySettings[0].MachineType, DailySettings);
+            return
+                base.ToString();   
+
         }
     }
 }

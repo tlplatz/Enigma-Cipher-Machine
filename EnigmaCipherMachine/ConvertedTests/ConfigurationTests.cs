@@ -28,6 +28,8 @@ namespace ConvertedTests
         [TestMethod]
         public void AAA1()
         {
+            
+
             Settings s = new Settings(MachineType.M3, ReflectorType.B);
 
             s.Rotors.Add(new RotorSetting(RotorName.I, 0));
