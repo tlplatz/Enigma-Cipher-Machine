@@ -53,7 +53,7 @@
     <Compile Include="Configuration\Validation.cs" />
     <Compile Include="Configuration\ValidationException.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="Mech\Base\ValidationFailureType.cs" />
+    <Compile Include="Enums\ValidationFailureType.cs" />
     <Compile Include="Mech\Base\Contact.cs" />
     <Compile Include="Mech\Base\FixedRotor.cs" />
     <Compile Include="Util\Formatting.cs" />

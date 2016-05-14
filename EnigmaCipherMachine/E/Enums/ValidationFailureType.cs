@@ -11,6 +11,7 @@ namespace Enigma.Enums
         TooManyPlugs,
         PlugsLinksNotUnique,
         DuplicatePlugs,
-        InvalidRotorSettings
+        InvalidRotorSettings,
+        LettersDuplicatedInPlugs
     }
 }
