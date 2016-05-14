@@ -46,7 +46,7 @@ namespace Enigma
             {
                 if (rotorSettings.Length != 4)
                 {
-                    throw new ValidationException("Invalid rotor setting count, 4 values are required")
+                    throw new ValidationException("Invalid rotor setting count, exactly 4 values are required")
                     {
                         BrokenRules = new List<BrokenRule>
                         {
@@ -69,7 +69,7 @@ namespace Enigma
                         {
                             new BrokenRule
                             {
-                                Message = "Invalid rotor setting count, 3 values are required",
+                                Message = "Invalid rotor setting count, exactly 3 values are required",
                                 FailureType = ValidationFailureType.InvalidRotorSettings
                             }
                         }
@@ -106,7 +106,7 @@ namespace Enigma
             return PlainText;
         }
 
-        public string RotorPositions
+        public string CurrentRotorPositions
         {
             get
             {

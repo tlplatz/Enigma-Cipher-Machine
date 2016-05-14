@@ -69,10 +69,17 @@ namespace Enigma.Configuration
                 rules.Add(new BrokenRule { FailureType = ValidationFailureType.PlugsLinksNotUnique, Message = "All plugs must link 2 different letters" });
             }
 
-            string duplicatePlugs = string.Join(" ", s.Plugs.GroupBy(p => p.ToString()).Where(g => g.Count() > 1).Select(g => g.Key)).Trim();
+            string duplicatePlugs = string.Join(", ", s.Plugs.GroupBy(p => p.ToString()).Where(g => g.Count() > 1).Select(g => g.Key)).Trim();
             if (!string.IsNullOrEmpty(duplicatePlugs))
             {
                 rules.Add(new BrokenRule { FailureType = ValidationFailureType.DuplicatePlugs, Message = string.Format("Plugs {0} are duplicated", duplicatePlugs) });
+            }
+
+            string plugString = string.Concat(s.Plugs.Select(p => p.ToString()));
+            string duplicatedLetters = string.Join(", ", plugString.GroupBy(p => p.ToString()).Where(g => g.Count() > 1).Select(g => g.Key)).Trim();
+            if (!string.IsNullOrEmpty(duplicatedLetters))
+            {
+                rules.Add(new BrokenRule { FailureType = ValidationFailureType.LettersDuplicatedInPlugs, Message = string.Format("Letters {0} are duplicated", duplicatedLetters) });
             }
 
             return !rules.Any();

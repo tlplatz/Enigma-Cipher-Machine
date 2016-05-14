@@ -345,6 +345,21 @@ namespace ConvertedTests
         }
 
         [TestMethod]
+        public void DuplicatedLetters()
+        {
+            Settings s = Settings.Random(MachineType.M3);
+            List<BrokenRule> rules = new List<BrokenRule>();
+
+            s.Plugs.Clear();
+            s.Plugs.Add(new PlugSetting("AB"));
+            s.Plugs.Add(new PlugSetting("CB"));
+            s.Plugs.Add(new PlugSetting("SA"));
+
+            Assert.AreEqual(false, Validation.Validate(s, out rules));
+            Assert.AreEqual(true, rules.Select(r => r.FailureType == ValidationFailureType.LettersDuplicatedInPlugs).Any());
+        }
+
+        [TestMethod]
         public void SerializationAndSave()
         {
             string folderName = Path.GetTempPath();
@@ -553,7 +568,7 @@ namespace ConvertedTests
             Message msg = new Message(s);
 
             //not enough rotor settings specified
-            string cipherText = msg.Encrypt(PLAIN_TEXT, "AAA");
+            string cipherText = msg.Encrypt(PLAIN_TEXT, "AAAAA");
         }
 
         [TestMethod]
