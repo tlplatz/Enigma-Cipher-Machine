@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Enigma.Util
 {
-    public class IoUtil
+    public static class IoUtil
     {
         private static void SaveFile(string fileName, string content)
         {

@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Enigma.UKW
+namespace Enigma
 {
     internal class ReflectorList : List<Reflector>
     {

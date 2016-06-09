@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Enigma.Base
+namespace Enigma
 {
     internal abstract class FixedRotor
     {

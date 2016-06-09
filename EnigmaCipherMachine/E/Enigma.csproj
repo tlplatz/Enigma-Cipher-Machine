@@ -56,6 +56,11 @@
     <Compile Include="Enums\ValidationFailureType.cs" />
     <Compile Include="Mech\Base\Contact.cs" />
     <Compile Include="Mech\Base\FixedRotor.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Util\Formatting.cs" />
     <Compile Include="Util\IoUtil.cs" />
     <Compile Include="Mech\Machine.cs" />
@@ -78,11 +83,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Docs\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Docs\December_2015_Settings.txt" />
     <Content Include="Docs\December_2015_Settings.xml" />
     <Content Include="Docs\Test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,5 @@
 ﻿
-namespace Enigma.Base
+namespace Enigma
 {
     internal class Contact
     {

@@ -1,8 +1,7 @@
-﻿using Enigma.Base;
-using Enigma.Enums;
+﻿using Enigma.Enums;
 using System.Linq;
 
-namespace Enigma.Rotors
+namespace Enigma
 {
     internal class Rotor : FixedRotor
     {

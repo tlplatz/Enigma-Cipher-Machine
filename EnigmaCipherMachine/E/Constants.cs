@@ -31,7 +31,7 @@
 
 namespace Enigma
 {
-    public class Constants
+    public static class Constants
     {
         public const string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

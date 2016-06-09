@@ -4,8 +4,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Enigma.Configuration;
 using Enigma.Enums;
 using Enigma;
-using Enigma.UKW;
-using Enigma.Rotors;
 using System.Collections.Generic;
 using System.IO;
 
