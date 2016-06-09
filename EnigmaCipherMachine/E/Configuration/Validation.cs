@@ -1,6 +1,4 @@
 ﻿using Enigma.Enums;
-using Enigma.Rotors;
-using Enigma.UKW;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -1,10 +1,10 @@
-﻿using Enigma.Base;
+﻿using Enigma;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 
-namespace Enigma.PlugBoard
+namespace Enigma
 {
     internal class Stecker : FixedRotor
     {

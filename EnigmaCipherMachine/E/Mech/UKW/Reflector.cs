@@ -1,7 +1,6 @@
-﻿using Enigma.Base;
-using Enigma.Enums;
+﻿using Enigma.Enums;
 
-namespace Enigma.UKW
+namespace Enigma
 {
     internal class Reflector : FixedRotor
     {

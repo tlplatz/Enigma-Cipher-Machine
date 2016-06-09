@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Enigma.PlugBoard
+namespace Enigma
 {
     internal class Plug : IComparable<Plug>
     {

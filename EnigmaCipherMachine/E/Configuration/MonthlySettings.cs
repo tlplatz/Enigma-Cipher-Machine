@@ -19,6 +19,8 @@ namespace Enigma.Configuration
         public MonthlySettings()
         {
             DailySettings = new List<Settings>();
+
+            noNamespaceSchemaLocation = "Settings.xsd";
         }
 
         public void Save(string fileName)
@@ -103,6 +105,13 @@ namespace Enigma.Configuration
             return
                 base.ToString();   
 
+        }
+
+        //this is a kludge to get the xml serializer to include the schema location when serializing to xml        
+        [XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/2001/XMLSchema-instance")]
+        public string noNamespaceSchemaLocation
+        {
+            get; set;
         }
     }
 }

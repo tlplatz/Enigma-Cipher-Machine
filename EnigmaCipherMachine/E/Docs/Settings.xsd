@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified">
+  <xsd:element name="MonthlySettings">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Year" type="xsd:unsignedShort" />
+        <xsd:element name="Month" type="xsd:unsignedByte" />
+        <xsd:element name="DailySettings">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element minOccurs="28" maxOccurs="31" name="Settings">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Day" type="xsd:unsignedByte" />
+                    <xsd:element name="MachineType" type="xsd:string" />
+                    <xsd:element name="ReflectorType" type="xsd:string" />
+                    <xsd:element name="Rotors">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element minOccurs="3" maxOccurs="4" name="RotorSetting">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="Name" type="xsd:string" />
+                                <xsd:element name="RingSetting" type="xsd:unsignedByte" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="Plugs">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element minOccurs="10" maxOccurs="10" name="PlugSetting">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="LetterA" type="xsd:string" />
+                                <xsd:element name="LetterB" type="xsd:string" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xs:schema>
