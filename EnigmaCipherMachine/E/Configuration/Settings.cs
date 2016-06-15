@@ -9,13 +9,21 @@ using System.Xml.Serialization;
 namespace Enigma.Configuration
 {
     [Serializable]
-    public class Settings
+    public class Settings : IEquatable<Settings>
     {
         private static Random _rnd = new Random();
 
+        [XmlAttribute]
         public int Day { get; set; }
+        [XmlAttribute]
         public MachineType MachineType { get; set; }
+        [XmlAttribute]
         public ReflectorType ReflectorType { get; set; }
+
+        [XmlAttribute]
+        public string Grund { get; set; }
+        [XmlAttribute]
+        public List<string> Kenngruppen { get; set; }
 
         public List<RotorSetting> Rotors { get; set; }
         public List<PlugSetting> Plugs { get; set; }
@@ -24,12 +32,128 @@ namespace Enigma.Configuration
         {
             Rotors = new List<RotorSetting>();
             Plugs = new List<PlugSetting>();
+
+            Kenngruppen = new List<string>();
         }
         public Settings(MachineType typ, ReflectorType refTyp)
             : this()
         {
             MachineType = typ;
             ReflectorType = refTyp;
+        }
+        public Settings(MachineType typ, ReflectorType refTyp, RotorName[] rotors, int[] ringPos, string[] plugs)
+            : this(typ, refTyp)
+        {
+            MachineType = typ;
+            ReflectorType = refTyp;
+
+            if (MachineType == MachineType.M4K)
+            {
+                if (refTyp == ReflectorType.B_Dunn)
+                {
+                    Rotors.Add(new RotorSetting(RotorName.Beta, 0));
+                }
+                else
+                {
+                    Rotors.Add(new RotorSetting(RotorName.Gamma, 0));
+                }
+            }
+
+            Rotors.Add(new RotorSetting(RotorName.I, 0));
+            Rotors.Add(new RotorSetting(RotorName.II, 0));
+            Rotors.Add(new RotorSetting(RotorName.III, 0));
+
+            Plugs.Clear();
+
+            for (int i = 0; i < rotors.Length; i++)
+            {
+                if (i <= Rotors.Count)
+                {
+                    Rotors[i].Name = rotors[i];
+                    if (i <= ringPos.Length)
+                    {
+                        Rotors[i].RingSetting = ringPos[i];
+                    }
+                }
+            }
+
+            for(int i=0; i<10; i++)
+            {
+                if (i <= plugs.Length)
+                {
+                    Plugs.Add(new PlugSetting(plugs[i]));
+                }
+            }
+        }
+        public Settings(MachineType typ, ReflectorType refTyp, params object[] args)
+            : this(typ, refTyp)
+        {
+            MachineType = typ;
+            ReflectorType = refTyp;
+
+            if (MachineType == MachineType.M4K)
+            {
+                if (refTyp == ReflectorType.B_Dunn)
+                {
+                    Rotors.Add(new RotorSetting(RotorName.Beta, 0));
+                }
+                else
+                {
+                    Rotors.Add(new RotorSetting(RotorName.Gamma, 0));
+                }
+            }
+
+            Rotors.Add(new RotorSetting(RotorName.I, 0));
+            Rotors.Add(new RotorSetting(RotorName.II, 0));
+            Rotors.Add(new RotorSetting(RotorName.III, 0));
+
+            Plugs.Clear();
+
+            List<RotorName> rotorNames = new List<RotorName>();
+            List<int> ringSettings = new List<int>();
+            List<string> plugSettings = new List<string>();
+
+            foreach(var item in args)
+            {
+                if(item is RotorName)
+                {
+                    rotorNames.Add((RotorName)item);
+                    continue;
+                }
+
+                if(item is int)
+                {
+                    ringSettings.Add((int)item);
+                    continue;
+                }
+
+                if(item is string)
+                {
+                    plugSettings.Add((string)item);
+                    continue;
+                }
+            }
+
+            for (int i = 0; i < rotorNames.Count; i++)
+            {
+                if (i <= Rotors.Count)
+                {
+                    Rotors[i].Name = rotorNames[i];
+                    if (i <= ringSettings.Count)
+                    {
+                        Rotors[i].RingSetting = ringSettings[i];
+                    }
+                }
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                if (i <= plugSettings.Count)
+                {
+                    Plugs.Add(new PlugSetting(plugSettings[i]));
+                }
+            }
+
         }
 
         public void Save(string fileName)
@@ -59,6 +183,13 @@ namespace Enigma.Configuration
             s.Rotors.Add(new RotorSetting { Name = RotorName.I, RingSetting = 0 });
             s.Rotors.Add(new RotorSetting { Name = RotorName.II, RingSetting = 0 });
             s.Rotors.Add(new RotorSetting { Name = RotorName.III, RingSetting = 0 });
+
+            s.Grund = "AAAA";
+
+            s.Kenngruppen.Add("AAA");
+            s.Kenngruppen.Add("BBB");
+            s.Kenngruppen.Add("CCC");
+            s.Kenngruppen.Add("DDD");
 
             return s;
         }
@@ -125,6 +256,22 @@ namespace Enigma.Configuration
 
             result.Plugs.Sort((a, b) => a.ToString().CompareTo(b.ToString()));
 
+            if (result.MachineType != MachineType.M3)
+            {
+                result.Grund = RandomUtil.GenerateSequence(4, Constants.ALPHABET, false, false);
+                result.Kenngruppen.Clear();
+            }
+            else
+            {
+                result.Grund = string.Empty;
+                result.Kenngruppen.Clear();
+
+                for (int i=0; i<4; i++)
+                {
+                    result.Kenngruppen.Add(RandomUtil.GenerateSequence(3, Constants.ALPHABET, false, false));
+                }
+            }
+
             return result;
         }
         public static Settings ParseSettingLine(string line)
@@ -144,6 +291,72 @@ namespace Enigma.Configuration
             {
                 throw new ValidationException(string.Join("\r\n", brokenRules.Select(r => r.Message))) { BrokenRules = brokenRules };
             }
+        }
+
+        public bool Equals(Settings other)
+        {
+            if (other == null) return false;
+
+            if (object.ReferenceEquals(this, other)) return true;
+
+            if (other.MachineType != MachineType) return false;
+            if (other.ReflectorType != ReflectorType) return false;
+
+            if (other.Rotors.Count != Rotors.Count) return false;
+
+            for(int i=0; i<Rotors.Count; i++)
+            {
+                if (other.Rotors[i].Name != Rotors[i].Name) return false;
+                if (other.Rotors[i].RingSetting != Rotors[i].RingSetting) return false;
+            }
+
+            if (other.Plugs.Count != Plugs.Count) return false;
+
+            other.Plugs.Sort((p1, p2) => p1.ToString().CompareTo(p2.ToString()));
+            Plugs.Sort((p1, p2) => p1.ToString().CompareTo(p2.ToString()));
+
+            for(int i=0; i<Plugs.Count; i++)
+            {
+                if (Plugs[i].ToString() != other.Plugs[i].ToString()) return false;
+            }
+
+            return true;
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+
+            if (object.ReferenceEquals(this, obj)) return true;
+
+            Settings s = obj as Settings;
+            if (s == null) return false;
+
+            return Equals(s);
+        }
+        public override int GetHashCode()
+        {
+            return ToString().GetHashCode();
+        }
+
+        public static bool operator ==(Settings a, Settings b)
+        {
+            if (System.Object.ReferenceEquals(a, b))
+            {
+                return true;
+            }
+
+            // If one is null, but not both, return false.
+            if (((object)a == null) || ((object)b == null))
+            {
+                return false;
+            }
+
+            // Return true if the fields match:
+            return a.Equals(b);
+        }
+        public static bool operator !=(Settings a, Settings b)
+        {
+            return !(a == b);
         }
     }
 }

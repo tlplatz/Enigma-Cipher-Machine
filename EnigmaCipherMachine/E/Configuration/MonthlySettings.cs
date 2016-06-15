@@ -11,7 +11,9 @@ namespace Enigma.Configuration
     [Serializable]
     public class MonthlySettings
     {
+        [XmlAttribute]
         public int Year { get; set; }
+        [XmlAttribute]
         public int Month { get; set; }
 
         public List<Settings> DailySettings { get; set; }
@@ -19,7 +21,6 @@ namespace Enigma.Configuration
         public MonthlySettings()
         {
             DailySettings = new List<Settings>();
-
             noNamespaceSchemaLocation = "Settings.xsd";
         }
 
@@ -30,6 +31,8 @@ namespace Enigma.Configuration
             {
                 ser.Serialize(stm, this);
             }
+            //this extracts the xsd file into the same directory as the settings file
+            IoUtil.ExtractXsd(fileName);
         }
 
         public static MonthlySettings Open(string fileName)

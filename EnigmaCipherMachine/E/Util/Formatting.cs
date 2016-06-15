@@ -17,7 +17,16 @@ namespace Enigma.Util
             sb.AppendFormat(" {0} |", s.ReflectorType.ToString()[0]);
             sb.AppendFormat(" {0} |", string.Join(" ", s.Rotors.Select(r => r.Name.ToString().PadRight(6))).PadRight(27));
             sb.AppendFormat(" {0} |", string.Join(" ", s.Rotors.Select(r => (r.RingSetting + 1).ToString("00"))).PadRight(12));
-            sb.AppendFormat(" {0}", string.Join(" ", s.Plugs.Select(p => p.ToString())));
+            sb.AppendFormat(" {0} |", string.Join(" ", s.Plugs.Select(p => p.ToString())));
+
+            if(s.MachineType == MachineType.M3)
+            {
+                sb.AppendFormat(" {0}", string.Join(" ", s.Kenngruppen));
+            }
+            else
+            {
+                sb.AppendFormat(" {0}", s.Grund);
+            }
 
             return sb.ToString();
         }
@@ -26,11 +35,11 @@ namespace Enigma.Util
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine();
-            sb.AppendLine(TitleLine(title, year, month));
+            sb.AppendLine(TitleLine(t, title, year, month));
             sb.AppendLine();
-            sb.AppendLine(DashedLine());
-            sb.AppendLine(HeaderLine());
-            sb.AppendLine(DashedLine());
+            sb.AppendLine(DashedLine(t));
+            sb.AppendLine(HeaderLine(t));
+            sb.AppendLine(DashedLine(t));
 
             for (int i = DateTime.DaysInMonth(year, month); i >= 1; i--)
             {
@@ -61,7 +70,7 @@ namespace Enigma.Util
                 sb.AppendLine(SettingLine(s, i));
             }
 
-            sb.AppendLine(DashedLine());
+            sb.AppendLine(DashedLine(t));
 
             return sb.ToString();
         }
@@ -69,18 +78,18 @@ namespace Enigma.Util
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine();
-            sb.AppendLine(TitleLine(title, year, month));
+            sb.AppendLine(TitleLine(t, title, year, month));
             sb.AppendLine();
-            sb.AppendLine(DashedLine());
-            sb.AppendLine(HeaderLine());
-            sb.AppendLine(DashedLine());
+            sb.AppendLine(DashedLine(t));
+            sb.AppendLine(HeaderLine(t));
+            sb.AppendLine(DashedLine(t));
 
             foreach (var s in settings)
             {
                 sb.AppendLine(SettingLine(s, s.Day));
 
             }
-            sb.AppendLine(DashedLine());
+            sb.AppendLine(DashedLine(t));
 
             return sb.ToString();
         }
@@ -88,31 +97,44 @@ namespace Enigma.Util
         {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine();
-            sb.AppendLine(TitleLine(title, year, month));
+            sb.AppendLine(TitleLine(t, title, year, month));
             sb.AppendLine();
-            sb.AppendLine(DashedLine());
-            sb.AppendLine(HeaderLine());
-            sb.AppendLine(DashedLine());
+            sb.AppendLine(DashedLine(t));
+            sb.AppendLine(HeaderLine(t));
+            sb.AppendLine(DashedLine(t));
 
             foreach (var s in settings)
             {
                 sb.AppendLine(SettingLine(s, s.Day));
 
             }
-            sb.AppendLine(DashedLine());
+            sb.AppendLine(DashedLine(t));
 
             return sb.ToString();
         }
 
-        public static string HeaderLine()
-        {
-            return "Tag |UKW|         Walzenlage          | Ringstellung |     Steckerverbindungen";
+        public static string HeaderLine(MachineType mt)
+        {            
+            if(mt == MachineType.M3)
+            {
+                return "Tag |UKW|         Walzenlage          | Ringstellung |     Steckerverbindungen       |   Kenngruppen";
+            }
+            else
+            {
+                return "Tag |UKW|         Walzenlage          | Ringstellung |     Steckerverbindungen       | Grund";
+            }
+            
         }
-        public static string TitleLine(string title, int year, int month)
+        public static string TitleLine(MachineType mt, string title, int year, int month)
         {
             DateTime dt = new DateTime(year, month, 1);
 
-            const int width = 84;
+
+            const int width_m3 = 103;
+            const int width_m4 = 92;
+
+            int width = mt == MachineType.M3 ? width_m3 : width_m4;
+
             int left, right;
 
             int i = width - 8 - title.Length - 8;
@@ -126,9 +148,16 @@ namespace Enigma.Util
                 dt,
                 dt);
         }
-        public static string DashedLine()
+        public static string DashedLine(MachineType mt)
         {
-            return "------------------------------------------------------------------------------------";
+            if(mt == MachineType.M3)
+            {
+                return "----+---+-----------------------------+--------------+-------------------------------+-----------------";
+            }
+            else
+            {
+                return "----+---+-----------------------------+--------------+-------------------------------+------";
+            }            
         }
         public static string OutputGroups(string input, int groupSize = 5, int perRow = 5, string delimiter = "  ")
         {
@@ -178,14 +207,24 @@ namespace Enigma.Util
             string rotors = tokens[2].Trim();
             string rings = tokens[3].Trim();
             string plugs = tokens[4].Trim();
+            string indicator = null;
+
+            if (tokens.Length == 6)
+                indicator = tokens[5].Trim();
 
             string[] rotorNames = rotors.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
             string[] ringSettings = rings.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
             string[] plugSettings = plugs.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            string[] indicatorValues = new string[0];
+
+            if (tokens.Length == 6)
+                indicatorValues = indicator.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
             if (rotorNames.Length == 4)
             {
                 result.MachineType = MachineType.M4K;
+
+                result.Grund = indicator;
 
                 if (ukw == "B")
                 {
@@ -199,6 +238,9 @@ namespace Enigma.Util
             else
             {
                 result.MachineType = MachineType.M3;
+
+                if (indicatorValues.Any())
+                    result.Kenngruppen.AddRange(indicatorValues);
 
                 if (ukw == "B")
                 {
@@ -233,6 +275,119 @@ namespace Enigma.Util
             }
 
             return result;
+        }
+
+        public static string ApplyExtendedFormatting(string input)
+        {
+            StringBuilder sb = new StringBuilder();
+            bool flag = false;
+
+            foreach(char c in input.ToUpper())
+            {
+                if(c == 'Z')
+                {
+                    if (flag)
+                    {
+                        flag = false;
+                        sb.Append('V');
+                    }
+
+                    sb.Append('X');
+                    continue;
+                }
+
+                if(c == 'J')
+                {
+                    if (flag)
+                    {
+                        flag = false;
+                        sb.Append('V');
+                    }
+
+                    sb.Append('Y');
+                    continue;
+                }
+
+                if(c == ' ')
+                {
+                    if (flag)
+                    {
+                        flag = false;
+                        sb.Append('V');
+                    }
+
+                    sb.Append('Z');
+                    continue;
+                }
+
+                if (Constants.NUMERIC.Contains(c))
+                {
+                    if (!flag)
+                    {
+                        flag = true;
+                        sb.Append('J');
+                    }
+
+                    sb.Append(Constants.NUMERIC_SUBS[Constants.NUMERIC.IndexOf(c)]);
+                    continue;
+                }
+
+                if (Constants.ALPHABET.Contains(c))
+                {
+                    sb.Append(c);
+                }
+            }
+
+            return sb.ToString();
+        }
+        public static string RemoveExtendedFormatting(string input)
+        {
+            StringBuilder sb = new StringBuilder();
+            bool flag = false;
+
+            foreach(char c in input)
+            {
+                if(c == 'Z')
+                {
+                    if (flag)
+                    {
+                        flag = false;
+                    }
+
+                    sb.Append(' ');
+                    continue;
+                }
+
+                if(c == 'J')
+                {
+                    flag = true;
+                    continue;
+                }
+
+                if(c == 'V')
+                {
+                    if (flag)
+                    {
+                        flag = false;
+                        continue;
+                    }
+                    else
+                    {
+                        sb.Append('V');
+                        continue;
+                    }
+                }
+
+                if(Constants.NUMERIC_SUBS.Contains(c) && flag)
+                {
+                    sb.Append(Constants.NUMERIC[Constants.NUMERIC_SUBS.IndexOf(c)]);
+                    continue;
+                }
+
+                sb.Append(c);
+            }
+
+            return sb.ToString();
         }
     }
 }
