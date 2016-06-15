@@ -1,7 +1,7 @@
-﻿using Enigma.Configuration;
-using Enigma.Enums;
-using System;
+﻿using System;
 using System.IO;
+using Enigma.Configuration;
+using Enigma.Enums;
 
 namespace Enigma.Util
 {
@@ -17,7 +17,7 @@ namespace Enigma.Util
                 using (StreamWriter sw = new StreamWriter(fs))
                 {
                     sw.Write(content);
-                }                    
+                }
             }
         }
         internal static string MonthFolderName(int year, int month)

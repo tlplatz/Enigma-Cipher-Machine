@@ -1,5 +1,5 @@
-﻿using Enigma.Enums;
-using System.Linq;
+﻿using System.Linq;
+using Enigma.Enums;
 
 namespace Enigma
 {
