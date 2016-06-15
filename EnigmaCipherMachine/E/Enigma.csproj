@@ -91,7 +91,6 @@
     <Content Include="Docs\December_2015_Settings.txt" />
     <Content Include="Docs\December_2015_Settings.xml" />
     <Content Include="Docs\Test.txt" />
-    <Content Include="Docs\tmpC56B.xml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
