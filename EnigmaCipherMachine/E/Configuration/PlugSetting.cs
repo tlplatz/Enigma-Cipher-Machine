@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Serialization;
 
 namespace Enigma.Configuration
 {
@@ -16,7 +17,9 @@ namespace Enigma.Configuration
         {
         }
 
+        [XmlAttribute]
         public string LetterA { get; set; }
+        [XmlAttribute]
         public string LetterB { get; set; }
 
         public override string ToString()

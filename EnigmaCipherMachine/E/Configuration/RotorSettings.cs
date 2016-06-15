@@ -1,5 +1,6 @@
 ﻿using Enigma.Enums;
 using System;
+using System.Xml.Serialization;
 
 namespace Enigma.Configuration
 {
@@ -15,7 +16,9 @@ namespace Enigma.Configuration
             RingSetting = ring;
         }
 
+        [XmlAttribute]
         public RotorName Name { get; set; }
+        [XmlAttribute]
         public int RingSetting { get; set; }
 
         public override string ToString()

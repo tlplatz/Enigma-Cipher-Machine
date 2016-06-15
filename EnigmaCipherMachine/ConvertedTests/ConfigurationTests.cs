@@ -6,6 +6,9 @@ using Enigma.Enums;
 using Enigma;
 using System.Collections.Generic;
 using System.IO;
+using System.Xml;
+using System.Xml.Schema;
+using System.Text;
 
 namespace ConvertedTests
 {
@@ -23,11 +26,42 @@ namespace ConvertedTests
         public const string M3K_SETTING_LINE = " 00 | B | VIII   VII    II            | 12 12 13     | AG BI CU ES FT HZ JP KO MX RW";
         public const string M4K_SETTING_LINE = " 00 | B | Beta   II     V      I      | 08 20 19 09  | BI CQ DK EU FY JS LT NP RZ VX";
 
+        public const string EXTENDED_PLAIN_TEXT =     "The 123 quick brown foxes jumped 456 times over the 789 lazy dogs x";
+        public const string EXTENDED_DECRYPTED_TEXT = "THE 123 QUICK BROWN FOXES YUMPED 456 TIMES OVER THE 789 LAXY DOGS X";
+
+
+        [TestMethod]
+        public void SettingsConstructorWithFullSettingsMatchesExpectedValue()
+        {
+            Enigma.Configuration.Settings s = new Settings(
+                MachineType.M4K, 
+                ReflectorType.B, 
+                new RotorName[] { RotorName.Beta, RotorName.II, RotorName.V, RotorName.I }, 
+                new int[] { 7, 19, 18, 8 }, 
+                new string[] { "BI", "CQ", "DK", "EU", "FY", "JS", "LT", "NP", "RZ", "VX" });
+
+            Enigma.Configuration.Settings s2 = Enigma.Configuration.Settings.ParseSettingLine(M4K_SETTING_LINE);
+
+            Assert.AreEqual(s.ToString(), s2.ToString());
+        }
+
+        [TestMethod]
+        public void SettingsConstructorWithParamArrayArgsMatchesExpectedValue()
+        {
+            Enigma.Configuration.Settings s = new Settings(
+                MachineType.M4K, 
+                ReflectorType.B, 
+                RotorName.Beta, 7, RotorName.II, 19, RotorName.V, 18, RotorName.I, 8, 
+                "BI", "CQ", "DK", "EU", "FY", "JS", "LT", "NP", "RZ", "VX");
+
+            Enigma.Configuration.Settings s2 = Enigma.Configuration.Settings.ParseSettingLine(M4K_SETTING_LINE);
+
+            Assert.AreEqual(s.ToString(), s2.ToString());
+        }
+
         [TestMethod]
         public void AAA1()
         {
-            
-
             Settings s = new Settings(MachineType.M3, ReflectorType.B);
 
             s.Rotors.Add(new RotorSetting(RotorName.I, 0));
@@ -567,7 +601,7 @@ namespace ConvertedTests
             Settings s = Settings.Random(MachineType.M4K);
             Message msg = new Message(s);
 
-            //not enough rotor settings specified
+            //too many rotor settings specified
             string cipherText = msg.Encrypt(PLAIN_TEXT, "AAAAA");
         }
 
@@ -585,6 +619,140 @@ namespace ConvertedTests
                 return;
             }
             Assert.Fail("No exception thrown");
+        }
+
+        private int xmlValidationCount = 0;
+        [TestMethod]
+        public void MonthlySettingsSaveValidXmlWhenSerializing()
+        {
+            string folderName = Path.GetTempPath();
+            string fileName = Path.GetTempFileName();
+
+            MonthlySettings ms = MonthlySettings.Random(2015, 12, MachineType.M4K, ReflectorType.B_Dunn, false);
+
+            string filePath = Path.Combine(folderName, fileName);
+            ms.Save(filePath);
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(filePath);
+
+            doc.Schemas.Add("", Path.Combine(folderName, "Settings.xsd"));
+            doc.Validate(XmlValidationHandler);
+
+            Assert.AreEqual(xmlValidationCount, 0);
+
+            File.Delete(filePath);
+            File.Delete(Path.Combine(folderName, "Settings.xsd"));
+        }
+
+        private void XmlValidationHandler(object sender, ValidationEventArgs e)
+        {
+            xmlValidationCount += 1;
+        }
+
+        [TestMethod]
+        public void WhenSavingSettingsTheSchemaFileIsAlsoSaved()
+        {
+            string folderName = Path.GetTempPath();
+            string fileName = Path.GetTempFileName();
+
+            MonthlySettings ms = MonthlySettings.Random(2015, 12, MachineType.M4K, ReflectorType.B_Dunn, false);
+
+            string filePath = Path.Combine(folderName, fileName);
+            ms.Save(filePath);
+
+            Assert.AreEqual(true, File.Exists(Path.Combine(folderName, "Settings.xsd")));
+
+            File.Delete(filePath);
+            File.Delete(Path.Combine(folderName, "Settings.xsd"));
+        }
+
+        [TestMethod]
+        public void TestYearlyFileExport()
+        {
+            string folderName = Path.GetTempPath();
+            string destinationName = Guid.NewGuid().ToString("N");
+            string path = Path.Combine(folderName, destinationName);
+
+            Directory.CreateDirectory(path);
+
+            int y = DateTime.Now.Year;
+
+            Enigma.Util.IoUtil.SaveYear(path, "Settings", y, MachineType.M4K);
+
+            for (int mo = 1; mo <= 12; mo++)
+            {
+                string monthFolderName = Path.Combine(path, Enigma.Util.IoUtil.MonthFolderName(y, mo));
+                Assert.AreEqual(true, Directory.Exists(monthFolderName));
+
+                string txtPath = Path.Combine(monthFolderName, Enigma.Util.IoUtil.MonthFileName(y, mo, ".txt"));
+                Assert.AreEqual(true, File.Exists(txtPath));
+
+                string xmlPath = Path.Combine(monthFolderName, Enigma.Util.IoUtil.MonthFileName(y, mo, ".xml"));
+                Assert.AreEqual(true, File.Exists(xmlPath));
+
+                string xsdPath = Path.Combine(path, Enigma.Util.IoUtil.XsdFileName(y, mo));
+                Assert.AreEqual(true, File.Exists(xsdPath));
+
+                File.Delete(xsdPath);
+                File.Delete(xmlPath);
+                File.Delete(txtPath);
+
+                Directory.Delete(monthFolderName);
+            }
+
+            Directory.Delete(path);
+        }
+
+        [TestMethod]
+        public void TestCharacterByCharacterTyping()
+        {
+            Message msg = new Message(Settings.ParseSettingLine(M4K_SETTING_LINE));
+            string ct = msg.Encrypt(PLAIN_TEXT, "TGBD");
+            string finalPos = msg.CurrentRotorPositions;
+
+            StringBuilder sb = new StringBuilder();
+
+            string rotorPosition = "TGBD";
+
+            foreach (char c in PLAIN_TEXT)
+            {
+                sb.Append(msg.Encrypt(c.ToString(), rotorPosition));
+                rotorPosition = msg.CurrentRotorPositions;
+            }
+
+            Assert.AreEqual(ct, Enigma.Util.Formatting.OutputGroups(sb.ToString(), 4));
+        }
+
+        [TestMethod]
+        public void CheckEqualityMethodsAndOperators()
+        {
+            Settings s3 = Settings.ParseSettingLine(M3K_SETTING_LINE);
+            Settings s4 = Settings.ParseSettingLine(M4K_SETTING_LINE);
+            object o3 = Settings.ParseSettingLine(M3K_SETTING_LINE);
+
+            Assert.AreEqual(s3.Equals(s4), false);
+            Assert.AreEqual(s4.Equals(s3), false);
+            Assert.AreEqual(s3.Equals(o3), true);
+            Assert.AreEqual(s3.Equals(null), false);
+
+            Settings s42 = Settings.ParseSettingLine(M4K_SETTING_LINE);
+
+            Assert.AreEqual(s4.GetHashCode(), s42.GetHashCode());
+            Assert.AreEqual(s4 == s42, true);
+            Assert.AreEqual(s4 != s3, true);
+        }
+
+        [TestMethod]
+        public void TestExtendedFormatting()
+        {
+            Settings s = Settings.ParseSettingLine(M3_SETTING_LINE);
+            Message msg = new Message(s);
+
+            string cipher = msg.Encrypt(EXTENDED_PLAIN_TEXT, "REX", true);
+            string decipher = msg.Decrypt(cipher, "REX", true);
+
+            Assert.AreEqual(EXTENDED_DECRYPTED_TEXT, decipher);
         }
     }
 }
