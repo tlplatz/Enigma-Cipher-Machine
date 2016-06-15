@@ -1,9 +1,9 @@
-﻿using Enigma.Configuration;
-using Enigma.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Enigma.Configuration;
+using Enigma.Enums;
 
 namespace Enigma.Util
 {
@@ -19,7 +19,7 @@ namespace Enigma.Util
             sb.AppendFormat(" {0} |", string.Join(" ", s.Rotors.Select(r => (r.RingSetting + 1).ToString("00"))).PadRight(12));
             sb.AppendFormat(" {0} |", string.Join(" ", s.Plugs.Select(p => p.ToString())));
 
-            if(s.MachineType == MachineType.M3)
+            if (s.MachineType == MachineType.M3)
             {
                 sb.AppendFormat(" {0}", string.Join(" ", s.Kenngruppen));
             }
@@ -114,8 +114,8 @@ namespace Enigma.Util
         }
 
         public static string HeaderLine(MachineType mt)
-        {            
-            if(mt == MachineType.M3)
+        {
+            if (mt == MachineType.M3)
             {
                 return "Tag |UKW|         Walzenlage          | Ringstellung |      Steckerverbindungen      |   Kenngruppen";
             }
@@ -123,7 +123,7 @@ namespace Enigma.Util
             {
                 return "Tag |UKW|         Walzenlage          | Ringstellung |      Steckerverbindungen      | Grund";
             }
-            
+
         }
         public static string TitleLine(MachineType mt, string title, int year, int month)
         {
@@ -150,14 +150,14 @@ namespace Enigma.Util
         }
         public static string DashedLine(MachineType mt)
         {
-            if(mt == MachineType.M3)
+            if (mt == MachineType.M3)
             {
                 return "----+---+-----------------------------+--------------+-------------------------------+-----------------";
             }
             else
             {
                 return "----+---+-----------------------------+--------------+-------------------------------+------";
-            }            
+            }
         }
         public static string OutputGroups(string input, int groupSize = 5, int perRow = 5, string delimiter = "  ")
         {
@@ -282,9 +282,9 @@ namespace Enigma.Util
             StringBuilder sb = new StringBuilder();
             bool flag = false;
 
-            foreach(char c in input.ToUpper())
+            foreach (char c in input.ToUpper())
             {
-                if(c == 'Z')
+                if (c == 'Z')
                 {
                     if (flag)
                     {
@@ -296,7 +296,7 @@ namespace Enigma.Util
                     continue;
                 }
 
-                if(c == 'J')
+                if (c == 'J')
                 {
                     if (flag)
                     {
@@ -308,7 +308,7 @@ namespace Enigma.Util
                     continue;
                 }
 
-                if(c == ' ')
+                if (c == ' ')
                 {
                     if (flag)
                     {
@@ -345,9 +345,9 @@ namespace Enigma.Util
             StringBuilder sb = new StringBuilder();
             bool flag = false;
 
-            foreach(char c in input)
+            foreach (char c in input)
             {
-                if(c == 'Z')
+                if (c == 'Z')
                 {
                     if (flag)
                     {
@@ -358,13 +358,13 @@ namespace Enigma.Util
                     continue;
                 }
 
-                if(c == 'J')
+                if (c == 'J')
                 {
                     flag = true;
                     continue;
                 }
 
-                if(c == 'V')
+                if (c == 'V')
                 {
                     if (flag)
                     {
@@ -378,7 +378,7 @@ namespace Enigma.Util
                     }
                 }
 
-                if(Constants.NUMERIC_SUBS.Contains(c) && flag)
+                if (Constants.NUMERIC_SUBS.Contains(c) && flag)
                 {
                     sb.Append(Constants.NUMERIC[Constants.NUMERIC_SUBS.IndexOf(c)]);
                     continue;

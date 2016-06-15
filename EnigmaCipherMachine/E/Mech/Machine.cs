@@ -1,7 +1,7 @@
-﻿using Enigma.Configuration;
-using Enigma.Enums;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Enigma.Configuration;
+using Enigma.Enums;
 
 namespace Enigma
 {

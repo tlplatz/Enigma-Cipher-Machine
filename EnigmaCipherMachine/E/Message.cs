@@ -1,9 +1,9 @@
-﻿using Enigma.Configuration;
-using Enigma.Enums;
-using Enigma.Util;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Enigma.Configuration;
+using Enigma.Enums;
+using Enigma.Util;
 
 namespace Enigma
 {

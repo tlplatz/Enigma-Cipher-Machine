@@ -1,6 +1,6 @@
-﻿using Enigma.Enums;
-using System;
+﻿using System;
 using System.Xml.Serialization;
+using Enigma.Enums;
 
 namespace Enigma.Configuration
 {

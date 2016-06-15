@@ -1,10 +1,10 @@
-﻿using Enigma.Enums;
-using Enigma.Util;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
+using Enigma.Enums;
+using Enigma.Util;
 
 namespace Enigma.Configuration
 {
@@ -77,7 +77,7 @@ namespace Enigma.Configuration
                 }
             }
 
-            for(int i=0; i<10; i++)
+            for (int i = 0; i < 10; i++)
             {
                 if (i <= plugs.Length)
                 {
@@ -113,21 +113,21 @@ namespace Enigma.Configuration
             List<int> ringSettings = new List<int>();
             List<string> plugSettings = new List<string>();
 
-            foreach(var item in args)
+            foreach (var item in args)
             {
-                if(item is RotorName)
+                if (item is RotorName)
                 {
                     rotorNames.Add((RotorName)item);
                     continue;
                 }
 
-                if(item is int)
+                if (item is int)
                 {
                     ringSettings.Add((int)item);
                     continue;
                 }
 
-                if(item is string)
+                if (item is string)
                 {
                     plugSettings.Add((string)item);
                     continue;
@@ -266,7 +266,7 @@ namespace Enigma.Configuration
                 result.Grund = string.Empty;
                 result.Kenngruppen.Clear();
 
-                for (int i=0; i<4; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     result.Kenngruppen.Add(RandomUtil.GenerateSequence(3, Constants.ALPHABET, false, false));
                 }
@@ -304,7 +304,7 @@ namespace Enigma.Configuration
 
             if (other.Rotors.Count != Rotors.Count) return false;
 
-            for(int i=0; i<Rotors.Count; i++)
+            for (int i = 0; i < Rotors.Count; i++)
             {
                 if (other.Rotors[i].Name != Rotors[i].Name) return false;
                 if (other.Rotors[i].RingSetting != Rotors[i].RingSetting) return false;
@@ -315,7 +315,7 @@ namespace Enigma.Configuration
             other.Plugs.Sort((p1, p2) => p1.ToString().CompareTo(p2.ToString()));
             Plugs.Sort((p1, p2) => p1.ToString().CompareTo(p2.ToString()));
 
-            for(int i=0; i<Plugs.Count; i++)
+            for (int i = 0; i < Plugs.Count; i++)
             {
                 if (Plugs[i].ToString() != other.Plugs[i].ToString()) return false;
             }
