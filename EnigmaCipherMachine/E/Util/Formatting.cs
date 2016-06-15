@@ -117,11 +117,11 @@ namespace Enigma.Util
         {            
             if(mt == MachineType.M3)
             {
-                return "Tag |UKW|         Walzenlage          | Ringstellung |     Steckerverbindungen       |   Kenngruppen";
+                return "Tag |UKW|         Walzenlage          | Ringstellung |      Steckerverbindungen      |   Kenngruppen";
             }
             else
             {
-                return "Tag |UKW|         Walzenlage          | Ringstellung |     Steckerverbindungen       | Grund";
+                return "Tag |UKW|         Walzenlage          | Ringstellung |      Steckerverbindungen      | Grund";
             }
             
         }
