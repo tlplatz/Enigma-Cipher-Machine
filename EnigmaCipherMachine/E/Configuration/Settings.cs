@@ -259,6 +259,12 @@ namespace Enigma.Configuration
             if (result.MachineType != MachineType.M3)
             {
                 result.Grund = RandomUtil.GenerateSequence(4, Constants.ALPHABET, false, false);
+
+                if(result.MachineType == MachineType.M3K)
+                {
+                    result.Grund = result.Grund.Substring(0, 3);
+                }
+
                 result.Kenngruppen.Clear();
             }
             else

@@ -25,6 +25,11 @@ namespace Enigma.Util
             }
             else
             {
+                if(s.MachineType == MachineType.M3K)
+                {
+                    sb.Append(" ");
+                }
+
                 sb.AppendFormat(" {0}", s.Grund);
             }
 
