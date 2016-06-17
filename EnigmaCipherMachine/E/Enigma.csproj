@@ -50,6 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\BrokenRule.cs" />
+    <Compile Include="Configuration\Digraph.cs" />
+    <Compile Include="Configuration\DigraphTable.cs" />
     <Compile Include="Configuration\Validation.cs" />
     <Compile Include="Configuration\ValidationException.cs" />
     <Compile Include="Constants.cs" />
