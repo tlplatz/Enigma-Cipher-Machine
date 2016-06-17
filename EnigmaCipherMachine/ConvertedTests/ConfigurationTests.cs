@@ -755,5 +755,12 @@ namespace ConvertedTests
             Assert.AreEqual(EXTENDED_DECRYPTED_TEXT, decipher);
         }
 
+        [TestMethod]
+        public void TestDigraphTable()
+        {
+            DigraphTable tbl = DigraphTable.Random(2016, 6);
+            string foo = tbl.ToString();
+        }
+
     }
 }
