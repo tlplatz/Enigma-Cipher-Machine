@@ -51,7 +51,6 @@ namespace Enigma.Util
             }
         }
 
-
         public static void SaveMonth(string folder, string title, int year, int month, MachineType t, ReflectorType r, bool compatibilityMode = false)
         {
             if (!Directory.Exists(folder))
@@ -64,6 +63,19 @@ namespace Enigma.Util
             SaveFile(filePath, Formatting.MonthlySettings(title, year, month, t, r, s.DailySettings));
             ExtractXsd(year, month);
         }
+        public static void SaveMonth(string folder, string title, int year, int month, MachineType t)
+        {
+            if (!Directory.Exists(folder))
+                Directory.CreateDirectory(folder);
+
+            MonthlySettings s = MonthlySettings.Random(year, month, t);
+
+            string fileName = MonthFileName(year, month, ".txt");
+            string filePath = Path.Combine(folder, fileName);
+            SaveFile(filePath, Formatting.MonthlySettings(title, year, month, t, s.DailySettings));
+            ExtractXsd(year, month);
+        }
+
         public static void SaveYear(string folder, string title, int year, MachineType t, ReflectorType r, bool compatibilityMode = false)
         {
             if (!Directory.Exists(folder))
@@ -91,19 +103,6 @@ namespace Enigma.Util
                 string textFilePath = Path.Combine(monthFolderPath, textFileName);
                 SaveFile(textFilePath, Formatting.MonthlySettings(title, year, m, t, r, s.DailySettings));
             }
-        }
-
-        public static void SaveMonth(string folder, string title, int year, int month, MachineType t)
-        {
-            if (!Directory.Exists(folder))
-                Directory.CreateDirectory(folder);
-
-            MonthlySettings s = MonthlySettings.Random(year, month, t);
-
-            string fileName = MonthFileName(year, month, ".txt");
-            string filePath = Path.Combine(folder, fileName);
-            SaveFile(filePath, Formatting.MonthlySettings(title, year, month, t, s.DailySettings));
-            ExtractXsd(year, month);
         }
         public static void SaveYear(string folder, string title, int year, MachineType t)
         {
