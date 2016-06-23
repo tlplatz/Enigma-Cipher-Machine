@@ -62,7 +62,7 @@ namespace Enigma
         /// <param name="plainText">The plain text message to encrypt</param>
         /// <param name="rotorSettings">The initial rotor settings</param>
         /// <returns>The encrypted text</returns>
-        public string Encrypt(string plainText, string rotorSettings, bool extended = false)
+        public string Encrypt(string plainText, string rotorSettings)
         {
             PlainText = plainText;
 
@@ -91,7 +91,7 @@ namespace Enigma
         /// <param name="cipherText">The encrypted text to decrypt</param>
         /// <param name="rotorSettings">The initial rotor settings</param>
         /// <returns>The decrypted text</returns>
-        public string Decrypt(string cipherText, string rotorSettings, bool extended = false)
+        public string Decrypt(string cipherText, string rotorSettings)
         {
             CipherText = cipherText;
 
