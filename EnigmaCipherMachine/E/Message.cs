@@ -70,7 +70,7 @@ namespace Enigma
 
             _machine.RotorSettings = rotorSettings;
 
-            string formatted = extended ? Formatting.ApplyExtendedFormatting(plainText) : Formatting.CleanInput(plainText);
+            string formatted = Formatting.CleanInput(plainText);
 
             if (_settings.MachineType == MachineType.M3)
             {
@@ -99,9 +99,7 @@ namespace Enigma
 
             _machine.RotorSettings = rotorSettings;
 
-            string formatted = Encipher_Decipher(Formatting.CleanInput(cipherText));
-
-            PlainText = extended ? Formatting.RemoveExtendedFormatting(formatted) : formatted;
+            PlainText = Encipher_Decipher(Formatting.CleanInput(cipherText));
 
             return PlainText;
         }

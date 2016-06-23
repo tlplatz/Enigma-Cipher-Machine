@@ -744,18 +744,6 @@ namespace ConvertedTests
         }
 
         [TestMethod]
-        public void TestExtendedFormatting()
-        {
-            Settings s = Settings.ParseSettingLine(M3_SETTING_LINE);
-            Message msg = new Message(s);
-
-            string cipher = msg.Encrypt(EXTENDED_PLAIN_TEXT, "REX", true);
-            string decipher = msg.Decrypt(cipher, "REX", true);
-
-            Assert.AreEqual(EXTENDED_DECRYPTED_TEXT, decipher);
-        }
-
-        [TestMethod]
         public void TestDigraphTable()
         {
             DigraphTable tbl = DigraphTable.Random(2016, 6);

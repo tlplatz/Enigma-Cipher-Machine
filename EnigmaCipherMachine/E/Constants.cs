@@ -35,10 +35,6 @@ namespace Enigma
     {
         public const string ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-        public const string NUMERIC = "0123456789";
-        public const string NUMERIC_SUBS = "QWERTYUIOP";
-        public const string VALID_CHARS = ALPHABET + NUMERIC + " ";
-
         public static List<string> Rotors = new List<string>()
         {
             "EKMFLGDQVZNTOWYHXUSPAIBRCJ",
