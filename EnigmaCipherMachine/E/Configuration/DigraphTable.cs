@@ -115,5 +115,14 @@ namespace Enigma.Configuration
 
             return sb.ToString();
         }
+
+        public string Encrypt(string plainText)
+        {
+            return cell_list.FirstOrDefault(c => c.PlainText == plainText).CipherText;
+        }
+        public string Decrypt(string cipherText)
+        {
+            return cell_list.FirstOrDefault(c => c.CipherText == cipherText).PlainText;
+        }
     }
 }
