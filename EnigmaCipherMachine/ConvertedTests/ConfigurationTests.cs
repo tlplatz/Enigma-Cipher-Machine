@@ -26,10 +26,6 @@ namespace ConvertedTests
         public const string M3K_SETTING_LINE = " 00 | B | VIII   VII    II            | 12 12 13     | AG BI CU ES FT HZ JP KO MX RW";
         public const string M4K_SETTING_LINE = " 00 | B | Beta   II     V      I      | 08 20 19 09  | BI CQ DK EU FY JS LT NP RZ VX";
 
-        public const string EXTENDED_PLAIN_TEXT = "The 123 quick brown foxes jumped 456 times over the 789 lazy dogs x";
-        public const string EXTENDED_DECRYPTED_TEXT = "THE 123 QUICK BROWN FOXES YUMPED 456 TIMES OVER THE 789 LAXY DOGS X";
-
-
         [TestMethod]
         public void SettingsConstructorWithFullSettingsMatchesExpectedValue()
         {
@@ -749,6 +745,5 @@ namespace ConvertedTests
             DigraphTable tbl = DigraphTable.Random(2016, 6);
             string foo = tbl.ToString();
         }
-
     }
 }
