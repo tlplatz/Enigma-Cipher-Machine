@@ -10,6 +10,12 @@ namespace Enigma.Util
     /// </summary>
     public static class IoUtil
     {
+        private const string MONTH_FOLDER_NAME_FORMAT = "{0:MMMM_yyyy}";
+        private const string MONTH_FILE_NAME_FORMAT = "{0:MMMM_yyyy}_Settings{1}";
+        public const string XSD_FILE_NAME = "Settings.xsd";
+        private const string TEXT_FILE_EXTENSION = ".txt";
+        private const string XML_FILE_EXTENSION = ".xml";
+
         private static void SaveFile(string fileName, string content)
         {
             using (FileStream fs = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None))
@@ -23,16 +29,16 @@ namespace Enigma.Util
         internal static string MonthFolderName(int year, int month)
         {
             DateTime dt = new DateTime(year, month, 1);
-            return string.Format("{0:MMMM_yyyy}", dt);
+            return string.Format(MONTH_FOLDER_NAME_FORMAT, dt);
         }
         internal static string MonthFileName(int year, int month, string ext)
         {
             DateTime dt = new DateTime(year, month, 1);
-            return string.Format("{0:MMMM_yyyy}_Settings{1}", dt, ext);
+            return string.Format(MONTH_FILE_NAME_FORMAT, dt, ext);
         }
         internal static string XsdFileName(int year, int month)
         {
-            return Path.Combine(MonthFolderName(year, month), "Settings.xsd");
+            return Path.Combine(MonthFolderName(year, month), XSD_FILE_NAME);
         }
         private static void ExtractXsd(int year, int month)
         {
@@ -43,7 +49,7 @@ namespace Enigma.Util
             DirectoryInfo dir = new DirectoryInfo(Path.GetDirectoryName(fileName));
             if (dir.Exists)
             {
-                string xsdFileName = Path.Combine(dir.FullName, "Settings.xsd");
+                string xsdFileName = Path.Combine(dir.FullName, XSD_FILE_NAME);
                 if (!File.Exists(xsdFileName))
                 {
                     SaveFile(xsdFileName, Properties.Resources.Settings);
@@ -58,10 +64,13 @@ namespace Enigma.Util
 
             MonthlySettings s = MonthlySettings.Random(year, month, t, r, compatibilityMode);
 
-            string fileName = MonthFileName(year, month, ".txt");
+            string fileName = MonthFileName(year, month, TEXT_FILE_EXTENSION);
             string filePath = Path.Combine(folder, fileName);
             SaveFile(filePath, Formatting.MonthlySettings(title, year, month, t, r, s.DailySettings));
-            ExtractXsd(year, month);
+
+            fileName = MonthFileName(year, month, XML_FILE_EXTENSION);
+            filePath = Path.Combine(folder, fileName);
+            s.Save(filePath);
         }
         public static void SaveMonth(string folder, string title, int year, int month, MachineType t)
         {
@@ -70,10 +79,13 @@ namespace Enigma.Util
 
             MonthlySettings s = MonthlySettings.Random(year, month, t);
 
-            string fileName = MonthFileName(year, month, ".txt");
+            string fileName = MonthFileName(year, month, TEXT_FILE_EXTENSION);
             string filePath = Path.Combine(folder, fileName);
             SaveFile(filePath, Formatting.MonthlySettings(title, year, month, t, s.DailySettings));
-            ExtractXsd(year, month);
+
+            fileName = MonthFileName(year, month, XML_FILE_EXTENSION);
+            filePath = Path.Combine(folder, fileName);
+            s.Save(filePath);
         }
 
         public static void SaveYear(string folder, string title, int year, MachineType t, ReflectorType r, bool compatibilityMode = false)
