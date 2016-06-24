@@ -1,38 +1,36 @@
 
- GEHEIM!                          Enigma Settings                           Dec 2015
-
---------------------------------------------------------------------------------------------
-Tag |UKW|         Walzenlage          | Ringstellung |     Steckerverbindungen       |    Kengruppen
+ GEHEIM!                                     Enigma Settings                                  Dec 2015
 ----+---+-----------------------------+--------------+-------------------------------+-----------------
- 31 | B | Beta   VI     IV     III    | 25 10 19 24  | AW CP DJ EM HT IU LQ NY RX VZ | ABC AAA DDD CCC
- 30 | B | Beta   II     IV     III    | 14 05 22 03  | AL BX CW DR EF GO HS IQ JT UZ | ABCD
- 29 | B | Beta   VII    II     VI     | 06 04 04 10  | AJ DT EW GN IV KM LO PU RS YZ | ABCD
- 28 | B | Beta   V      VI     I      | 26 06 20 13  | AM CL DH EQ FW GN IR KX PU VY | ABCD
- 27 | B | Beta   VI     II     V      | 15 04 02 06  | AM BP CF EX GR IJ KS OY QT UW | ABCD
- 26 | B | Beta   IV     VII    I      | 09 18 24 03  | AI BM DX HW JK LY NU OV PS QZ | ABCD
- 25 | B | Beta   II     VI     III    | 16 15 05 04  | AH BM CW DE IX JT KY LO QV RZ | ABCD
- 24 | B | Beta   II     I      VII    | 03 14 01 24  | AF CT EH GM IW JN KP QZ RY SV | ABCD
- 23 | B | Beta   IV     I      V      | 21 05 01 13  | AK BF CO ER GZ HT JS LY UV WX | ABCD
- 22 | B | Beta   II     IV     III    | 23 19 11 11  | BU CW EO FL GK HR MV NQ SY TZ | ABCD
- 21 | B | Beta   II     VIII   I      | 12 12 11 11  | AM CJ DL EF GR KN ST UY VZ WX | ABCD
- 20 | B | Beta   I      II     V      | 11 26 03 04  | AC BM DI EY FV JS LP NZ RU TW | ABCD
- 19 | B | Beta   VIII   II     VII    | 12 26 22 10  | AN CU EX FI GM KV LZ OR QT SW | ABCD
- 18 | B | Beta   VIII   III    V      | 20 14 02 09  | CN DI EQ FL GV KR MS OY PX WZ | ABCD
- 17 | B | Beta   II     III    V      | 25 19 02 23  | AT BX CU DJ EQ FW IP LM OS YZ | ABCD
- 16 | B | Beta   VI     II     IV     | 21 16 21 12  | AE BU CD FW GZ IO JX NR QV TY | ABCD
- 15 | B | Beta   III    IV     VII    | 25 08 10 25  | AM BY CW DR EO FP HL IV JN QZ | ABCD
- 14 | B | Beta   V      II     III    | 21 04 20 03  | AN BM CI ER FK HL JY PS QW XZ | ABCD
- 13 | B | Beta   I      VI     VII    | 11 10 03 23  | BH CY DU FZ GP IV JM KW NS RX | ABCD
- 12 | B | Beta   V      VII    VIII   | 24 08 26 01  | AH DY EO GL IQ KS MW NT PU XZ | ABCD
- 11 | B | Beta   VII    IV     II     | 03 04 25 26  | BC DL EM FT GN HJ IS KY OV PR | ABCD
- 10 | B | Beta   II     I      VIII   | 03 03 11 18  | AR BF EP GY HW IQ JZ KM LT OU | ABCD
- 09 | B | Beta   VI     V      I      | 24 03 05 22  | BQ DE FH GJ KT LM NR SU VY XZ | ABCD
- 08 | B | Beta   VIII   I      V      | 12 10 24 07  | AY CN DS EH FU GL JV KP RZ TW | ABCD
- 07 | B | Beta   III    II     IV     | 09 07 06 12  | AS CQ EM FT GK HU NV OX PR WZ | ABCD
- 06 | B | Beta   I      VIII   II     | 04 18 05 15  | BP EY FZ GL HQ IU JV MS RX TW | ABCD
- 05 | B | Beta   VII    IV     V      | 12 01 17 12  | AZ CQ DY GX HJ IS KO MN PR VW | ABCD
- 04 | B | Beta   I      V      II     | 09 25 14 06  | BQ CY DR FW GO HX IV JS MP TZ | ABCD
- 03 | B | Beta   III    I      V      | 23 16 13 07  | AL CW DZ GN IO JY KM PX QU SV | ABCD
- 02 | B | Beta   IV     I      V      | 15 15 14 04  | BN CF DJ EG HU KT MS PX RV YZ | ABCD
- 01 | B | Beta   III    VII    II     | 13 02 15 17  | CU DN EJ GP IK LR MQ OX TZ WY | ABCD
---------------------------------------------------------------------------------------------
+Tag |UKW|         Walzenlage          | Ringstellung |      Steckerverbindungen      |   Kenngruppen
+----+---+-----------------------------+--------------+-------------------------------+-----------------
+ 30 | B | IV     III    I             | 20 07 02     | AK CZ DV ER FO GW IP JU LY NQ | PIY BMD GXL FLU
+ 29 | B | II     III    IV            | 15 11 18     | AP BV CQ DZ ET FG IY JR KO MS | YKR EKD ATE ZPP
+ 28 | B | III    V      I             | 23 20 19     | AN CT EZ FL GO IQ JW KX MV PY | ETH DRU JRB YUG
+ 27 | B | V      III    II            | 08 06 21     | AE BR CD GZ HV IU JL NT QS WY | SIF UCO OQU PDU
+ 26 | B | III    II     V             | 08 09 05     | AV BH DS ET FL GJ MQ NW OU YZ | SNY SPX DPT IWS
+ 25 | B | IV     III    I             | 15 14 24     | AG BQ CF ER HP KN LV OW SZ UY | VCF RVU TAP KMC
+ 24 | B | V      I      II            | 12 23 06     | AK BU EP GH IO JQ MW NV TY XZ | XGQ PLY VPP MLD
+ 23 | B | I      IV     III           | 13 11 04     | AR BJ FG HZ IX MP NY OU QW SV | VRB DVE NJL NYZ
+ 22 | B | III    I      V             | 03 14 26     | AI BQ CP DZ FS GW JM LN OU TX | IXU ZVD EHB VVJ
+ 21 | B | II     IV     I             | 07 24 19     | CQ DK EL FW HI JX MP RV SZ UY | HNE UNH CIR CVE
+ 20 | B | IV     II     V             | 01 02 11     | AJ CH EG FP LV NO QZ RW SU XY | SPF KXD QJH QGO
+ 19 | B | III    II     V             | 23 17 16     | AO BL CG DY EX FP KW MQ RZ SV | DVT MID CAV SWH
+ 18 | B | II     III    IV            | 15 02 17     | DG EK FL HI JV MT NS OZ PR QW | ASV EKQ IGB QGG
+ 17 | B | V      IV     II            | 10 08 12     | AX BH CR EL FW KU MP NQ OV YZ | XTJ XEL BQH QRS
+ 16 | B | II     IV     III           | 08 06 20     | AX CD EG HT IJ LR OQ PS UY VZ | NPA NZV IAT XKF
+ 15 | B | III    II     I             | 08 24 20     | AL BE CD GV HP IW JK OQ TU XZ | IMZ RIZ MNO NPO
+ 14 | B | III    V      I             | 23 14 07     | AF CD EN GO HV IY JR KS MX QU | UFV KRF AKB CQV
+ 13 | B | II     III    I             | 17 09 01     | AB CV EQ FZ GX HJ KR OU PY SW | PUH GIG MZJ DOS
+ 12 | B | III    I      IV            | 08 11 18     | BZ CN ES FG HJ KO LV MY PX QU | MKI HED DAA MTU
+ 11 | B | II     IV     III           | 10 07 06     | AV BZ CJ DP EU GS HL NT QR WX | ZYJ NXA EFV EBN
+ 10 | B | II     V      III           | 17 21 12     | BT CV EK FO GY HI LR MZ NS WX | SFF IAP EQQ DXH
+ 09 | B | III    II     IV            | 22 13 01     | AW BV CD FI HL KT NQ OX RY SU | WSF XZQ UDB MHK
+ 08 | B | IV     II     V             | 12 09 15     | AY BU DN EG FK HZ IQ MR OS VX | XYC IZJ WII VOY
+ 07 | B | IV     II     I             | 22 21 18     | AD CI EY FS GX HW JM KT LV NO | YUZ KHC DWA CRE
+ 06 | B | I      II     IV            | 09 15 16     | AQ BO CZ DJ EK FG HS LV MN PU | UHF FJY MFY VLB
+ 05 | B | I      IV     III           | 23 02 07     | AI BH CQ FG JP KX LR MU NY SZ | NWR HGP YBE HYE
+ 04 | B | V      II     I             | 06 18 13     | BU CT DK EF GQ HJ IO LZ PS RY | QJV YIK JVH XOS
+ 03 | B | II     IV     III           | 25 20 07     | AX CK DN EP FY HT JZ MW OR QU | DRZ JII ADJ YXL
+ 02 | B | II     I      III           | 17 26 15     | AN BH CT DK FG IY JM LP OQ UW | LWP LDQ ANI AOZ
+ 01 | B | III    II     I             | 06 13 17     | AB CU DF EQ GL HV IS KW MP NO | COW NLQ UQI ZDP
+----+---+-----------------------------+--------------+-------------------------------+-----------------
