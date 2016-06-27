@@ -85,8 +85,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Docs\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Docs\CodeSheet.txt" />
+    <Content Include="Docs\Digraphs.txt" />
     <Content Include="Docs\July_2016_Settings.txt" />
     <Content Include="Docs\July_2016_Settings.xml" />
     <Content Include="Docs\Test.txt" />

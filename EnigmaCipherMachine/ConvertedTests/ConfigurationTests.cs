@@ -740,11 +740,5 @@ namespace ConvertedTests
             Assert.AreEqual(s4 != s3, true);
         }
 
-        [TestMethod]
-        public void TestDigraphTable()
-        {
-            DigraphTable tbl = DigraphTable.Random(2016, 6);
-            string foo = tbl.ToString();
-        }
     }
 }

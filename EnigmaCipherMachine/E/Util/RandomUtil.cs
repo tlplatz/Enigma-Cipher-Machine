@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Enigma.Util
 {
@@ -70,6 +71,88 @@ namespace Enigma.Util
             }
 
             return string.Concat(result);
+        }
+        public static string KeySheet(int groupSize)
+        {
+            int i = 0, j = 0, k = 0, l = 0, m = 0;
+            int counter = 0;
+            List<KeySheetValue> values = new List<KeySheetValue>();
+            List<string> keyValues = new List<string>();
+
+            while(counter<Math.Pow(6, 5))
+            {
+                counter += 1;
+
+                i += 1;
+
+                if (i == 6)
+                {
+                    i = 0;
+                    j += 1;
+
+                    if(j == 6)
+                    {
+                        j = 0;
+                        k += 1;
+
+                        if (k == 6)
+                        {
+                            k = 0;
+                            l += 1;
+
+                            if (l == 6)
+                            {
+                                l = 0;
+                                m += 1;
+                            }
+                        }
+                    }
+                }
+
+                values.Add(new KeySheetValue { Key = string.Format("{0}{1}{2}{3}{4}", i + 1, j + 1, k + 1, l + 1, m + 1) });
+            }
+
+            values.Sort((v1, v2) => v1.Key.CompareTo(v2.Key));
+
+            while (keyValues.Count<Math.Pow(6, 5))
+            {
+                string temp = GenerateSequence(groupSize, Constants.ALPHABET, false, false);
+                if (!keyValues.Contains(temp))
+                {
+                    keyValues.Add(temp);
+                }
+            }
+            keyValues.Sort((v1, v2) => v1.CompareTo(v2));
+
+            for(int x=0; x<keyValues.Count; x++)
+            {
+                values[x].Value = keyValues[x];
+            }
+
+            StringBuilder sb = new StringBuilder();
+            int steps = (int)(Math.Pow(6.0, 5.0) / 6.0);
+
+            for (int x = 0; x < steps; x++)
+            {
+                sb.AppendLine(string.Join("\t", values.Skip(x * 6).Take(6).Select(t => t.ToString())));
+                if ((x + 1) % 36 == 0)
+                {
+                    sb.AppendLine();
+                }
+            }
+
+            return sb.ToString();
+        }
+    }
+
+    internal class KeySheetValue
+    {
+        public string Key { get; set; }
+        public string Value { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format("{0}  {1}", Key, Value);
         }
     }
 }
