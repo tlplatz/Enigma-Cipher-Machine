@@ -79,7 +79,9 @@ namespace Enigma.Util
             List<KeySheetValue> values = new List<KeySheetValue>();
             List<string> keyValues = new List<string>();
 
-            while(counter<Math.Pow(6, 5))
+            i = -1;
+
+            while (counter<Math.Pow(6, 5))
             {
                 counter += 1;
 
@@ -108,7 +110,6 @@ namespace Enigma.Util
                         }
                     }
                 }
-
                 values.Add(new KeySheetValue { Key = string.Format("{0}{1}{2}{3}{4}", i + 1, j + 1, k + 1, l + 1, m + 1) });
             }
 

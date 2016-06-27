@@ -739,6 +739,5 @@ namespace ConvertedTests
             Assert.AreEqual(s4 == s42, true);
             Assert.AreEqual(s4 != s3, true);
         }
-
     }
 }
