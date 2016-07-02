@@ -145,5 +145,31 @@ namespace Enigma.Util
             }
         }
 
+        public static void SaveDigraphTable(int year, int month, string folder)
+        {
+            DigraphTable tbl = DigraphTable.Random(year, month);
+            DateTime dt = new DateTime(year, month, 1);
+
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+
+            string fileName = string.Format("Digraph_{0:yyyyMMM}.txt", dt);
+            string fullPath = Path.Combine(folder, fileName);
+            SaveFile(fullPath, tbl.ToString());
+        }
+        public static void SaveKeySheet(int groupSize, string folder)
+        {
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+
+            KeySheet ks = new KeySheet(groupSize);
+
+            string fullPath = Path.Combine(folder, "KeySheet.txt");
+            SaveFile(fullPath, ks.ToString());
+        }
     }
 }

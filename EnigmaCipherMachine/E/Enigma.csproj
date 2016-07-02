@@ -52,6 +52,8 @@
     <Compile Include="Configuration\BrokenRule.cs" />
     <Compile Include="Configuration\Digraph.cs" />
     <Compile Include="Configuration\DigraphTable.cs" />
+    <Compile Include="Configuration\KeySheet.cs" />
+    <Compile Include="Configuration\KeySheetValue.cs" />
     <Compile Include="Configuration\Validation.cs" />
     <Compile Include="Configuration\ValidationException.cs" />
     <Compile Include="Constants.cs" />
@@ -90,7 +92,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Docs\CodeSheet.txt" />
+    <Content Include="Docs\KeySheet.txt" />
     <Content Include="Docs\Digraphs.txt" />
     <Content Include="Docs\July_2016_Settings.txt" />
     <Content Include="Docs\July_2016_Settings.xml" />
