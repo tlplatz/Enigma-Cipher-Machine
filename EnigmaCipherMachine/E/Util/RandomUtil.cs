@@ -135,7 +135,7 @@ namespace Enigma.Util
 
             for (int x = 0; x < steps; x++)
             {
-                sb.AppendLine(string.Join("\t", values.Skip(x * 6).Take(6).Select(t => t.ToString())));
+                sb.AppendLine(string.Join("      ", values.Skip(x * 6).Take(6).Select(t => t.ToString())));
                 if ((x + 1) % 36 == 0)
                 {
                     sb.AppendLine();
