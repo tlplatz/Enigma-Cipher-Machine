@@ -1,18 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Enigma.Configuration
 {
+    [Serializable]
     public class KeySheet
     {
-        private int groupSize;
-        private List<KeySheetValue> values = new List<KeySheetValue>();
+        public List<KeySheetValue> Values { get; set; }
 
-        public KeySheet(int groupSize)
+        public KeySheet()
         {
+            Values = new List<KeySheetValue>();
+        }
+        internal KeySheet(int groupSize)
+        {
+            Values = new List<KeySheetValue>();
+
             int i = 0, j = 0, k = 0, l = 0, m = 0;
             int counter = 0;
             
@@ -49,10 +57,10 @@ namespace Enigma.Configuration
                         }
                     }
                 }
-                values.Add(new KeySheetValue { Key = string.Format("{0}{1}{2}{3}{4}", i + 1, j + 1, k + 1, l + 1, m + 1) });
+                Values.Add(new KeySheetValue { Key = string.Format("{0}{1}{2}{3}{4}", i + 1, j + 1, k + 1, l + 1, m + 1) });
             }
 
-            values.Sort((v1, v2) => v1.Key.CompareTo(v2.Key));
+            Values.Sort((v1, v2) => v1.Key.CompareTo(v2.Key));
 
             while (keyValues.Count < Math.Pow(6, 5))
             {
@@ -66,13 +74,13 @@ namespace Enigma.Configuration
 
             for (int x = 0; x < keyValues.Count; x++)
             {
-                values[x].Value = keyValues[x];
+                Values[x].Value = keyValues[x];
             }
         }
 
         public string GetKeyValue(string lookupKey)
         {
-            return values.FirstOrDefault(v => v.Key == lookupKey).Value;
+            return Values.FirstOrDefault(v => v.Key == lookupKey).Value;
         }
         public string GetRandomValue()
         {
@@ -86,7 +94,7 @@ namespace Enigma.Configuration
 
             for (int x = 0; x < steps; x++)
             {
-                sb.AppendLine(string.Join("      ", values.Skip(x * 6).Take(6).Select(t => t.ToString())));
+                sb.AppendLine(string.Join("      ", Values.Skip(x * 6).Take(6).Select(t => t.ToString())));
                 if ((x + 1) % 36 == 0)
                 {
                     sb.AppendLine();
@@ -94,6 +102,28 @@ namespace Enigma.Configuration
             }
 
             return sb.ToString();
+        }
+
+        public void Save(string fileName)
+        {
+            XmlSerializer ser = new XmlSerializer(typeof(KeySheet));
+            using(StreamWriter sw = File.CreateText(fileName))
+            {
+                ser.Serialize(sw, this);
+            }
+        }
+
+        public static KeySheet Open(string fileName)
+        {
+            XmlSerializer ser = new XmlSerializer(typeof(KeySheet));
+            using (StreamReader rdr = File.OpenText(fileName))
+            {
+                return (KeySheet)ser.Deserialize(rdr);
+            }
+        }
+        public static KeySheet Random(int groupSize)
+        {
+            return new KeySheet(groupSize);
         }
     }
 }
