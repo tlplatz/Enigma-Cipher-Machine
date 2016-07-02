@@ -26,6 +26,11 @@ namespace ConvertedTests
         public const string M3K_SETTING_LINE = " 00 | B | VIII   VII    II            | 12 12 13     | AG BI CU ES FT HZ JP KO MX RW";
         public const string M4K_SETTING_LINE = " 00 | B | Beta   II     V      I      | 08 20 19 09  | BI CQ DK EU FY JS LT NP RZ VX";
 
+        [TestMethod]
+        public void CreateCodePage()
+        {
+            string foo = Enigma.Util.RandomUtil.KeySheet(4);
+        }
 
         [TestMethod]
         public void SettingsConstructorWithFullSettingsMatchesExpectedValue()
