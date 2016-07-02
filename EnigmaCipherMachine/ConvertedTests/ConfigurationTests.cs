@@ -26,11 +26,6 @@ namespace ConvertedTests
         public const string M3K_SETTING_LINE = " 00 | B | VIII   VII    II            | 12 12 13     | AG BI CU ES FT HZ JP KO MX RW";
         public const string M4K_SETTING_LINE = " 00 | B | Beta   II     V      I      | 08 20 19 09  | BI CQ DK EU FY JS LT NP RZ VX";
 
-        [TestMethod]
-        public void CreateCodePage()
-        {
-            string foo = Enigma.Util.RandomUtil.KeySheet(4);
-        }
 
         [TestMethod]
         public void SettingsConstructorWithFullSettingsMatchesExpectedValue()
@@ -743,6 +738,72 @@ namespace ConvertedTests
             Assert.AreEqual(s4.GetHashCode(), s42.GetHashCode());
             Assert.AreEqual(s4 == s42, true);
             Assert.AreEqual(s4 != s3, true);
+        }
+
+        [TestMethod]
+        public void CheckDigraphTable()
+        {
+            string path = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N"));
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            DigraphTable tbl = DigraphTable.Random(2016, 7);
+            string fileName = "TestDigraphs.xml";
+            tbl.Save(Path.Combine(path, fileName));
+
+            string e1 = tbl.Encrypt("AS");
+            string e2 = tbl.Encrypt("YX");
+            string e3 = tbl.Encrypt("PP");
+            string e4 = tbl.Encrypt("QW");
+
+            Assert.AreEqual(tbl.Decrypt(e1), "AS");
+            Assert.AreEqual(tbl.Decrypt(e2), "YX");
+            Assert.AreEqual(tbl.Decrypt(e3), "PP");
+            Assert.AreEqual(tbl.Decrypt(e4), "QW");
+
+            DigraphTable newTable = DigraphTable.Open(Path.Combine(path, fileName));
+
+            Assert.AreEqual(tbl.Encrypt("AS"), e1);
+            Assert.AreEqual(tbl.Encrypt("YX"), e2);
+            Assert.AreEqual(tbl.Encrypt("PP"), e3);
+            Assert.AreEqual(tbl.Encrypt("QW"), e4);
+
+            File.Delete(Path.Combine(path, fileName));
+            Directory.Delete(path);
+        }
+
+        [TestMethod]
+        public void CheckKeySheet()
+        {
+            string path = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N"));
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            KeySheet sheet = KeySheet.Random(4);
+
+            string fileName = "TestKeySheet.xml";
+            sheet.Save(Path.Combine(path, fileName));
+
+            string k1 = sheet.GetKeyValue("11111");
+            string k2 = sheet.GetKeyValue("22222");
+            string k3 = sheet.GetKeyValue("33333");
+            string k4 = sheet.GetKeyValue("44444");
+            string k5 = sheet.GetKeyValue("55555");
+            string k6 = sheet.GetKeyValue("66666");
+
+            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "11111").Value, k1);
+            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "22222").Value, k2);
+            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "33333").Value, k3);
+            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "44444").Value, k4);
+            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "55555").Value, k5);
+            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "66666").Value, k6);
+
+            File.Delete(Path.Combine(path, fileName));
+            Directory.Delete(path);
         }
     }
 }
