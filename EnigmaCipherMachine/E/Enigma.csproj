@@ -58,6 +58,7 @@
     <Compile Include="Configuration\ValidationException.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Enums\ValidationFailureType.cs" />
+    <Compile Include="KreigsmarineMessage.cs" />
     <Compile Include="Mech\Base\Contact.cs" />
     <Compile Include="Mech\Base\FixedRotor.cs" />
     <Compile Include="Message.cs" />
