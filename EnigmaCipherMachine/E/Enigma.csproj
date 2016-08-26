@@ -58,7 +58,6 @@
     <Compile Include="Configuration\ValidationException.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Enums\ValidationFailureType.cs" />
-    <Compile Include="KreigsmarineMessage.cs" />
     <Compile Include="Mech\Base\Contact.cs" />
     <Compile Include="Mech\Base\FixedRotor.cs" />
     <Compile Include="Message.cs" />
@@ -71,7 +70,6 @@
     <Compile Include="Util\IoUtil.cs" />
     <Compile Include="Mech\Machine.cs" />
     <Compile Include="Enums\MachineType.cs" />
-    <Compile Include="MessageBase.cs" />
     <Compile Include="Configuration\MonthlySettings.cs" />
     <Compile Include="Mech\PlugBoard\Plug.cs" />
     <Compile Include="Configuration\PlugSetting.cs" />
@@ -86,8 +84,6 @@
     <Compile Include="Configuration\RotorSettings.cs" />
     <Compile Include="Configuration\Settings.cs" />
     <Compile Include="Mech\PlugBoard\Stecker.cs" />
-    <Compile Include="WehrmachtMessage.cs" />
-    <Compile Include="WehrmachtMessagePart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
