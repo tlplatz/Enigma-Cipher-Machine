@@ -806,17 +806,6 @@ namespace ConvertedTests
             Directory.Delete(path);
         }
 
-        [TestMethod]
-        public void CheckWehrmachtFormat()
-        {
-            string plainText = @"To identify the key that was used for a particular message, the operator had to insert a five letter group called Buchstabenkenngruppe (letter identification group) as the first group of the message. The Buchstabenkenngruppe is composed of two randomly selected letters and one of the four possible three-letter Kenngruppen at the key sheet for that day. If we take day 31 from the Army Staff key 28 (image above), we see the Kenngruppen JKM, OGI, NCJ and GLP. In this case, some examples of a correct Buchstabenkenngruppe are FDJKM, KVOGI or QNNCJ. This five letter group at the start of the message should not be encrypted with the rest of the message! If a message was devided into several parts, the operator had to insert another Buchstabenkenngruppe for each part of the message. When counting the letters for the message header, the five letters of the Buchstabenkenngruppe must be included. The receiving operator immediately recognized which key was to be applied by looking at the last three letters of the first group.";
 
-            Settings s = Settings.Random(MachineType.M3);
-            WehrmachtMessage msg = new WehrmachtMessage(s);
-
-            string cipher = msg.Encrypt(plainText);
-
-            
-        }
     }
 }
