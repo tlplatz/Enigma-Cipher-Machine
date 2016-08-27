@@ -164,6 +164,7 @@ namespace Enigma.Util
                 return "----+---+-----------------------------+--------------+-------------------------------+------";
             }
         }
+
         public static string OutputGroups(string input, int groupSize = 5, int perRow = 5, string delimiter = "  ")
         {
             StringBuilder sb = new StringBuilder();
