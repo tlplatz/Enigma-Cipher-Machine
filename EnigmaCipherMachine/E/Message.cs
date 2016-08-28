@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Enigma.Configuration;
 
 namespace Enigma
@@ -28,12 +24,12 @@ namespace Enigma
 
         public string Encrypt(string plainText, string settings)
         {
-            if(_settings.MachineType == Enums.MachineType.M4K)
+            if (_settings.MachineType == Enums.MachineType.M4K)
             {
                 if (settings.Length != 4)
                 {
                     throw new ValidationException("M4 Enigma requires settings for 4 rotors");
-                }               
+                }
             }
             else
             {
@@ -50,7 +46,7 @@ namespace Enigma
             _machine.RotorSettings = settings;
 
             StringBuilder sb = new StringBuilder();
-            foreach(char c in clean)
+            foreach (char c in clean)
             {
                 sb.Append(_machine.Encipher(c.ToString()));
             }

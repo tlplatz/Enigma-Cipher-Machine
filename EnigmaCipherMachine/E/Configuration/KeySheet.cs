@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace Enigma.Configuration
@@ -23,7 +22,7 @@ namespace Enigma.Configuration
 
             int i = 0, j = 0, k = 0, l = 0, m = 0;
             int counter = 0;
-            
+
             List<string> keyValues = new List<string>();
 
             i = -1;
@@ -107,7 +106,7 @@ namespace Enigma.Configuration
         public void Save(string fileName)
         {
             XmlSerializer ser = new XmlSerializer(typeof(KeySheet));
-            using(StreamWriter sw = File.CreateText(fileName))
+            using (StreamWriter sw = File.CreateText(fileName))
             {
                 ser.Serialize(sw, this);
             }

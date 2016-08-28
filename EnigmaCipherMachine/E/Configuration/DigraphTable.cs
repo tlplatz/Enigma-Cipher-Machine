@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 using Enigma.Util;
 
@@ -48,7 +47,7 @@ namespace Enigma.Configuration
                 return (DigraphTable)ser.Deserialize(stm);
             }
         }
-        public static DigraphTable Random(int year , int month)
+        public static DigraphTable Random(int year, int month)
         {
             DigraphTable result = new DigraphTable();
 
@@ -68,7 +67,7 @@ namespace Enigma.Configuration
             }
 
             List<Tuple<Digraph, double>> values = new List<Tuple<Digraph, double>>();
-            foreach(var item in result.cell_list)
+            foreach (var item in result.cell_list)
             {
                 values.Add(new Tuple<Digraph, double>(item, RandomUtil._rand.NextDouble()));
             }
