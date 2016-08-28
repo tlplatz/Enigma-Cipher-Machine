@@ -11,7 +11,7 @@ namespace Enigma.Configuration
     [Serializable]
     public class MonthlySettings
     {
-        
+
         [XmlAttribute]
         public int Year { get; set; }
         [XmlAttribute]
