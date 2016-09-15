@@ -9,7 +9,7 @@ using Enigma.Util;
 namespace Enigma.Configuration
 {
     [Serializable]
-    public class MonthlySettings
+    public class MonthlySettings : IEquatable<MonthlySettings>, ICloneable
     {
         const string DEFAULT_SETTING_NAME = "Settings";
 
@@ -105,6 +105,10 @@ namespace Enigma.Configuration
 
             return result;
         }
+        public static MonthlySettings Parse(string settings)
+        {
+            return Formatting.ParseSettings(settings);
+        }
 
         public override string ToString()
         {
@@ -113,6 +117,70 @@ namespace Enigma.Configuration
             return
                 base.ToString();
 
+        }
+
+        public bool Equals(MonthlySettings other)
+        {
+            if (other == null) return false;
+
+            if (object.ReferenceEquals(this, other)) return true;
+
+            if (Title != other.Title) return false;
+            if (Year != other.Year) return false;
+            if (Month != other.Month) return false;
+
+            if (DailySettings.Count != other.DailySettings.Count) return false;
+
+            for(int i=0; i<DailySettings.Count; i++)
+            {
+                if (DailySettings[i] != other.DailySettings[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+
+            if (object.ReferenceEquals(this, obj)) return true;
+
+            MonthlySettings s = obj as MonthlySettings;
+            if (s == null) return false;
+
+            return Equals(s);
+        }
+        public override int GetHashCode()
+        {
+            return ToString().GetHashCode();
+        }
+
+        public object Clone()
+        {
+            return MonthlySettings.Parse(this.ToString());
+        }
+
+        public static bool operator ==(MonthlySettings a, MonthlySettings b)
+        {
+            if (System.Object.ReferenceEquals(a, b))
+            {
+                return true;
+            }
+
+            // If one is null, but not both, return false.
+            if (((object)a == null) || ((object)b == null))
+            {
+                return false;
+            }
+
+            // Return true if the fields match:
+            return a.Equals(b);
+        }
+        public static bool operator !=(MonthlySettings a, MonthlySettings b)
+        {
+            return !(a == b);
         }
 
         //this is a kludge to get the xml serializer to include the schema location when serializing to xml        
