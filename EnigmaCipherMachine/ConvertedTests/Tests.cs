@@ -806,6 +806,38 @@ namespace ConvertedTests
             Directory.Delete(path);
         }
 
+        [TestMethod]
+        public void CheckMonthlySettingParsingAndEquality()
+        {
+            MonthlySettings monSet = MonthlySettings.Random(2000, 1, MachineType.M3);
+            MonthlySettings check = MonthlySettings.Parse(monSet.ToString());
+            Assert.IsTrue(monSet == check);
 
+            monSet = MonthlySettings.Random(2000, 1, MachineType.M3K);
+            check = MonthlySettings.Parse(monSet.ToString());
+            Assert.IsTrue(monSet == check);
+
+            monSet = MonthlySettings.Random(2000, 1, MachineType.M4K);
+            check = MonthlySettings.Parse(monSet.ToString());
+            Assert.IsTrue(monSet == check);
+        }
+
+        [TestMethod]
+        public void CheckSettingsCloneMethod()
+        {
+            Settings s = Settings.Random(MachineType.M4K);
+            var check = s.Clone() as Settings;
+
+            Assert.IsTrue(check != null && check == s);
+        }
+
+        [TestMethod]
+        public void CheckMonthlySettingsCloneMethod()
+        {
+            MonthlySettings monset = MonthlySettings.Random(2000, 1, MachineType.M3);
+            var check = monset.Clone() as MonthlySettings;
+
+            Assert.IsTrue(check != null && check == monset);
+        }
     }
 }

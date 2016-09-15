@@ -243,10 +243,23 @@ namespace Enigma.Util
             }
             else
             {
+                
                 result.MachineType = MachineType.M3;
 
                 if (indicatorValues.Any())
-                    result.Kenngruppen.AddRange(indicatorValues);
+                {
+                    if(indicatorValues.Length == 4)
+                    {
+                        result.Kenngruppen.AddRange(indicatorValues);
+                        result.MachineType = MachineType.M3;
+                    }
+                    else
+                    {
+                        result.Grund = indicator;
+                        result.MachineType = MachineType.M3K;
+                    }
+                }
+                    
 
                 if (ukw == "B")
                 {
@@ -281,6 +294,45 @@ namespace Enigma.Util
             }
 
             return result;
+        }
+        public static MonthlySettings ParseSettings(string settings)
+        {
+            string[] lines = settings.Split(new string[] { "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+
+            string titleLine = lines[0];
+            string[] titleTokens = titleLine.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+
+            string[] days = lines.Skip(4).Take(lines.Length - 5).ToArray();
+
+            MonthlySettings result = new MonthlySettings();
+
+            result.Title = titleTokens[1];
+            result.Month = ParseMonth(titleTokens[2]);
+            result.Year = int.Parse(titleTokens[3]);
+
+            foreach(string s in days)
+            {
+                result.DailySettings.Add(Settings.ParseSettingLine(s));
+            }
+
+            return result;
+        }
+
+        private static List<string> _monthNames = null;
+        public static int ParseMonth(string name)
+        {
+            if (_monthNames == null)
+            {
+                _monthNames = new List<string>();
+
+                for (int m = 1; m <= 12; m++)
+                {
+                    DateTime temp = new DateTime(2000, m, 1);
+                    _monthNames.Add(temp.ToString("MMM").ToUpper());
+                }
+            }
+
+            return _monthNames.IndexOf(name.ToUpper()) + 1;
         }
     }
 }
