@@ -184,7 +184,7 @@ namespace Enigma.Configuration
         }
 
         //this is a kludge to get the xml serializer to include the schema location when serializing to xml        
-        [XmlAttributeAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/2001/XMLSchema-instance")]
+        [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/2001/XMLSchema-instance")]
         public string noNamespaceSchemaLocation
         {
             get; set;
