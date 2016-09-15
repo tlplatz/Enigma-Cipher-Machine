@@ -11,16 +11,20 @@ namespace Enigma.Configuration
     [Serializable]
     public class MonthlySettings
     {
+        const string DEFAULT_SETTING_NAME = "Settings";
 
         [XmlAttribute]
         public int Year { get; set; }
         [XmlAttribute]
         public int Month { get; set; }
+        [XmlAttribute]
+        public string Title { get; set; }
 
         public List<Settings> DailySettings { get; set; }
 
         public MonthlySettings()
         {
+            Title = DEFAULT_SETTING_NAME;
             DailySettings = new List<Settings>();
             noNamespaceSchemaLocation = IoUtil.XSD_FILE_NAME;
         }
