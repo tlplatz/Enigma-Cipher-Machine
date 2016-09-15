@@ -9,7 +9,7 @@ using Enigma.Util;
 namespace Enigma.Configuration
 {
     [Serializable]
-    public class Settings : IEquatable<Settings>
+    public class Settings : IEquatable<Settings>, ICloneable
     {
         private static Random _rnd = new Random();
 
@@ -342,6 +342,11 @@ namespace Enigma.Configuration
         public override int GetHashCode()
         {
             return ToString().GetHashCode();
+        }
+
+        public object Clone()
+        {
+            return Settings.ParseSettingLine(this.ToString());
         }
 
         public static bool operator ==(Settings a, Settings b)
