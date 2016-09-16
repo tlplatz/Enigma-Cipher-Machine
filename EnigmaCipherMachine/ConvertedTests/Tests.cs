@@ -8,6 +8,7 @@ using System.Xml.Schema;
 using Enigma;
 using Enigma.Configuration;
 using Enigma.Enums;
+using Enigma.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ConvertedTests
@@ -769,38 +770,6 @@ namespace ConvertedTests
             Assert.AreEqual(tbl.Encrypt("YX"), e2);
             Assert.AreEqual(tbl.Encrypt("PP"), e3);
             Assert.AreEqual(tbl.Encrypt("QW"), e4);
-
-            File.Delete(Path.Combine(path, fileName));
-            Directory.Delete(path);
-        }
-
-        [TestMethod]
-        public void CheckKeySheet()
-        {
-            string path = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N"));
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-
-            KeySheet sheet = KeySheet.Random(4);
-
-            string fileName = "TestKeySheet.xml";
-            sheet.Save(Path.Combine(path, fileName));
-
-            string k1 = sheet.GetKeyValue("11111");
-            string k2 = sheet.GetKeyValue("22222");
-            string k3 = sheet.GetKeyValue("33333");
-            string k4 = sheet.GetKeyValue("44444");
-            string k5 = sheet.GetKeyValue("55555");
-            string k6 = sheet.GetKeyValue("66666");
-
-            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "11111").Value, k1);
-            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "22222").Value, k2);
-            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "33333").Value, k3);
-            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "44444").Value, k4);
-            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "55555").Value, k5);
-            Assert.AreEqual(sheet.Values.FirstOrDefault(v => v.Key == "66666").Value, k6);
 
             File.Delete(Path.Combine(path, fileName));
             Directory.Delete(path);

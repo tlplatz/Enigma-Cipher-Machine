@@ -159,17 +159,15 @@ namespace Enigma.Util
             string fullPath = Path.Combine(folder, fileName);
             SaveFile(fullPath, tbl.ToString());
         }
-        public static void SaveKeySheet(int groupSize, string folder)
+        public static void SaveKeySheet(int year, string folder)
         {
             if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);
             }
 
-            KeySheet ks = new KeySheet(groupSize);
-
             string fullPath = Path.Combine(folder, "KeySheet.txt");
-            SaveFile(fullPath, ks.ToString());
+            SaveFile(fullPath, RandomUtil.GenerateKeySheet(year));
         }
     }
 }
