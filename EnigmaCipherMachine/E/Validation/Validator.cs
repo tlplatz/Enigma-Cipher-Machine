@@ -4,7 +4,7 @@ using Enigma.Enums;
 
 namespace Enigma.Configuration
 {
-    internal static class Validation
+    internal static class Validator
     {
         public static bool Validate(Settings s, out List<BrokenRule> rules)
         {

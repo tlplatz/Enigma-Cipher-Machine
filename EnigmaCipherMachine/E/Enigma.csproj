@@ -49,11 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\BrokenRule.cs" />
-    <Compile Include="Configuration\Digraph.cs" />
-    <Compile Include="Configuration\DigraphTable.cs" />
-    <Compile Include="Configuration\Validation.cs" />
-    <Compile Include="Configuration\ValidationException.cs" />
+    <Compile Include="Validation\BrokenRule.cs" />
+    <Compile Include="Validation\Validator.cs" />
+    <Compile Include="Validation\ValidationException.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Enums\ValidationFailureType.cs" />
     <Compile Include="Mech\Base\Contact.cs" />

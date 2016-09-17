@@ -88,6 +88,10 @@ namespace Enigma.Util
 
             return sb.ToString();
         }
+        public static string GenerateDigraphTable(int year, int month)
+        {
+            return DigraphTable.Random(year, month).ToString();
+        }
 
         internal static string GenerateKeySheet(string name)
         {
@@ -126,7 +130,7 @@ namespace Enigma.Util
             {
                 for (int col = 0; col < 6; col++)
                 {
-                    sb.Append(string.Format("{0}  {1}", entries[x].Key, entries[x].Value));
+                    sb.Append(string.Format("{0}   {1}", entries[x].Key, entries[x].Value));
                     sb.Append("     ");
                     x++;
                 }
@@ -181,11 +185,119 @@ namespace Enigma.Util
             public DateTime Date { get; set; }
             public string SheetName { get; set; }
         }
+
         private class KeySheetEntry
         {
             public string Key { get; set; }
             public string Value { get; set; }
         }
 
+        private class Digraph
+        {           
+            public char PlainTextX { get; set; }            
+            public char PlainTextY { get; set; }
+            
+            public char CipherTextX { get; set; }            
+            public char CipherTextY { get; set; }
+
+            public string PlainText { get { return string.Concat(PlainTextX, PlainTextY); } }
+            public string CipherText { get { return string.Concat(CipherTextX, CipherTextY); } }
+        }
+
+        private class DigraphTable
+        {
+            private Digraph[,] cells = new Digraph[Constants.ALPHABET.Length, Constants.ALPHABET.Length];
+            private List<Digraph> cell_list = new List<Digraph>();
+
+            public DigraphTable()
+            {
+
+            }
+
+            public int Year { get; set; }
+            public int Month { get; set; }
+
+            public List<Digraph> Cells
+            {
+                get { return cell_list; }
+                set { cell_list = value; }
+            }
+            public static DigraphTable Random(int year, int month)
+            {
+                DigraphTable result = new DigraphTable();
+
+                for (int y = 0; y < Constants.ALPHABET.Length; y++)
+                {
+                    for (int x = 0; x < Constants.ALPHABET.Length; x++)
+                    {
+                        Digraph newDigraph = new Digraph
+                        {
+                            PlainTextX = Constants.ALPHABET[x],
+                            PlainTextY = Constants.ALPHABET[y]
+                        };
+
+                        result.cell_list.Add(newDigraph);
+                        result.cells[x, y] = newDigraph;
+                    }
+                }
+
+                List<Tuple<Digraph, double>> values = new List<Tuple<Digraph, double>>();
+                foreach (var item in result.cell_list)
+                {
+                    values.Add(new Tuple<Digraph, double>(item, RandomUtil._rand.NextDouble()));
+                }
+                values.Sort((v1, v2) => v1.Item2.CompareTo(v2.Item2));
+
+                while (values.Any())
+                {
+                    var f = values.First();
+                    var l = values.Last();
+
+                    f.Item1.CipherTextX = l.Item1.PlainTextX;
+                    f.Item1.CipherTextY = l.Item1.PlainTextY;
+
+                    l.Item1.CipherTextX = f.Item1.PlainTextX;
+                    l.Item1.CipherTextY = f.Item1.PlainTextY;
+
+                    values.Remove(f);
+                    values.Remove(l);
+                }
+
+                return result;
+            }
+
+            public override string ToString()
+            {
+                StringBuilder sb = new StringBuilder();
+
+                sb.Append("     ");
+                sb.AppendLine(string.Join("  ", Constants.ALPHABET.Select(c => c)));
+                sb.AppendLine(new string('-', 81));
+
+                for (int y = 0; y < Constants.ALPHABET.Length; y++)
+                {
+                    sb.Append(Constants.ALPHABET[y]);
+                    sb.Append(" | ");
+
+                    for (int x = 0; x < Constants.ALPHABET.Length; x++)
+                    {
+                        sb.Append(cells[x, y].CipherText);
+                        sb.Append(" ");
+                    }
+                    sb.Append("\r\n");
+                }
+
+                return sb.ToString();
+            }
+
+            public string Encrypt(string plainText)
+            {
+                return cell_list.FirstOrDefault(c => c.PlainText == plainText).CipherText;
+            }
+            public string Decrypt(string cipherText)
+            {
+                return cell_list.FirstOrDefault(c => c.CipherText == cipherText).PlainText;
+            }
+        }
     }
 }
