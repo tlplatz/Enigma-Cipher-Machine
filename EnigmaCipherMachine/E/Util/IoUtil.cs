@@ -147,7 +147,6 @@ namespace Enigma.Util
 
         public static void SaveDigraphTable(int year, int month, string folder)
         {
-            DigraphTable tbl = DigraphTable.Random(year, month);
             DateTime dt = new DateTime(year, month, 1);
 
             if (!Directory.Exists(folder))
@@ -157,7 +156,7 @@ namespace Enigma.Util
 
             string fileName = string.Format("Digraph_{0:yyyyMMM}.txt", dt);
             string fullPath = Path.Combine(folder, fileName);
-            SaveFile(fullPath, tbl.ToString());
+            SaveFile(fullPath, RandomUtil.GenerateDigraphTable(year, month));
         }
         public static void SaveKeySheet(int year, string folder)
         {

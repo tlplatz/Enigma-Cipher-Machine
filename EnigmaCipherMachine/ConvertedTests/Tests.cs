@@ -280,7 +280,7 @@ namespace ConvertedTests
             Settings s = Settings.Random(MachineType.M3);
             List<BrokenRule> brokenRules;
 
-            Assert.AreEqual(true, Validation.Validate(s, out brokenRules));
+            Assert.AreEqual(true, Validator.Validate(s, out brokenRules));
         }
 
         [TestMethod]
@@ -290,7 +290,7 @@ namespace ConvertedTests
             s.ReflectorType = ReflectorType.B_Dunn;
             List<BrokenRule> brokenRules;
 
-            Assert.AreEqual(false, Validation.Validate(s, out brokenRules));
+            Assert.AreEqual(false, Validator.Validate(s, out brokenRules));
             Assert.AreEqual(true, brokenRules.Select(r => r.FailureType == ValidationFailureType.InvalidRotorTypeForMachine).Any());
         }
 
@@ -301,7 +301,7 @@ namespace ConvertedTests
             s.Rotors.RemoveAt(0);
             List<BrokenRule> brokenRules;
 
-            Assert.AreEqual(false, Validation.Validate(s, out brokenRules));
+            Assert.AreEqual(false, Validator.Validate(s, out brokenRules));
             Assert.AreEqual(true, brokenRules.Select(r => r.FailureType == ValidationFailureType.InvalidRotorCount).Any());
         }
 
@@ -312,7 +312,7 @@ namespace ConvertedTests
             s.Rotors[0].Name = RotorName.Gamma;
             List<BrokenRule> brokenRules;
 
-            Assert.AreEqual(false, Validation.Validate(s, out brokenRules));
+            Assert.AreEqual(false, Validator.Validate(s, out brokenRules));
             Assert.AreEqual(true, brokenRules.Select(r => r.FailureType == ValidationFailureType.InvalidRotorTypeForMachine).Any());
         }
 
@@ -324,7 +324,7 @@ namespace ConvertedTests
             s.Rotors[0].RingSetting = -1;
             List<BrokenRule> rules;
 
-            Assert.AreEqual(false, Validation.Validate(s, out rules));
+            Assert.AreEqual(false, Validator.Validate(s, out rules));
             Assert.AreEqual(true, rules.Select(r => r.FailureType == ValidationFailureType.RingSettingOutOfRange).Any());
         }
 
@@ -335,7 +335,7 @@ namespace ConvertedTests
             s.MachineType = MachineType.M4K;
             List<BrokenRule> rules = new List<BrokenRule>();
 
-            Assert.AreEqual(false, Validation.Validate(s, out rules));
+            Assert.AreEqual(false, Validator.Validate(s, out rules));
             Assert.AreEqual(true, rules.Select(r => r.FailureType == ValidationFailureType.ThinRotorMissing).Any());
         }
 
@@ -349,7 +349,7 @@ namespace ConvertedTests
             s.Plugs.Add(new PlugSetting { LetterA = "A", LetterB = "B" });
             s.Plugs.Add(new PlugSetting { LetterA = "A", LetterB = "B" });
 
-            Assert.AreEqual(false, Validation.Validate(s, out rules));
+            Assert.AreEqual(false, Validator.Validate(s, out rules));
             Assert.AreEqual(true, rules.Select(r => r.FailureType == ValidationFailureType.TooManyPlugs).Any());
         }
 
@@ -360,7 +360,7 @@ namespace ConvertedTests
             List<BrokenRule> rules = new List<BrokenRule>();
             s.Plugs.Add(new PlugSetting { LetterA = "A", LetterB = "A" });
 
-            Assert.AreEqual(false, Validation.Validate(s, out rules));
+            Assert.AreEqual(false, Validator.Validate(s, out rules));
             Assert.AreEqual(true, rules.Select(r => r.FailureType == ValidationFailureType.PlugsLinksNotUnique).Any());
         }
 
@@ -372,7 +372,7 @@ namespace ConvertedTests
             s.Plugs.Add(new PlugSetting { LetterA = "A", LetterB = "B" });
             s.Plugs.Add(new PlugSetting { LetterA = "A", LetterB = "B" });
 
-            Assert.AreEqual(false, Validation.Validate(s, out rules));
+            Assert.AreEqual(false, Validator.Validate(s, out rules));
             Assert.AreEqual(true, rules.Select(r => r.FailureType == ValidationFailureType.DuplicatePlugs).Any());
         }
 
@@ -387,7 +387,7 @@ namespace ConvertedTests
             s.Plugs.Add(new PlugSetting("CB"));
             s.Plugs.Add(new PlugSetting("SA"));
 
-            Assert.AreEqual(false, Validation.Validate(s, out rules));
+            Assert.AreEqual(false, Validator.Validate(s, out rules));
             Assert.AreEqual(true, rules.Select(r => r.FailureType == ValidationFailureType.LettersDuplicatedInPlugs).Any());
         }
 
@@ -742,40 +742,6 @@ namespace ConvertedTests
         }
 
         [TestMethod]
-        public void CheckDigraphTable()
-        {
-            string path = Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N"));
-            if (!Directory.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-
-            DigraphTable tbl = DigraphTable.Random(2016, 7);
-            string fileName = "TestDigraphs.xml";
-            tbl.Save(Path.Combine(path, fileName));
-
-            string e1 = tbl.Encrypt("AS");
-            string e2 = tbl.Encrypt("YX");
-            string e3 = tbl.Encrypt("PP");
-            string e4 = tbl.Encrypt("QW");
-
-            Assert.AreEqual(tbl.Decrypt(e1), "AS");
-            Assert.AreEqual(tbl.Decrypt(e2), "YX");
-            Assert.AreEqual(tbl.Decrypt(e3), "PP");
-            Assert.AreEqual(tbl.Decrypt(e4), "QW");
-
-            DigraphTable newTable = DigraphTable.Open(Path.Combine(path, fileName));
-
-            Assert.AreEqual(tbl.Encrypt("AS"), e1);
-            Assert.AreEqual(tbl.Encrypt("YX"), e2);
-            Assert.AreEqual(tbl.Encrypt("PP"), e3);
-            Assert.AreEqual(tbl.Encrypt("QW"), e4);
-
-            File.Delete(Path.Combine(path, fileName));
-            Directory.Delete(path);
-        }
-
-        [TestMethod]
         public void CheckMonthlySettingParsingAndEquality()
         {
             MonthlySettings monSet = MonthlySettings.Random(2000, 1, MachineType.M3);
@@ -807,6 +773,14 @@ namespace ConvertedTests
             var check = monset.Clone() as MonthlySettings;
 
             Assert.IsTrue(check != null && check == monset);
+        }
+
+        [TestMethod]
+        public void CreateKeySheet()
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+
+            IoUtil.SaveKeySheet(DateTime.Now.Year, path);
         }
     }
 }
