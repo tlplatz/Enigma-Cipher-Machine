@@ -209,6 +209,8 @@ namespace Enigma.Util
 
             Settings result = new Settings();
 
+            result.Day = int.Parse(tokens[0]);
+
             string ukw = tokens[1].Trim();
             string rotors = tokens[2].Trim();
             string rings = tokens[3].Trim();
