@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enigma", "E\Enigma.csproj", "{29176BFB-17E7-485D-AB01-D06FD2550D5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertedTests", "ConvertedTests\ConvertedTests.csproj", "{2623EEAE-A2E3-4CA4-9D5A-C32A0CE8CF4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messaging", "Messaging\Messaging.csproj", "{464044DC-94BC-4A1B-9998-A6300E6B2F8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,12 +23,16 @@ Global
 		{2623EEAE-A2E3-4CA4-9D5A-C32A0CE8CF4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2623EEAE-A2E3-4CA4-9D5A-C32A0CE8CF4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2623EEAE-A2E3-4CA4-9D5A-C32A0CE8CF4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{464044DC-94BC-4A1B-9998-A6300E6B2F8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{464044DC-94BC-4A1B-9998-A6300E6B2F8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{464044DC-94BC-4A1B-9998-A6300E6B2F8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{464044DC-94BC-4A1B-9998-A6300E6B2F8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
+		SccNumberOfProjects = 4
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
 		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs40
 		SccLocalPath0 = .
@@ -36,5 +42,8 @@ Global
 		SccProjectUniqueName2 = ConvertedTests\\ConvertedTests.csproj
 		SccProjectName2 = ConvertedTests
 		SccLocalPath2 = ConvertedTests
+		SccProjectUniqueName3 = Messaging\\Messaging.csproj
+		SccProjectName3 = Messaging
+		SccLocalPath3 = Messaging
 	EndGlobalSection
 EndGlobal
