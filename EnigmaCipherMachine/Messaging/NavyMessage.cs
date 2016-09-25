@@ -154,10 +154,7 @@ namespace Messaging
 
                 if (settings.Grund.Length == 3)
                 {
-                    //machine type is m3k, else m4k
-                    //1st 3
                     string trimmedStart = startPosition.Substring(0, 3);
-                    //last 3
                     string trimmedKey = messageKey.Substring(1, 3);
 
                     Enigma.Message msg = new Enigma.Message(settings);
