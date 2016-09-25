@@ -18,10 +18,6 @@ namespace Messaging
 
         public List<ArmyMessagePart> Parts { get; private set; }
 
-        private ArmyMessage()
-        {
-
-        }
         public ArmyMessage(string settingsFileName, string input, int day)
         {
             MonthlySettingsFileName = settingsFileName;
@@ -164,7 +160,5 @@ namespace Messaging
 
             return null;
         }
-
-
     }
 }

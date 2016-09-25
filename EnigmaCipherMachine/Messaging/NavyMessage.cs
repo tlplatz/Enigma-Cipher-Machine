@@ -36,8 +36,11 @@ namespace Messaging
                 }
                 else
                 {
-                    string fileContent = fi.OpenText().ReadToEnd();
-                    _monthlySettings = MonthlySettings.Parse(fileContent);
+                    using (StreamReader rdr = fi.OpenText())
+                    {
+                        string fileContent = rdr.ReadToEnd();
+                        _monthlySettings = MonthlySettings.Parse(fileContent);
+                    }
                 }
             }
 
@@ -46,7 +49,6 @@ namespace Messaging
 
             string[] parts = Utility.GetMessageParts(paddedInput, 4, 96);
             string[,] digs = Utility.ParseDigraphTable(digraphFileName);
-
 
             Settings s = _monthlySettings.DailySettings.FirstOrDefault(ss => ss.Day == Day);
             if (s == null) s = _monthlySettings.DailySettings.Last();
