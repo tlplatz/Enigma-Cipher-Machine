@@ -26,6 +26,7 @@ namespace Enigma.Util
                 }
             }
         }
+
         internal static string MonthFolderName(int year, int month)
         {
             DateTime dt = new DateTime(year, month, 1);
@@ -40,6 +41,12 @@ namespace Enigma.Util
         {
             return Path.Combine(MonthFolderName(year, month), XSD_FILE_NAME);
         }
+        internal static string DigraphFileName(int year, int month)
+        {
+            DateTime dt = new DateTime(year, month, 1);
+            return string.Format("Digraph_{0:yyyyMMM}.txt", dt);
+        }
+
         private static void ExtractXsd(int year, int month)
         {
             SaveFile(XsdFileName(year, month), Properties.Resources.Settings);
@@ -154,7 +161,7 @@ namespace Enigma.Util
                 Directory.CreateDirectory(folder);
             }
 
-            string fileName = string.Format("Digraph_{0:yyyyMMM}.txt", dt);
+            string fileName = DigraphFileName(year, month);
             string fullPath = Path.Combine(folder, fileName);
             SaveFile(fullPath, RandomUtil.GenerateDigraphTable(year, month));
         }

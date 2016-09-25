@@ -95,23 +95,26 @@ namespace Messaging
 
         public static string[,] ParseDigraphTable(string fileName)
         {
-            string content = File.OpenText(fileName).ReadToEnd();
             string[,] digrams = new string[26, 26];
 
-            string[] lines = content.Split(new string[] { "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
-            string[] alphaRows = lines.Skip(2).Take(26).ToArray();
-
-            for(int row = 0;row<26; row++)
+            using (StreamReader rdr = File.OpenText(fileName))
             {
-                string[] tokens = alphaRows[row].Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToArray();
-                string[] cells = tokens.Skip(2).Take(26).ToArray();
+                string content = rdr.ReadToEnd();
 
-                for(int col = 0; col<26; col++)
+                string[] lines = content.Split(new string[] { "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
+                string[] alphaRows = lines.Skip(2).Take(26).ToArray();
+
+                for (int row = 0; row < 26; row++)
                 {
-                    digrams[col, row] = cells[col];
+                    string[] tokens = alphaRows[row].Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries).ToArray();
+                    string[] cells = tokens.Skip(2).Take(26).ToArray();
+
+                    for (int col = 0; col < 26; col++)
+                    {
+                        digrams[col, row] = cells[col];
+                    }
                 }
             }
-
             return digrams;
         }
     }
