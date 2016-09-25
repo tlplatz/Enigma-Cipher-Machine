@@ -27,6 +27,21 @@ namespace ConvertedTests
         public const string M3K_SETTING_LINE = " 00 | B | VIII   VII    II            | 12 12 13     | AG BI CU ES FT HZ JP KO MX RW";
         public const string M4K_SETTING_LINE = " 00 | B | Beta   II     V      I      | 08 20 19 09  | BI CQ DK EU FY JS LT NP RZ VX";
 
+        public const string LONG_TEST_PLAIN_TEXT = @"or shame deny that thou bear'st love to any,
+Who for thy self art so unprovident.
+Grant, if thou wilt, thou art beloved of many,
+But that thou none lov'st is most evident:
+For thou art so possessed with murderous hate,
+That 'gainst thy self thou stick'st not to conspire,
+Seeking that beauteous roof to ruinate
+Which to repair should be thy chief desire.
+O! change thy thought, that I may change my mind:
+Shall hate be fairer lodged than gentle love?
+Be, as thy presence is, gracious and kind,
+Or to thyself at least kind-hearted prove:
+   Make thee another self for love of me,
+   That beauty still may live in thine or thee.";
+
 
         [TestMethod]
         public void SettingsConstructorWithFullSettingsMatchesExpectedValue()
@@ -782,5 +797,86 @@ namespace ConvertedTests
 
             IoUtil.SaveKeySheet(DateTime.Now.Year, path);
         }
+
+        [TestMethod]
+        public void TestArmyMessaging()
+        {
+            string fileName = IoUtil.MonthFileName(DateTime.Now.Year, DateTime.Now.Month, ".xml");
+            string folder = Path.GetTempPath();
+
+            string xmlFullPath = Path.Combine(folder, fileName);
+
+            MonthlySettings monSet = MonthlySettings.Random(DateTime.Now.Year, DateTime.Now.Month, MachineType.M3);
+
+            monSet.Save(xmlFullPath);
+
+            Messaging.ArmyMessage msg = new Messaging.ArmyMessage(xmlFullPath, LONG_TEST_PLAIN_TEXT, DateTime.Now.Day);
+
+            string messageText = msg.ToString();
+
+            string decrypted = Messaging.ArmyMessage.Decrypt(xmlFullPath, messageText);
+            string cleanPlain = Messaging.Utility.GetPaddedString(Messaging.Utility.CleanString(LONG_TEST_PLAIN_TEXT), 5);
+
+            Assert.AreEqual(decrypted, cleanPlain);
+
+            File.Delete(xmlFullPath);
+        }
+
+        [TestMethod]
+        public void TestNavyMessagingM4()
+        {
+            string fileName = IoUtil.MonthFileName(DateTime.Now.Year, DateTime.Now.Month, ".xml");
+            string digraphFileName = IoUtil.DigraphFileName(DateTime.Now.Year, DateTime.Now.Month);
+
+            string folder = Path.GetTempPath();
+
+            string xmlFullPath = Path.Combine(folder, fileName);
+            string digraphFullPath = Path.Combine(folder, digraphFileName);
+
+            MonthlySettings monSet = MonthlySettings.Random(DateTime.Now.Year, DateTime.Now.Month, MachineType.M4K);
+            monSet.Save(xmlFullPath);
+            IoUtil.SaveDigraphTable(DateTime.Now.Year, DateTime.Now.Month, folder);
+
+            Messaging.NavyMessage msg = new Messaging.NavyMessage(xmlFullPath, digraphFullPath, LONG_TEST_PLAIN_TEXT, DateTime.Now.Day, "XYZ");
+
+            string messageText = msg.ToString();
+
+            string decrypted = Messaging.NavyMessage.Decrypt(xmlFullPath, digraphFullPath, messageText);
+            string cleanPlain = Messaging.Utility.GetPaddedString(Messaging.Utility.CleanString(LONG_TEST_PLAIN_TEXT), 4);
+
+            Assert.AreEqual(decrypted, cleanPlain);
+
+            File.Delete(xmlFullPath);
+            File.Delete(digraphFullPath);
+        }
+
+        [TestMethod]
+        public void TestNavyMessagingM3()
+        {
+            string fileName = IoUtil.MonthFileName(DateTime.Now.Year, DateTime.Now.Month, ".xml");
+            string digraphFileName = IoUtil.DigraphFileName(DateTime.Now.Year, DateTime.Now.Month);
+
+            string folder = Path.GetTempPath();
+
+            string xmlFullPath = Path.Combine(folder, fileName);
+            string digraphFullPath = Path.Combine(folder, digraphFileName);
+
+            MonthlySettings monSet = MonthlySettings.Random(DateTime.Now.Year, DateTime.Now.Month, MachineType.M3K);
+            monSet.Save(xmlFullPath);
+            IoUtil.SaveDigraphTable(DateTime.Now.Year, DateTime.Now.Month, folder);
+
+            Messaging.NavyMessage msg = new Messaging.NavyMessage(xmlFullPath, digraphFullPath, LONG_TEST_PLAIN_TEXT, DateTime.Now.Day, "XYZ");
+
+            string messageText = msg.ToString();
+
+            string decrypted = Messaging.NavyMessage.Decrypt(xmlFullPath, digraphFullPath, messageText);
+            string cleanPlain = Messaging.Utility.GetPaddedString(Messaging.Utility.CleanString(LONG_TEST_PLAIN_TEXT), 4);
+
+            Assert.AreEqual(decrypted, cleanPlain);
+
+            File.Delete(xmlFullPath);
+            File.Delete(digraphFullPath);
+        }
+
     }
 }
