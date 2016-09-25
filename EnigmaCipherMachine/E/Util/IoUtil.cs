@@ -78,6 +78,11 @@ namespace Enigma.Util
             fileName = MonthFileName(year, month, XML_FILE_EXTENSION);
             filePath = Path.Combine(folder, fileName);
             s.Save(filePath);
+
+            if(t != MachineType.M3)
+            {
+                SaveDigraphTable(year, month, folder);
+            }
         }
         public static void SaveMonth(string folder, string title, int year, int month, MachineType t)
         {
@@ -93,6 +98,11 @@ namespace Enigma.Util
             fileName = MonthFileName(year, month, XML_FILE_EXTENSION);
             filePath = Path.Combine(folder, fileName);
             s.Save(filePath);
+
+            if (t != MachineType.M3)
+            {
+                SaveDigraphTable(year, month, folder);
+            }
         }
 
         public static void SaveYear(string folder, string title, int year, MachineType t, ReflectorType r, bool compatibilityMode = false)
@@ -121,7 +131,11 @@ namespace Enigma.Util
                 string textFileName = MonthFileName(year, m, ".txt");
                 string textFilePath = Path.Combine(monthFolderPath, textFileName);
                 SaveFile(textFilePath, Formatting.MonthlySettings(title, year, m, t, r, s.DailySettings));
+
+                SaveDigraphTable(year, m, monthFolderPath);
             }
+
+            SaveKeySheet(year, folder);
         }
         public static void SaveYear(string folder, string title, int year, MachineType t)
         {
@@ -149,7 +163,11 @@ namespace Enigma.Util
                 string textFileName = MonthFileName(year, m, ".txt");
                 string textFilePath = Path.Combine(monthFolderPath, textFileName);
                 SaveFile(textFilePath, Formatting.MonthlySettings(title, year, m, t, s.DailySettings));
+
+                SaveDigraphTable(year, m, monthFolderPath);
             }
+
+            SaveKeySheet(year, folder);
         }
 
         public static void SaveDigraphTable(int year, int month, string folder)

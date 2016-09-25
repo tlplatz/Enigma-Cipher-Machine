@@ -1,0 +1,502 @@
+    | JAN | FEB | MAR | APR | MAY | JUN | JUL | AUG | SEP | OCT | NOV | DEC |
+----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+
+ 01 |  B  |  K  |  D  |  D  |  L  |  F  |  E  |  B  |  C  |  F  |  C  |  M  |
+ 02 |  K  |  K  |  M  |  M  |  B  |  H  |  F  |  D  |  F  |  K  |  L  |  B  |
+ 03 |  H  |  E  |  E  |  B  |  G  |  A  |  C  |  F  |  G  |  J  |  F  |  F  |
+ 04 |  L  |  H  |  C  |  F  |  B  |  H  |  G  |  K  |  C  |  B  |  E  |  K  |
+ 05 |  B  |  B  |  H  |  L  |  D  |  K  |  K  |  B  |  K  |  D  |  D  |  K  |
+ 06 |  J  |  M  |  M  |  K  |  M  |  F  |  H  |  D  |  B  |  C  |  B  |  C  |
+ 07 |  F  |  C  |  A  |  K  |  G  |  F  |  G  |  H  |  G  |  C  |  D  |  G  |
+ 08 |  K  |  E  |  F  |  A  |  A  |  B  |  A  |  C  |  F  |  A  |  F  |  K  |
+ 09 |  G  |  J  |  A  |  D  |  H  |  H  |  J  |  H  |  C  |  J  |  A  |  G  |
+ 10 |  D  |  K  |  F  |  F  |  G  |  B  |  K  |  J  |  L  |  E  |  A  |  M  |
+ 11 |  J  |  B  |  G  |  M  |  C  |  G  |  E  |  G  |  B  |  A  |  E  |  M  |
+ 12 |  L  |  A  |  L  |  A  |  C  |  G  |  B  |  H  |  K  |  A  |  C  |  K  |
+ 13 |  L  |  J  |  J  |  H  |  G  |  C  |  H  |  K  |  E  |  A  |  E  |  C  |
+ 14 |  H  |  C  |  G  |  E  |  H  |  M  |  E  |  D  |  J  |  C  |  B  |  B  |
+ 15 |  G  |  G  |  F  |  H  |  F  |  D  |  G  |  F  |  C  |  K  |  D  |  J  |
+ 16 |  F  |  F  |  D  |  J  |  D  |  D  |  G  |  G  |  C  |  A  |  G  |  B  |
+ 17 |  B  |  A  |  M  |  G  |  L  |  G  |  F  |  G  |  F  |  D  |  M  |  C  |
+ 18 |  A  |  A  |  D  |  B  |  C  |  E  |  D  |  G  |  L  |  D  |  G  |  J  |
+ 19 |  C  |  L  |  K  |  J  |  D  |  G  |  F  |  D  |  K  |  D  |  C  |  M  |
+ 20 |  D  |  F  |  B  |  B  |  G  |  H  |  B  |  A  |  B  |  C  |  E  |  C  |
+ 21 |  E  |  E  |  E  |  G  |  B  |  H  |  C  |  M  |  E  |  A  |  C  |  D  |
+ 22 |  A  |  A  |  E  |  L  |  A  |  B  |  L  |  L  |  G  |  D  |  A  |  J  |
+ 23 |  M  |  H  |  F  |  C  |  H  |  M  |  A  |  J  |  C  |  H  |  F  |  J  |
+ 24 |  M  |  M  |  G  |  L  |  D  |  B  |  J  |  M  |  D  |  K  |  J  |  K  |
+ 25 |  H  |  B  |  L  |  L  |  K  |  K  |  E  |  F  |  D  |  D  |  B  |  E  |
+ 26 |  K  |  K  |  C  |  G  |  F  |  G  |  D  |  F  |  H  |  J  |  B  |  C  |
+ 27 |  E  |  H  |  J  |  K  |  K  |  C  |  J  |  F  |  G  |  D  |  M  |  E  |
+ 28 |  F  |  D  |  C  |  E  |  C  |  E  |  L  |  C  |  D  |  C  |  K  |  J  |
+ 29 |  F  |  D  |  E  |  F  |  G  |  K  |  K  |  F  |  H  |  M  |  G  |  D  |
+ 30 |  E  |     |  F  |  C  |  E  |  C  |  D  |  M  |  K  |  C  |  L  |  C  |
+ 31 |  H  |     |  D  |     |  M  |     |  D  |  H  |     |  H  |     |  C  |
+
+                                     TABLE A
+-------------------------------------------------------------------------------------
+111   ACQI     112   AELM     113   AEUI     114   ANTE     115   ANUM     116   AYMI     
+121   BEOB     122   BFZF     123   BHMF     124   BNVQ     125   BPUA     126   BRNW     
+131   CAJN     132   CBNZ     133   CCNJ     134   CDPU     135   CEGD     136   CGNG     
+141   CKSS     142   CQJR     143   CVOF     144   CWJK     145   CXNI     146   CYJE     
+151   DCVH     152   DEGK     153   DFZR     154   DIXQ     155   DIYP     156   DJHK     
+161   DNRI     162   DPII     163   DQQN     164   DRNF     165   DTKJ     166   DZEZ     
+211   EAKV     212   ECYR     213   EHQY     214   ELXT     215   EZIN     216   FESI     
+221   FHYP     222   FJDC     223   FKQZ     224   FLRK     225   FMIC     226   FQEJ     
+231   FSPI     232   FSRO     233   FTAC     234   FTHG     235   FUIM     236   FVSS     
+241   FWJP     242   FXDU     243   GECC     244   GHYQ     245   GLQH     246   GUFI     
+251   GVCI     252   GZZR     253   HAFS     254   HEQA     255   HEYR     256   HGXW     
+261   HLLV     262   HZBX     263   IEUF     264   IFTK     265   IHCQ     266   IIYE     
+311   IKAU     312   ILQD     313   IRVN     314   ITLX     315   IUHN     316   IZOG     
+321   JEYD     322   JKTK     323   JMHO     324   JPIP     325   JPSF     326   JSPW     
+331   JZKZ     332   JZLO     333   KBCP     334   KCYW     335   KEUF     336   KFGH     
+341   KFIF     342   KKYM     343   KLAC     344   KNBG     345   KPNV     346   KRWH     
+351   KTSF     352   KVPC     353   KVWY     354   KWDS     355   KZGQ     356   KZKQ     
+361   LEVU     362   LGAU     363   LNIM     364   LQWD     365   LRGW     366   MBVV     
+411   MCFT     412   MHQP     413   MNUJ     414   MTWB     415   NGBD     416   NOWT     
+421   NQXE     422   NSOP     423   NUEF     424   NUWR     425   NXDC     426   OABC     
+431   OENF     432   OEYH     433   OKIP     434   OKLC     435   OOHJ     436   OUWN     
+441   OWPB     442   OYHA     443   OYQA     444   PBGS     445   PGEG     446   PMWJ     
+451   PNBM     452   PQPJ     453   PUOQ     454   QDGZ     455   QDHB     456   QDHW     
+461   QDPD     462   QJVF     463   QMVN     464   QYCZ     465   QYHO     466   REEA     
+511   RENQ     512   RFXI     513   RKLR     514   RTVX     515   SORZ     516   SPKA     
+521   SSQN     522   TEXT     523   TGEJ     524   THUV     525   TJVD     526   TRAB     
+531   TRPP     532   TZEM     533   UDAW     534   UEQS     535   UETG     536   UFKC     
+541   UFYO     542   UGTN     543   UHIR     544   UKUF     545   URIZ     546   UTOO     
+551   UUJN     552   VBJW     553   VCDN     554   VCGD     555   VEWI     556   VGKA     
+561   VISG     562   VMTQ     563   VVBT     564   WBXP     565   WCTD     566   WDPK     
+611   WGNJ     612   WJAA     613   WKRV     614   WMDV     615   WNKD     616   WPTK     
+621   WQCS     622   WQYM     623   WSAS     624   WYQQ     625   XABQ     626   XBOS     
+631   XEWJ     632   XJKF     633   XLJN     634   XUYM     635   YBWO     636   YJDS     
+641   YMRN     642   YMZC     643   YOAT     644   YWEE     645   YYFS     646   ZBMX     
+651   ZERT     652   ZGRA     653   ZGVF     654   ZIZM     655   ZJSB     656   ZMHO     
+661   ZMSD     662   ZPFG     663   ZQHC     664   ZTJV     665   ZZDQ     666   ZZWE     
+
+                                     TABLE B
+-------------------------------------------------------------------------------------
+111   AAPG     112   AEQN     113   AETI     114   AEWK     115   ANEA     116   APPN     
+121   ASRR     122   ATSP     123   AUBC     124   AUTB     125   AXGB     126   BBUH     
+131   BFBE     132   BNLP     133   BNRY     134   BNXJ     135   BOFF     136   BPFB     
+141   BTBE     142   BTSA     143   BUZT     144   BZLG     145   CDFP     146   CFME     
+151   CFOM     152   CHZV     153   CILA     154   CMYP     155   CPZN     156   CUUE     
+161   CWZX     162   DCAK     163   DCAV     164   DNYC     165   DNZY     166   DQER     
+211   DQTP     212   DRAF     213   EBDX     214   ECTG     215   EEIA     216   EHUE     
+221   EJUS     222   ELLN     223   EOBM     224   EODM     225   ERTZ     226   ERUH     
+231   EZET     232   FBFK     233   FHSD     234   FJYC     235   FPOL     236   FQHT     
+241   FQIC     242   FSZX     243   FTUF     244   FVFV     245   FXIS     246   GBSE     
+251   GERZ     252   GGSN     253   GJJZ     254   GMVV     255   GRYD     256   GUUB     
+261   GZFK     262   GZHV     263   HANT     264   HAVA     265   HBBA     266   HCKX     
+311   HDCB     312   HEHR     313   HGQK     314   HLEW     315   HOJK     316   HOPW     
+321   HRQT     322   HUXL     323   HZSZ     324   IACQ     325   IFPM     326   IGZE     
+331   IHNU     332   IQRO     333   ITYV     334   IVDE     335   IXJM     336   JBWL     
+341   JCEP     342   JDIK     343   JIEY     344   JKMI     345   JLSZ     346   JQIF     
+351   JVFH     352   JXWT     353   KIAP     354   KJBN     355   KOBA     356   KOGB     
+361   KSOS     362   KUCB     363   KZAO     364   LAKC     365   LBDB     366   LBDP     
+411   LJGX     412   LLSD     413   LPID     414   LPSD     415   LPVS     416   LPZZ     
+421   LREL     422   MBSG     423   MGPQ     424   MHVX     425   MIUW     426   MMCC     
+431   MNXY     432   MOMW     433   MWXI     434   MXYL     435   NAXC     436   NCZF     
+441   NDPF     442   NLBV     443   NWTP     444   NYGC     445   OAXK     446   OCSI     
+451   OFJD     452   OJWZ     453   OKIC     454   ONWY     455   OTPY     456   OVUA     
+461   OZDF     462   OZXN     463   PAHA     464   PBYX     465   PCVR     466   PKBK     
+511   PMUD     512   PNXW     513   POUC     514   PQAU     515   PTUJ     516   PWBH     
+521   PYNG     522   QEYG     523   QJFJ     524   QKEX     525   RBLE     526   RDFH     
+531   REJH     532   RFQR     533   SGUO     534   SHID     535   SHLC     536   SLXC     
+541   SODG     542   SQGN     543   SRYG     544   SSDS     545   TCKS     546   TEXV     
+551   TFEU     552   THOC     553   TIPB     554   TJPS     555   TJXS     556   TRLO     
+561   TSAB     562   TTTM     563   TXII     564   TYXR     565   UBYU     566   ULRW     
+611   UTKN     612   UYYU     613   VDQA     614   VEWE     615   VKUE     616   VLGD     
+621   VNCG     622   VOEP     623   VPLG     624   VTMB     625   WBJI     626   WFAF     
+631   WFHC     632   WFWI     633   WPID     634   WTEL     635   WUTJ     636   WZWY     
+641   WZXO     642   XGKM     643   XORY     644   XQWK     645   XRQW     646   XUYE     
+651   XXRJ     652   XYNO     653   XZLO     654   YHNX     655   YJRQ     656   YKJE     
+661   YMXM     662   YPNR     663   YWPL     664   YZFJ     665   YZXH     666   YZZZ     
+
+                                     TABLE C
+-------------------------------------------------------------------------------------
+111   ACGF     112   AEHW     113   AMWL     114   ASHI     115   ASUT     116   AUHE     
+121   BFQG     122   BMBW     123   CBMF     124   CGQG     125   CHKS     126   CLYK     
+131   COHF     132   COLI     133   CVQZ     134   CXPM     135   DBZU     136   DDQU     
+141   DGMC     142   DHCJ     143   DIGV     144   DMXZ     145   DRXS     146   DZWM     
+151   EDYJ     152   EHDL     153   EKWF     154   EOHI     155   EOKS     156   EPEA     
+161   EPOW     162   EPWZ     163   EQWK     164   ERIL     165   ETHY     166   EUGE     
+211   EVZM     212   EYZB     213   FKIO     214   FOJF     215   FXKW     216   FZKJ     
+221   GAFB     222   GEZA     223   GMAN     224   GPCI     225   GWHI     226   GXTX     
+231   GZGZ     232   HEFA     233   HRMA     234   HUSG     235   HWXF     236   IANR     
+241   IASH     242   IDTI     243   IGOC     244   IIFR     245   ILOG     246   IPPG     
+251   ISSD     252   IWKC     253   IYFX     254   JFEG     255   JFKW     256   JKAE     
+261   JKVO     262   JLYU     263   JLZY     264   JNNZ     265   JRXK     266   JVOD     
+311   JYXP     312   KDDI     313   KFOU     314   KKVO     315   KMDK     316   KOPJ     
+321   KPFZ     322   KRSI     323   KTHY     324   KVNK     325   KWWE     326   KXGI     
+331   LIGS     332   LMPO     333   LMTW     334   LQGF     335   LRID     336   LSAX     
+341   MCAI     342   MLAY     343   MQUI     344   MSGX     345   MTMU     346   MXPQ     
+351   NJKB     352   NTXD     353   NTYT     354   OAOL     355   ODFQ     356   OIJS     
+361   OMEN     362   OQOM     363   OSCU     364   OSTS     365   OXPY     366   PBYC     
+411   PCTE     412   PEQV     413   PJJC     414   PNJT     415   PTMT     416   PXER     
+421   PYZU     422   QARB     423   QETO     424   QMXA     425   QNVX     426   QQMS     
+431   QRSG     432   QSBA     433   QWNX     434   RBDN     435   RJBE     436   RPFW     
+441   RPJD     442   RPXV     443   RTMV     444   RUKR     445   RVUQ     446   RWDR     
+451   RXPF     452   RXXG     453   SAPA     454   SASA     455   SBVL     456   SDUV     
+461   SDVI     462   SJQI     463   SLAQ     464   SOBW     465   SOIZ     466   SOYY     
+511   SPTX     512   SRJG     513   STKR     514   SWSN     515   TAWA     516   TJSO     
+521   TOGK     522   TOXA     523   TPYH     524   TURT     525   TWKD     526   TXAA     
+531   TYSR     532   UAGP     533   UDDU     534   UGLD     535   UGSM     536   UHHS     
+541   UIIK     542   UKVM     543   UPRH     544   UQCT     545   UTZO     546   UYAF     
+551   VAJL     552   VBND     553   VHFZ     554   VLZM     555   VOCC     556   VQHK     
+561   VQPY     562   VQXV     563   VSYH     564   VTFU     565   WCQV     566   WEPW     
+611   WGPC     612   WGWN     613   WHAD     614   WMSQ     615   WOAV     616   WOVX     
+621   WPBC     622   WRQP     623   XATL     624   XBZQ     625   XCAR     626   XCHI     
+631   XHOQ     632   XMPW     633   XOQE     634   XPYK     635   XVKG     636   XWBM     
+641   YAAX     642   YADQ     643   YBRL     644   YING     645   YJSF     646   YLEH     
+651   YOWV     652   YSHE     653   YUCN     654   YXIQ     655   YZDR     656   ZCRL     
+661   ZDKQ     662   ZEJS     663   ZIHL     664   ZNAV     665   ZTYE     666   ZZHD     
+
+                                     TABLE D
+-------------------------------------------------------------------------------------
+111   AFMF     112   ALLF     113   ANUT     114   AORV     115   ATBY     116   BCUJ     
+121   BFDZ     122   BGQM     123   BJMT     124   BTFC     125   BUJV     126   BWMQ     
+131   BXKH     132   CBQN     133   CNYE     134   CSIX     135   CSYY     136   CTYV     
+141   CVRC     142   CXKG     143   CYHJ     144   DAEM     145   DCUP     146   DDEN     
+151   DGIW     152   DIPH     153   DLVE     154   DRUF     155   DUEZ     156   DUQB     
+161   DWPE     162   DXGW     163   DYGA     164   DZCB     165   EDBQ     166   EIJH     
+211   EJLW     212   EQGS     213   EWCD     214   EWLZ     215   EXOL     216   EYLO     
+221   FAII     222   FATG     223   FBNK     224   FBSS     225   FFAG     226   FFGS     
+231   FMHY     232   FPPM     233   FQCQ     234   FRLN     235   FSYW     236   GKNS     
+241   GQNC     242   GRGU     243   GRXE     244   GXHH     245   HBVK     246   HFHO     
+251   HGWJ     252   HGZA     253   HINK     254   HLLG     255   HLWE     256   HMMR     
+261   HVLB     262   IBNI     263   IERE     264   IKZZ     265   IMTX     266   INTC     
+311   IOMR     312   IYUT     313   JGUE     314   JOXO     315   JPSW     316   JSSO     
+321   JWPM     322   JYOH     323   KAWL     324   KBED     325   KGJD     326   KHKY     
+331   KKMW     332   KNTQ     333   KOEJ     334   KQNS     335   KQSV     336   KVED     
+341   KYRR     342   LCFF     343   LCWB     344   LFSS     345   LJQL     346   LKLU     
+351   LLAH     352   LMDG     353   LMGX     354   LOBS     355   LRTO     356   LTBH     
+361   LVYK     362   MDMX     363   MGOB     364   MHCQ     365   MHSG     366   MICR     
+411   MQVB     412   MTKH     413   MVQA     414   MXRZ     415   NAJB     416   NBRK     
+421   NEAI     422   NFEP     423   NUAR     424   NWHB     425   NYXI     426   NZLB     
+431   ODFH     432   OFOY     433   OHOK     434   OPBV     435   OPJA     436   OPLO     
+441   PAAD     442   PKAI     443   PMZZ     444   POHM     445   POIU     446   PQPE     
+451   PSFE     452   PTPB     453   PTPE     454   PWDT     455   QBVT     456   QCBA     
+461   QDZL     462   QFPE     463   QJTQ     464   QQZJ     465   RGLQ     466   RQGO     
+511   RTKZ     512   RTWF     513   RVXU     514   RXAE     515   RYEB     516   RYKO     
+521   RZQE     522   SEGI     523   SQYS     524   SQZI     525   SVKT     526   SYJI     
+531   TCTS     532   TEXX     533   THGR     534   TJJA     535   TSFG     536   TSIC     
+541   TTAF     542   TUFL     543   TUMT     544   TZKW     545   UFGP     546   UFUE     
+551   UKUP     552   ULQD     553   UMLV     554   UOWM     555   UPUC     556   UWSG     
+561   VMAQ     562   VMIF     563   VOAM     564   VPKO     565   VTVY     566   WALY     
+611   WDVL     612   WIXJ     613   WKGJ     614   WPYG     615   WQBX     616   WQJG     
+621   WQTP     622   WTQX     623   WVMK     624   WYQP     625   WZHH     626   XAGD     
+631   XDKV     632   XEMV     633   XFYP     634   XGNX     635   XJTW     636   XKGU     
+641   XONG     642   XSEW     643   XXUW     644   YIII     645   YIJI     646   YKNT     
+651   YOTQ     652   YRTZ     653   YUJV     654   YVZD     655   YZZL     656   ZCEB     
+661   ZCIO     662   ZIMU     663   ZJIF     664   ZPBZ     665   ZUUG     666   ZVYM     
+
+                                     TABLE E
+-------------------------------------------------------------------------------------
+111   ACQZ     112   AESO     113   AMUE     114   AOPL     115   APCM     116   ARMN     
+121   ASTJ     122   AYXI     123   BFGA     124   BLXW     125   BMAD     126   BNXT     
+131   BXVA     132   BYSJ     133   BZTP     134   CAAY     135   CBBX     136   CBJH     
+141   CDPX     142   CDRQ     143   CJPM     144   CNUQ     145   CQFE     146   CQZF     
+151   CVXN     152   CZVK     153   DAAH     154   DARF     155   DKSD     156   DOON     
+161   DOOR     162   DSWC     163   DUOE     164   DWBN     165   DZFN     166   EAAX     
+211   EBXN     212   ECBO     213   ECNX     214   EHMM     215   EJOF     216   EKHV     
+221   ELUM     222   EPDU     223   FAUH     224   FHUP     225   FIYW     226   FJHZ     
+231   FKXK     232   FPFK     233   FRKZ     234   FVIA     235   GDWZ     236   GGWC     
+241   GHVP     242   GLQW     243   GPSZ     244   GQYE     245   GVOB     246   GYMW     
+251   GZAJ     252   HAPT     253   HEKG     254   HHWL     255   HHXK     256   HJDJ     
+261   HOKY     262   HOPQ     263   HOZI     264   HQYD     265   HUEU     266   HWCV     
+311   HWXB     312   HZQY     313   IADT     314   IARU     315   IASE     316   IGCJ     
+321   IJHJ     322   IJXN     323   IVXJ     324   IWDT     325   IZWI     326   JGFB     
+331   JGKG     332   JHKV     333   JOZB     334   JSIF     335   JVBB     336   JZLA     
+341   KFIN     342   KIXT     343   KKRY     344   KQTJ     345   KTRS     346   KUDL     
+351   KUTQ     352   KWJV     353   KXOE     354   KXUN     355   KYXH     356   LBWF     
+361   LEEW     362   LHGC     363   LJKJ     364   LNDZ     365   LNSI     366   LVOZ     
+411   LYBF     412   LYXT     413   MGDR     414   MJHW     415   MLRP     416   MPVW     
+421   MRKC     422   MTSC     423   MYGJ     424   NBNG     425   NCHR     426   NDYZ     
+431   NKKJ     432   NLUI     433   NLVG     434   NONW     435   NPSI     436   NXGU     
+441   ODHJ     442   ODND     443   OGLE     444   OJKB     445   OQRZ     446   OSLC     
+451   OVMX     452   PBAB     453   PEYH     454   PFOV     455   PRTO     456   PUZP     
+461   PYCN     462   QDOH     463   QEWS     464   QFTB     465   QPEI     466   QRUG     
+511   QYLA     512   RAGZ     513   RAPJ     514   RDOS     515   REVE     516   RFKI     
+521   RHQR     522   RLVH     523   RQFX     524   RRGD     525   RTYM     526   RZHV     
+531   SCFF     532   SEZM     533   SIRR     534   SRQU     535   SVHL     536   TBHJ     
+541   TGUT     542   TKZS     543   TMTS     544   TPJX     545   TRUI     546   TYRC     
+551   UADD     552   UFZS     553   UIDR     554   ULTE     555   UNJS     556   UWLW     
+561   UYGD     562   UZGX     563   VBGZ     564   VHZO     565   VKHI     566   VKNS     
+611   VLUA     612   VPIZ     613   VPMB     614   VQYM     615   VYTL     616   VZLA     
+621   WBHN     622   WDMC     623   WNYY     624   WWXG     625   XBPY     626   XCTJ     
+631   XKHU     632   XLGS     633   XMTX     634   XOOZ     635   XQMD     636   XSUI     
+641   XSZO     642   XTHB     643   XTKE     644   XVCM     645   XXRC     646   XZNG     
+651   YATR     652   YBDA     653   YBLX     654   YBVN     655   YIGG     656   YKJP     
+661   YTSR     662   YWHK     663   ZNWG     664   ZRKS     665   ZTIQ     666   ZZER     
+
+                                     TABLE F
+-------------------------------------------------------------------------------------
+111   AHKN     112   AKPO     113   ATPS     114   BAOY     115   BSSQ     116   BWQG     
+121   BZQL     122   CAHF     123   CDGI     124   CEME     125   CEQM     126   CHAX     
+131   CJUB     132   CLSI     133   CMFA     134   CTWE     135   CUGA     136   CXKI     
+141   CYCL     142   CZTD     143   DBOV     144   DGEE     145   DLST     146   DMIC     
+151   DOPP     152   DRAU     153   DZKV     154   DZMM     155   EAJD     156   EFLA     
+161   ELEW     162   ENDB     163   ETAG     164   EYMC     165   FDAH     166   FEBQ     
+211   FGOW     212   FIKN     213   FJJP     214   FKJF     215   FOYF     216   FUNY     
+221   GANE     222   GBYZ     223   GIQR     224   GIYU     225   GJYG     226   GLUV     
+231   GMYG     232   GNCS     233   GNFA     234   GPCS     235   GRIJ     236   HEDB     
+241   HFYU     242   HIHW     243   HJOH     244   HNBC     245   HOBC     246   HPXU     
+251   HRTP     252   HUMH     253   HUNR     254   HWMB     255   HXDT     256   HXSB     
+261   IBYT     262   IKRG     263   IPUS     264   IUAZ     265   IVAC     266   JAQT     
+311   JJFT     312   JMDZ     313   JTDN     314   JVHB     315   KEON     316   KEYG     
+321   KGGV     322   KOTO     323   KTFC     324   KUMS     325   KYRL     326   LAIT     
+331   LDAD     332   LQGI     333   LUXM     334   LVRI     335   LXHZ     336   LZVI     
+341   MDNE     342   MDPZ     343   MFEP     344   MIIC     345   MJOH     346   MKDC     
+351   MPQY     352   MQSB     353   MUUP     354   NAUX     355   NFBO     356   NHGP     
+361   NHPI     362   NOYS     363   NQAJ     364   NVCM     365   OAZS     366   OEAA     
+411   OEIP     412   OLSH     413   OOOE     414   OUJM     415   OWII     416   OXSV     
+421   PAGK     422   PBXB     423   PCAP     424   PEVE     425   PEZY     426   PIAS     
+431   PIBS     432   PJJO     433   PSLZ     434   PVQS     435   PYNY     436   QAAA     
+441   QCIQ     442   QRJN     443   QUIA     444   QWJV     445   QWRD     446   QYJR     
+451   RFUJ     452   RGDH     453   RPRW     454   RUQR     455   RUVJ     456   RVAF     
+461   SANO     462   SCVG     463   SFCH     464   SGGG     465   SIXO     466   SKWS     
+511   SODV     512   SPVC     513   SRIQ     514   STVY     515   SYOZ     516   SYTR     
+521   SZXT     522   TBRF     523   TGPE     524   TPYW     525   TSBL     526   TUGL     
+531   UBBO     532   UDQS     533   UDYQ     534   UFJW     535   UGSP     536   UITO     
+541   ULQW     542   UMHS     543   UTXD     544   UVOB     545   UXBO     546   UYXF     
+551   UZUE     552   VCKA     553   VCRA     554   VDQO     555   VPCM     556   VTOP     
+561   WCHA     562   WEHY     563   WGBN     564   WGXR     565   WHVF     566   WIXA     
+611   WKJQ     612   WKLT     613   WMZU     614   WOVA     615   WRJX     616   WTAR     
+621   WUIJ     622   XEOY     623   XIOL     624   XPDF     625   XSJN     626   XXSG     
+631   XZCK     632   XZTF     633   YAGC     634   YAZA     635   YFRO     636   YFZR     
+641   YLFX     642   YNQX     643   YTHB     644   YVWV     645   YYWH     646   YYXC     
+651   ZAYB     652   ZERT     653   ZFML     654   ZFTA     655   ZIIJ     656   ZLAX     
+661   ZMYX     662   ZQTN     663   ZSKP     664   ZSQU     665   ZWFD     666   ZYUL     
+
+                                     TABLE G
+-------------------------------------------------------------------------------------
+111   ANXX     112   ARNE     113   ASSO     114   AWRT     115   AYZS     116   BCFK     
+121   BDGH     122   BEBU     123   BPVM     124   BQPR     125   BSIU     126   BUBR     
+131   CIIL     132   CKGT     133   CMSS     134   CNIJ     135   CQVN     136   CTUZ     
+141   CVTK     142   CWRV     143   DAJB     144   DBOW     145   DFVQ     146   DHKK     
+151   DUZB     152   DVKT     153   DVVG     154   DWER     155   DZHS     156   EARH     
+161   EDTA     162   EEJI     163   EEQH     164   EIOB     165   EJLR     166   EMDC     
+211   ENUB     212   EOMB     213   EOOF     214   EPHG     215   FBOC     216   FIHA     
+221   FKUJ     222   FPCB     223   FSSQ     224   FWCX     225   FWWD     226   GGLH     
+231   GGMN     232   GIIH     233   GKST     234   GPPH     235   GRKX     236   GROP     
+241   GTIG     242   GUJQ     243   GYXO     244   HCYN     245   HHMD     246   HLXX     
+251   HNOV     252   HZLS     253   IECF     254   IEKU     255   IGEQ     256   IHRC     
+261   IIVF     262   IKJA     263   IOXT     264   IXAZ     265   IYKP     266   IYLS     
+311   JHJQ     312   JIJY     313   JNGR     314   JOLK     315   JZNH     316   KEWA     
+321   KGCH     322   KGNJ     323   KIVC     324   KLYY     325   KMEH     326   KONV     
+331   KRMG     332   KUZR     333   KYPS     334   LAOT     335   LERG     336   LGGZ     
+341   LIEO     342   LKTC     343   LLYY     344   LRVK     345   LUAY     346   LUNY     
+351   LXNJ     352   MCXH     353   MHMN     354   MMGG     355   MPEN     356   MPSV     
+361   MSXS     362   MTLZ     363   MWCP     364   MZRT     365   NBVB     366   NHHU     
+411   NHSL     412   NKBK     413   NLCK     414   NNAQ     415   NQKL     416   NSJN     
+421   NYMQ     422   OCPH     423   OFPP     424   OHAW     425   OKQF     426   OLUC     
+431   OTJV     432   OXLG     433   PBPD     434   PBVK     435   PIAX     436   PJBX     
+441   PMBV     442   PSIE     443   PZUH     444   PZYX     445   QBMX     446   QBRM     
+451   QPAH     452   RAGX     453   RBIJ     454   RDEE     455   REJI     456   RIGL     
+461   RWVE     462   SBLG     463   SFEF     464   SHCP     465   SIUJ     466   SKXT     
+511   SOHT     512   SVVM     513   TBZC     514   TCZV     515   TDCN     516   THNF     
+521   THTE     522   TKND     523   TKWA     524   TPSL     525   TRDG     526   TUWM     
+531   TVXF     532   UAPQ     533   UBUS     534   UEEM     535   UESY     536   UFET     
+541   ULBX     542   UUGI     543   UXRV     544   UXTY     545   UZKI     546   VHOF     
+551   VIQS     552   VKHL     553   VKTL     554   VSZN     555   VTJN     556   VVOH     
+561   VVUC     562   VWVB     563   WBPG     564   WBZI     565   WCVX     566   WECN     
+611   WIPR     612   WMUA     613   WNRW     614   WQBI     615   WRYM     616   WTDL     
+621   WYAN     622   WYCH     623   XAIF     624   XFCK     625   XIJC     626   XMBF     
+631   XNKF     632   XPWT     633   XUAH     634   XZZU     635   YABZ     636   YBWB     
+641   YHUV     642   YJCG     643   YOWE     644   YTFU     645   YVQP     646   YVXK     
+651   YXZD     652   YZCQ     653   ZDLX     654   ZEYX     655   ZFDU     656   ZFWA     
+661   ZMUX     662   ZNJO     663   ZPAN     664   ZPUE     665   ZTND     666   ZYHO     
+
+                                     TABLE H
+-------------------------------------------------------------------------------------
+111   ABNB     112   AEZE     113   AGOQ     114   APJK     115   ARNI     116   ARQF     
+121   AZQF     122   BDZU     123   BEYJ     124   BFLY     125   BLFF     126   BPSC     
+131   BPZM     132   BRRF     133   BVDS     134   CADS     135   CBEB     136   CBXB     
+141   CEHE     142   CEPW     143   CJRL     144   CLHY     145   CNGT     146   CRWS     
+151   CSDP     152   DBRC     153   DDYU     154   DGBJ     155   DGVT     156   DGYE     
+161   DHQO     162   DRFR     163   DTAD     164   DXRE     165   DYOC     166   DZMR     
+211   DZOT     212   EBFL     213   ECKI     214   EFHA     215   EGUC     216   EJOJ     
+221   ELUE     222   EOQX     223   EPUX     224   EQSD     225   ETJG     226   ETJR     
+231   EVZN     232   FCIE     233   FDZW     234   FEIK     235   FFJD     236   FOGW     
+241   FONU     242   FPZU     243   FTJY     244   FTSC     245   FUTM     246   FWHT     
+251   GBYQ     252   GKQA     253   GLXS     254   GPSX     255   GQTP     256   GRDU     
+261   GXNA     262   HCRS     263   HCTA     264   HOHD     265   HRIF     266   HWWI     
+311   IAFI     312   IHPN     313   IJYI     314   IKGK     315   IQQM     316   IQVR     
+321   IXVC     322   IXYF     323   IYMW     324   IZYN     325   JHIQ     326   JHNY     
+331   JJYX     332   JKQJ     333   JMCL     334   JRUO     335   JUDW     336   JYRQ     
+341   JZDE     342   KDCL     343   KKUT     344   KNNO     345   KPUY     346   KPWA     
+351   KTPY     352   KVFG     353   KWIE     354   KWZG     355   LFFU     356   LKQD     
+361   LLQK     362   LLZB     363   LNVA     364   LVMU     365   LWWA     366   MAQE     
+411   MDZS     412   MEVV     413   MHOK     414   MIAL     415   MNXP     416   MVYB     
+421   MZAO     422   MZMX     423   NCXI     424   NEKO     425   NFSO     426   NIHS     
+431   NIYG     432   NLHJ     433   NMNA     434   NOKK     435   NPSW     436   NRYY     
+441   NSGX     442   NTPI     443   NUSZ     444   OAAE     445   OFIV     446   OFZX     
+451   OMOW     452   OPMY     453   OWSO     454   PBDW     455   PFZC     456   PIHW     
+461   PJJP     462   POOA     463   PQBW     464   PQIG     465   PRMT     466   PTQP     
+511   PXGE     512   QBML     513   QEFT     514   QEZP     515   QFNJ     516   QGOX     
+521   QMIJ     522   QNGE     523   QOTE     524   QQAC     525   QQMC     526   QRKF     
+531   QXYQ     532   QYYM     533   QZTD     534   RFWN     535   RGGL     536   RJMF     
+541   RKXN     542   RTZM     543   RWJB     544   SDMD     545   SEDP     546   SMKA     
+551   STNM     552   SWNM     553   TATN     554   TEBR     555   THWI     556   TJNW     
+561   TVRW     562   TXUU     563   UCQH     564   UGDG     565   ULZD     566   UOPL     
+611   URCZ     612   UXHQ     613   VAHU     614   VBTD     615   VHPV     616   VINX     
+621   VKLN     622   VOYO     623   VYQR     624   WAHC     625   WBUH     626   WEIQ     
+631   WFAH     632   WGGL     633   WOKO     634   WPKU     635   WUAZ     636   WXSV     
+641   XESI     642   XHFD     643   XJMK     644   XNVL     645   XWXK     646   YANY     
+651   YAPJ     652   YHZD     653   YIXW     654   YNGE     655   YPAD     656   YPLI     
+661   YWXN     662   YYFD     663   ZAIR     664   ZJUJ     665   ZODP     666   ZTGO     
+
+                                     TABLE J
+-------------------------------------------------------------------------------------
+111   AAXY     112   ABGG     113   ABOT     114   ACMP     115   AKKI     116   ANLG     
+121   ANRE     122   ASHP     123   ATFK     124   AUYK     125   AVXU     126   AXRI     
+131   AZRM     132   BEXO     133   BGMZ     134   BJNK     135   BLBC     136   BQEY     
+141   BTQU     142   BTWB     143   BWFZ     144   BWJU     145   CIJD     146   CJDS     
+151   CMPY     152   COUN     153   CPOM     154   CRHG     155   CTRJ     156   CVIJ     
+161   DIHF     162   DJOQ     163   DOPI     164   DPZZ     165   DUJZ     166   DYCC     
+211   EATW     212   EDMN     213   EDRL     214   EEGM     215   EGUM     216   EICB     
+221   EIGS     222   ELUY     223   ENMQ     224   EOOH     225   ERVB     226   FANN     
+231   FEDX     232   FFJQ     233   FGPW     234   FIFP     235   FIZO     236   FJGE     
+241   FKJN     242   FPNR     243   FUDG     244   FUEA     245   GAHK     246   GASR     
+251   GBFZ     252   GBMA     253   GCQV     254   GDDS     255   GIXX     256   GJWO     
+261   GQZI     262   GZMK     263   HAEM     264   HBDF     265   HCZO     266   HHZK     
+311   HLBK     312   HLLR     313   HRSF     314   HTAU     315   HUBQ     316   HVZW     
+321   HZMR     322   HZYU     323   IAXI     324   IFAS     325   IGZE     326   IMYI     
+331   INFT     332   ISDY     333   IYFD     334   JCRG     335   JGVR     336   JLQL     
+341   JMFJ     342   JMZO     343   JUDH     344   JULM     345   KFYB     346   KILX     
+351   KOVP     352   LCGI     353   LDDF     354   LFHX     355   LJGX     356   LPDF     
+361   LTRZ     362   LURL     363   MCCE     364   MSFI     365   MUWM     366   MZFX     
+411   NBAM     412   NBXG     413   NEWD     414   NGNA     415   NKDL     416   NRLS     
+421   NUDF     422   OBXH     423   ODEG     424   ODJL     425   OFAW     426   OGQX     
+431   OHGQ     432   OJZG     433   OOMM     434   OOWF     435   OQLB     436   PBXV     
+441   PIWB     442   PMTG     443   PPEO     444   PSYD     445   PVNE     446   QBHW     
+451   QBOI     452   QLAB     453   QTRZ     454   QXTI     455   QXVW     456   QZHY     
+461   RIGX     462   RSLE     463   RSZE     464   RTSE     465   RYHM     466   RYKJ     
+511   SEGN     512   SGJJ     513   SJEQ     514   SJGO     515   SLWH     516   SMTM     
+521   SSUQ     522   SVHL     523   SXTB     524   TGSI     525   TGWN     526   TJET     
+531   TREA     532   TRXM     533   TSBP     534   TWEZ     535   TWNW     536   UDBC     
+541   UDBT     542   UDMZ     543   UGIQ     544   UJPK     545   UNQZ     546   UOSS     
+551   URXL     552   VFXU     553   VKYP     554   VWKG     555   WDZA     556   WIPF     
+561   WIYH     562   WLVL     563   WMRD     564   WMTX     565   WOBO     566   WSUE     
+611   XCLA     612   XCNV     613   XFKL     614   XIDS     615   XJSL     616   XLGX     
+621   XNVD     622   XRCZ     623   XUKT     624   XZOV     625   YCAJ     626   YCCB     
+631   YDHT     632   YFHU     633   YKFP     634   YLBP     635   YRFW     636   YVFF     
+641   YXQD     642   YYVQ     643   ZCPT     644   ZGFT     645   ZHDK     646   ZISZ     
+651   ZIVS     652   ZJOX     653   ZKAT     654   ZKRH     655   ZKWM     656   ZPDF     
+661   ZPXH     662   ZQVG     663   ZWPF     664   ZXLL     665   ZYBP     666   ZZYS     
+
+                                     TABLE K
+-------------------------------------------------------------------------------------
+111   ABRX     112   ALBJ     113   AUFE     114   AUKW     115   AYBY     116   BFHI     
+121   BGWS     122   BGWV     123   BGZK     124   BMYL     125   BUKC     126   BYWG     
+131   CETU     132   CFAR     133   CJTK     134   COVN     135   COYY     136   CQTU     
+141   CRPX     142   CSUN     143   CTNK     144   CVNX     145   CVSM     146   CWVT     
+151   DJVU     152   DLSY     153   DNAX     154   DRGF     155   DRLK     156   DUND     
+161   EAVU     162   EGXG     163   EOGA     164   ESDJ     165   EXXX     166   EYAN     
+211   FEOK     212   FIXS     213   FLEV     214   FPQE     215   FSTW     216   FWBJ     
+221   FYDA     222   FYSO     223   GCIA     224   GHTF     225   GKBD     226   GKEZ     
+231   GNFD     232   GQJC     233   GQNH     234   HAJB     235   HERA     236   HHEC     
+241   HHLR     242   HJRF     243   HPUJ     244   HQSD     245   HUUQ     246   HZVK     
+251   IDIU     252   IHDC     253   ITAH     254   IXDU     255   IZNK     256   JCNY     
+261   JDEN     262   JFDP     263   JIQU     264   JPHB     265   JQHC     266   JSLY     
+311   JVWW     312   JXXY     313   KDOD     314   KFGM     315   KRTY     316   KRVQ     
+321   KTES     322   KWFP     323   KYWL     324   LHOG     325   LNIB     326   LOTH     
+331   LRIL     332   LSPP     333   LVFI     334   LXXM     335   LYZP     336   MASH     
+341   MHYJ     342   MJIP     343   MMOR     344   MOOU     345   MUTT     346   MVCQ     
+351   MXNQ     352   MXQZ     353   NAZI     354   NCBQ     355   NEKF     356   NEXR     
+361   NFCU     362   NKPS     363   NSNZ     364   NVLA     365   ODIO     366   ODWI     
+411   OHZD     412   OIGL     413   OJOB     414   OLJV     415   ORHC     416   ORMW     
+421   OUFH     422   OVYH     423   PCZD     424   PDFO     425   PDVN     426   PGQT     
+431   PIPV     432   PNYB     433   PPFW     434   PPJA     435   PRYX     436   PTCE     
+441   PUJI     442   PXPY     443   PZQJ     444   QCJP     445   QJFI     446   QJOL     
+451   QJPX     452   QNPU     453   QOXL     454   QXUH     455   QYAM     456   QZFL     
+461   REKS     462   RGET     463   RGIQ     464   RJAL     465   ROYV     466   RTXN     
+511   SAHU     512   SCHQ     513   SGRG     514   SGUV     515   SKEF     516   SLNJ     
+521   SOTW     522   SPQP     523   SRBF     524   SUOF     525   SWCZ     526   SXOC     
+531   SZQS     532   TGNZ     533   TIRJ     534   TLWC     535   TQUC     536   TSJW     
+541   TSOB     542   TTLF     543   TUHV     544   TVXK     545   TXVS     546   TYHA     
+551   TZNV     552   TZZT     553   UKPA     554   ULUS     555   ULUY     556   UMKV     
+561   UNVX     562   UOWT     563   UTPA     564   UTTW     565   UYSY     566   VFVY     
+611   VHDN     612   VJEQ     613   VQMN     614   VRKG     615   VTDL     616   VXWP     
+621   VYWA     622   WABH     623   WAUI     624   WBOG     625   WBTF     626   WDTG     
+631   WFJS     632   WHDX     633   WJIO     634   WNSY     635   WPMU     636   WPRN     
+641   WRJG     642   WTAO     643   WTFR     644   XAHV     645   XBID     646   XEJJ     
+651   XTBH     652   XYBK     653   YBLK     654   YBPR     655   YCEW     656   YFWE     
+661   YHWO     662   YLRB     663   YSNH     664   YXGC     665   ZDTE     666   ZOAL     
+
+                                     TABLE L
+-------------------------------------------------------------------------------------
+111   ADZW     112   AEHL     113   AHDY     114   AIKY     115   ATND     116   BBBG     
+121   BCPC     122   BDAD     123   BDXA     124   BILR     125   BLXG     126   BMCJ     
+131   BZPV     132   CQZK     133   CUSQ     134   CUUT     135   CXYP     136   CZXX     
+141   DAAS     142   DAWC     143   DCUE     144   DEKH     145   DFGH     146   DIKZ     
+151   DKLJ     152   DPDN     153   DPOD     154   DRVX     155   DVTU     156   DXNZ     
+161   EDWQ     162   EKWC     163   ELWZ     164   ERFR     165   ETHJ     166   ETNA     
+211   ETYT     212   EVFI     213   FCMG     214   FERE     215   FJGD     216   FMVO     
+221   FMYA     222   FNBB     223   FOOG     224   FRAO     225   FSBS     226   FTEU     
+231   FURT     232   FXCM     233   GBYM     234   GGYP     235   GIOT     236   GLAN     
+241   GRVN     242   GWNY     243   HAZV     244   HBXL     245   HIHG     246   HJGF     
+251   HJPO     252   HKAE     253   HLNX     254   HMCV     255   HMNU     256   HPWR     
+261   HSPV     262   HURI     263   HWSX     264   HXDB     265   HYDX     266   HZZX     
+311   IHEA     312   ILCU     313   JBJU     314   JOFH     315   JQXT     316   JYGM     
+321   JYKY     322   KESY     323   KFHD     324   KKCP     325   KKTK     326   KMLE     
+331   KMRS     332   KNHI     333   KZRD     334   LBTU     335   LHQV     336   LJHW     
+341   LKOZ     342   LMPV     343   LNTV     344   LPNE     345   LRIW     346   LTJX     
+351   LTVG     352   LWNM     353   MBKW     354   MQYR     355   MYMH     356   MYMS     
+361   MYSQ     362   NHUR     363   NOAB     364   NSAW     365   NTDP     366   NVCC     
+411   NWEG     412   NWTK     413   NZOG     414   ODQH     415   OJLS     416   OOEK     
+421   OPQT     422   OUFZ     423   OUZJ     424   OWZR     425   PEZA     426   PKIF     
+431   PMFS     432   PSOY     433   PVOX     434   PVSP     435   PXRW     436   QAVS     
+441   QDBX     442   QIDA     443   QMOE     444   QRXN     445   QSPW     446   QXKL     
+451   QYTJ     452   QZDL     453   RAXN     454   RBQT     455   RCPK     456   RKPU     
+461   ROLD     462   RUTG     463   SBSB     464   SDAD     465   SEWD     466   SHRP     
+511   SJYN     512   SLUD     513   SMGE     514   SWLD     515   SWRN     516   SZGP     
+521   TAHA     522   TAVK     523   TETB     524   TGFB     525   TIPN     526   TJMO     
+531   TTRE     532   UBPJ     533   UGUU     534   UMIQ     535   UNME     536   UPIF     
+541   UTKR     542   UZWR     543   VAGB     544   VJIB     545   VKPW     546   VKVC     
+551   VMBM     552   VNKU     553   VOSB     554   VREA     555   VTRJ     556   VVAF     
+561   WAUS     562   WEFN     563   WFTS     564   WIJA     565   WIMG     566   WIMN     
+611   WKOP     612   WLTJ     613   WNWD     614   WSRK     615   WSXB     616   WSZA     
+621   WUDG     622   WUSV     623   WYVC     624   XAXN     625   XCFM     626   XCUT     
+631   XDHQ     632   XDUL     633   XFWX     634   XHAC     635   XIHX     636   XOOG     
+641   XOOG     642   XQMS     643   XSNE     644   XVFK     645   XWFV     646   YADA     
+651   YAUS     652   YHPM     653   YKCA     654   YNFN     655   YYRU     656   ZEZC     
+661   ZFSL     662   ZKEO     663   ZUBS     664   ZUPK     665   ZXIW     666   ZYNW     
+
+                                     TABLE M
+-------------------------------------------------------------------------------------
+111   AAKT     112   ABEX     113   AFRY     114   AHRP     115   AKGD     116   ATVG     
+121   AYZO     122   BAYO     123   BEZE     124   BGGB     125   BHUW     126   BIJV     
+131   BIOC     132   BIZV     133   BLVU     134   BRNT     135   BRPC     136   BSYD     
+141   BULT     142   BYEN     143   CDPH     144   CGSL     145   CLPR     146   CPAN     
+151   CPTF     152   CQYV     153   CRAQ     154   CWIT     155   DIQC     156   DOTP     
+161   DTJS     162   DTRN     163   DXSQ     164   EDRP     165   EHTC     166   EQAR     
+211   EWIM     212   EYCA     213   EZVM     214   FEQD     215   FHRS     216   FIMX     
+221   FQDM     222   FTZD     223   FVUP     224   FVZW     225   FXTQ     226   FYTO     
+231   GAZO     232   GDCT     233   GDYY     234   GEDY     235   GIOG     236   GKLK     
+241   GLDF     242   GPXI     243   GQCF     244   GQZT     245   GXGE     246   HBKH     
+251   HCMZ     252   HDBY     253   HHQJ     254   HKKZ     255   HLYT     256   HUBB     
+261   HUJW     262   HVHU     263   HYHB     264   HYHD     265   IBXN     266   ICVE     
+311   IFHP     312   IGON     313   IKXA     314   INDQ     315   IVSV     316   JAHT     
+321   JEFJ     322   JFAT     323   JFTQ     324   JKOJ     325   JLNZ     326   JMZA     
+331   JQJK     332   JRFM     333   JSFY     334   JSKW     335   JTRW     336   JTWX     
+341   KALV     342   KBEM     343   KHQD     344   KJFE     345   KNOV     346   KWAN     
+351   KYTA     352   LADP     353   LANR     354   LSCO     355   LTRF     356   LXIO     
+361   LXJR     362   MBAV     363   MFFM     364   MGKX     365   MMLE     366   MOFW     
+411   MPJX     412   MQBO     413   MSEA     414   MXLC     415   NBEI     416   NENQ     
+421   NJOG     422   NPMJ     423   NRJP     424   NVGP     425   NXAP     426   NZOO     
+431   OGGG     432   OHMR     433   OLPT     434   OMOJ     435   OZKY     436   OZOM     
+441   PABX     442   PFMX     443   PJNE     444   PJNT     445   PJXA     446   PQHV     
+451   PQYN     452   PYGE     453   PZFH     454   QARI     455   QDNK     456   QERK     
+461   QGIS     462   QGRJ     463   QITB     464   QKPW     465   QPMU     466   QQHS     
+511   QTDH     512   QYXV     513   QZUL     514   RBCK     515   RDCE     516   RDXA     
+521   RGOO     522   RNUR     523   RPBZ     524   RQEW     525   RQUV     526   RTXY     
+531   RVAF     532   RXPL     533   RZBH     534   RZEN     535   SAGL     536   SQFW     
+541   STOT     542   TBQZ     543   TCRW     544   TFNH     545   TMLS     546   TPWO     
+551   TWNZ     552   TXUE     553   UCUH     554   UKDK     555   UPXT     556   UVDG     
+561   VASS     562   VBNB     563   VDJI     564   VLZJ     565   VUBU     566   VVWN     
+611   VWYH     612   WAYV     613   WCQS     614   WHDJ     615   WHLG     616   WPUE     
+621   WTWT     622   WUKS     623   WXFX     624   XBZG     625   XCFJ     626   XGSR     
+631   XJTK     632   XNHS     633   XPBO     634   XUIW     635   XXTK     636   YAGH     
+641   YICZ     642   YJRI     643   YLOB     644   YOHQ     645   YPHN     646   YPOD     
+651   YQOU     652   ZAXW     653   ZCPN     654   ZEBT     655   ZGQL     656   ZHBN     
+661   ZMXS     662   ZSAK     663   ZSIO     664   ZVPQ     665   ZYEM     666   ZYYO     
+

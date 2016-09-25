@@ -1,0 +1,37 @@
+
+ GEHEIM!                                    Test                                    Jun 2016
+
+----+---+-----------------------------+--------------+-------------------------------+------
+Tag |UKW|         Walzenlage          | Ringstellung |      Steckerverbindungen      | Grund
+----+---+-----------------------------+--------------+-------------------------------+------
+ 30 | C | Beta   VI     II     III    | 24 18 19 23  | AI BK CQ EH FU GN MO PR ST XZ | WUFA
+ 29 | C | Gamma  IV     VI     III    | 03 22 23 24  | AF DT GS HM JZ KN LP QR VX WY | MYYT
+ 28 | C | Gamma  VI     V      VIII   | 09 15 18 09  | BG CF EX HO IQ JT KZ LM UV WY | RWRT
+ 27 | B | Beta   III    I      VIII   | 24 06 01 04  | AX DQ EM FY HO IV JT KP LZ UW | DDJD
+ 26 | C | Gamma  V      I      IV     | 21 10 02 07  | AH BL EU FY GI JS KP NW OX QV | YYWQ
+ 25 | B | Beta   IV     VIII   I      | 14 04 17 24  | AU CH EI FT GZ JL KW MP NS QR | QKMT
+ 24 | B | Gamma  I      V      VIII   | 13 19 14 17  | AJ BV CG EH IR KM LN OZ TW XY | DFTY
+ 23 | B | Beta   II     V      IV     | 23 03 11 15  | AO DM FS GQ HT IK JP LZ RW UX | BVGF
+ 22 | B | Gamma  III    V      VI     | 07 25 08 04  | AM BT CH DI EO FQ GZ KW LU PY | HWUU
+ 21 | C | Beta   I      II     VI     | 22 08 12 14  | AT BV CH DE IN JP KQ LS MR OY | SRPE
+ 20 | C | Gamma  II     V      VIII   | 21 22 14 11  | BO CD FH GK IX JU LY NT PR QZ | HVKC
+ 19 | C | Gamma  VII    V      IV     | 22 07 06 15  | AG BW CZ DY EH FS IQ KO LU NR | SLJL
+ 18 | C | Gamma  VII    IV     II     | 26 25 26 18  | AN BD ER FJ GL HS IZ OW PQ TX | FEXY
+ 17 | C | Beta   IV     II     III    | 12 12 07 20  | AD CV EW FG HI MY NR QS TU XZ | RNBL
+ 16 | C | Beta   VII    I      II     | 04 08 07 11  | AU BT DX EO FG HQ IN KY LM RS | HMXG
+ 15 | C | Gamma  II     I      V      | 10 08 12 08  | AK BJ CL DM ET FP HU NR SZ XY | EASW
+ 14 | C | Gamma  VIII   V      VI     | 23 04 12 18  | BS DX GM HO IK JW LR NZ PU QY | PLMG
+ 13 | C | Gamma  VIII   V      II     | 12 16 23 02  | AK BF CH DJ IM LV NX OT QW RU | JPLG
+ 12 | C | Beta   VII    III    VI     | 19 14 06 24  | BN CX HQ IL JK MZ OU PY SV TW | ISJU
+ 11 | C | Gamma  V      VIII   VII    | 09 10 20 11  | AV BW CY EU FH GZ JX KN MQ OS | AJBS
+ 10 | C | Beta   VIII   V      VII    | 04 03 11 12  | AX BV CO DM FR GK HI JW NY TZ | VITX
+ 09 | B | Beta   III    I      V      | 22 11 08 02  | AH BN DQ IX KS MR OP TU VZ WY | YHOU
+ 08 | B | Gamma  II     IV     VIII   | 09 05 16 05  | BI CU DG EX FT HY JQ KW LO NP | VING
+ 07 | B | Beta   IV     VIII   VII    | 23 24 02 20  | AG BZ CU DQ ER FI HS MP NV TY | UIAH
+ 06 | B | Gamma  VIII   II     VI     | 20 09 18 23  | AM BD EZ HS IX KT LV PW QY RU | DOMG
+ 05 | C | Gamma  II     VII    VI     | 05 04 09 01  | AN BU DT EZ HL IM JS KQ OY WX | ZCCP
+ 04 | B | Gamma  II     VI     III    | 24 09 14 17  | AZ CY DE FI GU HQ JV KM OR PW | TQQZ
+ 03 | B | Gamma  VI     III    VII    | 19 06 21 03  | AY BN DL EK FZ GJ MR OU PS WX | DGLX
+ 02 | C | Gamma  VIII   VII    II     | 05 16 08 16  | AO CS FG IX JT KP LR MV QU YZ | KFLV
+ 01 | C | Gamma  VI     VII    IV     | 13 03 20 21  | BU CG DR EF IW KS OV PQ TZ XY | HUYI
+----+---+-----------------------------+--------------+-------------------------------+------

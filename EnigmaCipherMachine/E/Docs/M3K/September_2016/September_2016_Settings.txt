@@ -1,0 +1,37 @@
+
+ GEHEIM!                                    Test                                    Sep 2016
+
+----+---+-----------------------------+--------------+-------------------------------+------
+Tag |UKW|         Walzenlage          | Ringstellung |      Steckerverbindungen      | Grund
+----+---+-----------------------------+--------------+-------------------------------+------
+ 30 | B | I      II     VII           | 25 17 11     | BO CQ EF GN HU IK JS MV PZ WX |  RBR
+ 29 | C | VIII   V      VII           | 26 21 05     | AX BJ CV EQ GT HZ IK LY MS PU |  IXI
+ 28 | C | II     I      VII           | 04 25 07     | AO BX CQ DI EM GL JR KT NU SV |  MHR
+ 27 | C | I      II     III           | 19 24 12     | AJ BD EU FH GX IP LZ MQ OR TY |  GYL
+ 26 | C | VI     VII    II            | 19 07 20     | BT CI DH FN JW LP OR QY SU VX |  PHT
+ 25 | B | III    II     VIII          | 14 02 03     | AD BQ EG FI LY MO NR PV SX TW |  YVW
+ 24 | C | VII    III    VI            | 11 22 21     | AI BD CP EF GN HY JM KR OU TX |  HSS
+ 23 | B | II     III    VII           | 11 16 21     | AG BF CV DH EJ KW LZ MY NT RX |  VDL
+ 22 | B | VI     III    V             | 20 17 10     | AF BU EW GM JR KN LO PS TZ VX |  PWH
+ 21 | B | II     I      III           | 06 02 21     | BY CR DV EM FU IQ JZ KO LT NX |  QHC
+ 20 | B | II     IV     I             | 24 11 20     | AF BK CE DU GV HP LZ MS OY QR |  UGY
+ 19 | C | I      V      VI            | 09 17 23     | AM BZ CF DW HP JV KQ LU NS RY |  HBI
+ 18 | C | VI     V      VII           | 16 26 19     | AI BQ CK DO EP GN JU LW RX TY |  FDN
+ 17 | B | V      II     I             | 19 18 25     | BF CU EZ GN HM IL JY KR OX QW |  GOU
+ 16 | C | I      VII    VIII          | 09 19 01     | AX BQ CE GY IM JV KT LO PW SZ |  FXF
+ 15 | B | II     VIII   VII           | 22 04 10     | AB DE FO GU IX JT LQ MW PS RY |  FKX
+ 14 | C | II     VI     I             | 26 11 19     | DH EN FT GU IM JO KX PS QV RZ |  VBE
+ 13 | B | V      III    IV            | 03 11 08     | AW CH DS EL FY GK IM JZ PU VX |  QYX
+ 12 | C | VII    II     VIII          | 18 14 11     | AY BV CU DL EG HM IR JZ KO NS |  FMX
+ 11 | C | VII    III    IV            | 03 18 04     | BK CE DM FW GZ HN IO LR QS TU |  WTM
+ 10 | C | VIII   VI     II            | 05 12 12     | AV CO EK FQ HN IW JX MP RT UY |  JNT
+ 09 | B | VII    V      VIII          | 03 02 16     | BR CU DN EG HM IY OZ PT QS VX |  PHJ
+ 08 | C | VI     V      VIII          | 20 07 18     | AV BX CT DU EO HZ JP KW MS QY |  CKH
+ 07 | C | VII    IV     II            | 15 05 17     | AE BR CF DY HW IX JP KS LZ MN |  CMB
+ 06 | C | VI     VII    IV            | 19 03 25     | AX CN DI ER JQ KY LV MW OT PU |  JPG
+ 05 | B | V      IV     VII           | 16 25 09     | AF BH CZ DS GK IP LX NT QV RW |  WZO
+ 04 | B | I      VII    IV            | 25 19 12     | BX CP DJ ER FV HN KW LU OS QT |  GGY
+ 03 | B | II     VI     VII           | 15 05 24     | AO BJ GH IY KS LU MZ NX PV QR |  RDA
+ 02 | C | VIII   III    VI            | 07 24 02     | AL CK DN EJ FV GO IW MZ RX TY |  KZG
+ 01 | C | I      VIII   II            | 01 14 15     | AW BY DU EZ FI GP JL KM QV RT |  RET
+----+---+-----------------------------+--------------+-------------------------------+------

@@ -83,6 +83,114 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Docs\M3K\April_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\August_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\December_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\February_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\January_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\July_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\June_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\March_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\May_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\November_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\October_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3K\September_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\April_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\August_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\December_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\February_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\January_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\July_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\June_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\March_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\May_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\November_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\October_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M3\September_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\April_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\August_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\December_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\February_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\January_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\July_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\June_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\March_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\May_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\November_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\October_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Docs\M4K\September_2016\Settings.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Docs\Settings.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -92,6 +200,105 @@
     <Content Include="Docs\Digraphs.txt" />
     <Content Include="Docs\July_2016_Settings.txt" />
     <Content Include="Docs\July_2016_Settings.xml" />
+    <Content Include="Docs\M3K\April_2016\April_2016_Settings.txt" />
+    <Content Include="Docs\M3K\April_2016\April_2016_Settings.xml" />
+    <Content Include="Docs\M3K\April_2016\Digraph_2016Apr.txt" />
+    <Content Include="Docs\M3K\August_2016\August_2016_Settings.txt" />
+    <Content Include="Docs\M3K\August_2016\August_2016_Settings.xml" />
+    <Content Include="Docs\M3K\August_2016\Digraph_2016Aug.txt" />
+    <Content Include="Docs\M3K\December_2016\December_2016_Settings.txt" />
+    <Content Include="Docs\M3K\December_2016\December_2016_Settings.xml" />
+    <Content Include="Docs\M3K\December_2016\Digraph_2016Dec.txt" />
+    <Content Include="Docs\M3K\February_2016\Digraph_2016Feb.txt" />
+    <Content Include="Docs\M3K\February_2016\February_2016_Settings.txt" />
+    <Content Include="Docs\M3K\February_2016\February_2016_Settings.xml" />
+    <Content Include="Docs\M3K\January_2016\Digraph_2016Jan.txt" />
+    <Content Include="Docs\M3K\January_2016\January_2016_Settings.txt" />
+    <Content Include="Docs\M3K\January_2016\January_2016_Settings.xml" />
+    <Content Include="Docs\M3K\July_2016\Digraph_2016Jul.txt" />
+    <Content Include="Docs\M3K\July_2016\July_2016_Settings.txt" />
+    <Content Include="Docs\M3K\July_2016\July_2016_Settings.xml" />
+    <Content Include="Docs\M3K\June_2016\Digraph_2016Jun.txt" />
+    <Content Include="Docs\M3K\June_2016\June_2016_Settings.txt" />
+    <Content Include="Docs\M3K\June_2016\June_2016_Settings.xml" />
+    <Content Include="Docs\M3K\KeySheet.txt" />
+    <Content Include="Docs\M3K\March_2016\Digraph_2016Mar.txt" />
+    <Content Include="Docs\M3K\March_2016\March_2016_Settings.txt" />
+    <Content Include="Docs\M3K\March_2016\March_2016_Settings.xml" />
+    <Content Include="Docs\M3K\May_2016\Digraph_2016May.txt" />
+    <Content Include="Docs\M3K\May_2016\May_2016_Settings.txt" />
+    <Content Include="Docs\M3K\May_2016\May_2016_Settings.xml" />
+    <Content Include="Docs\M3K\November_2016\Digraph_2016Nov.txt" />
+    <Content Include="Docs\M3K\November_2016\November_2016_Settings.txt" />
+    <Content Include="Docs\M3K\November_2016\November_2016_Settings.xml" />
+    <Content Include="Docs\M3K\October_2016\Digraph_2016Oct.txt" />
+    <Content Include="Docs\M3K\October_2016\October_2016_Settings.txt" />
+    <Content Include="Docs\M3K\October_2016\October_2016_Settings.xml" />
+    <Content Include="Docs\M3K\September_2016\Digraph_2016Sep.txt" />
+    <Content Include="Docs\M3K\September_2016\September_2016_Settings.txt" />
+    <Content Include="Docs\M3K\September_2016\September_2016_Settings.xml" />
+    <Content Include="Docs\M3\April_2016\April_2016_Settings.txt" />
+    <Content Include="Docs\M3\April_2016\April_2016_Settings.xml" />
+    <Content Include="Docs\M3\August_2016\August_2016_Settings.txt" />
+    <Content Include="Docs\M3\August_2016\August_2016_Settings.xml" />
+    <Content Include="Docs\M3\December_2016\December_2016_Settings.txt" />
+    <Content Include="Docs\M3\December_2016\December_2016_Settings.xml" />
+    <Content Include="Docs\M3\February_2016\February_2016_Settings.txt" />
+    <Content Include="Docs\M3\February_2016\February_2016_Settings.xml" />
+    <Content Include="Docs\M3\January_2016\January_2016_Settings.txt" />
+    <Content Include="Docs\M3\January_2016\January_2016_Settings.xml" />
+    <Content Include="Docs\M3\July_2016\July_2016_Settings.txt" />
+    <Content Include="Docs\M3\July_2016\July_2016_Settings.xml" />
+    <Content Include="Docs\M3\June_2016\June_2016_Settings.txt" />
+    <Content Include="Docs\M3\June_2016\June_2016_Settings.xml" />
+    <Content Include="Docs\M3\KeySheet.txt" />
+    <Content Include="Docs\M3\March_2016\March_2016_Settings.txt" />
+    <Content Include="Docs\M3\March_2016\March_2016_Settings.xml" />
+    <Content Include="Docs\M3\May_2016\May_2016_Settings.txt" />
+    <Content Include="Docs\M3\May_2016\May_2016_Settings.xml" />
+    <Content Include="Docs\M3\November_2016\November_2016_Settings.txt" />
+    <Content Include="Docs\M3\November_2016\November_2016_Settings.xml" />
+    <Content Include="Docs\M3\October_2016\October_2016_Settings.txt" />
+    <Content Include="Docs\M3\October_2016\October_2016_Settings.xml" />
+    <Content Include="Docs\M3\September_2016\September_2016_Settings.txt" />
+    <Content Include="Docs\M3\September_2016\September_2016_Settings.xml" />
+    <Content Include="Docs\M4K\April_2016\April_2016_Settings.txt" />
+    <Content Include="Docs\M4K\April_2016\April_2016_Settings.xml" />
+    <Content Include="Docs\M4K\April_2016\Digraph_2016Apr.txt" />
+    <Content Include="Docs\M4K\August_2016\August_2016_Settings.txt" />
+    <Content Include="Docs\M4K\August_2016\August_2016_Settings.xml" />
+    <Content Include="Docs\M4K\August_2016\Digraph_2016Aug.txt" />
+    <Content Include="Docs\M4K\December_2016\December_2016_Settings.txt" />
+    <Content Include="Docs\M4K\December_2016\December_2016_Settings.xml" />
+    <Content Include="Docs\M4K\December_2016\Digraph_2016Dec.txt" />
+    <Content Include="Docs\M4K\February_2016\Digraph_2016Feb.txt" />
+    <Content Include="Docs\M4K\February_2016\February_2016_Settings.txt" />
+    <Content Include="Docs\M4K\February_2016\February_2016_Settings.xml" />
+    <Content Include="Docs\M4K\January_2016\Digraph_2016Jan.txt" />
+    <Content Include="Docs\M4K\January_2016\January_2016_Settings.txt" />
+    <Content Include="Docs\M4K\January_2016\January_2016_Settings.xml" />
+    <Content Include="Docs\M4K\July_2016\Digraph_2016Jul.txt" />
+    <Content Include="Docs\M4K\July_2016\July_2016_Settings.txt" />
+    <Content Include="Docs\M4K\July_2016\July_2016_Settings.xml" />
+    <Content Include="Docs\M4K\June_2016\Digraph_2016Jun.txt" />
+    <Content Include="Docs\M4K\June_2016\June_2016_Settings.txt" />
+    <Content Include="Docs\M4K\June_2016\June_2016_Settings.xml" />
+    <Content Include="Docs\M4K\KeySheet.txt" />
+    <Content Include="Docs\M4K\March_2016\Digraph_2016Mar.txt" />
+    <Content Include="Docs\M4K\March_2016\March_2016_Settings.txt" />
+    <Content Include="Docs\M4K\March_2016\March_2016_Settings.xml" />
+    <Content Include="Docs\M4K\May_2016\Digraph_2016May.txt" />
+    <Content Include="Docs\M4K\May_2016\May_2016_Settings.txt" />
+    <Content Include="Docs\M4K\May_2016\May_2016_Settings.xml" />
+    <Content Include="Docs\M4K\November_2016\Digraph_2016Nov.txt" />
+    <Content Include="Docs\M4K\November_2016\November_2016_Settings.txt" />
+    <Content Include="Docs\M4K\November_2016\November_2016_Settings.xml" />
+    <Content Include="Docs\M4K\October_2016\Digraph_2016Oct.txt" />
+    <Content Include="Docs\M4K\October_2016\October_2016_Settings.txt" />
+    <Content Include="Docs\M4K\October_2016\October_2016_Settings.xml" />
+    <Content Include="Docs\M4K\September_2016\Digraph_2016Sep.txt" />
+    <Content Include="Docs\M4K\September_2016\September_2016_Settings.txt" />
+    <Content Include="Docs\M4K\September_2016\September_2016_Settings.xml" />
     <Content Include="Docs\Test.txt" />
   </ItemGroup>
   <ItemGroup>
