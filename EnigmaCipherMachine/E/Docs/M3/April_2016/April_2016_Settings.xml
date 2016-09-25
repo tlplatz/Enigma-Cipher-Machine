@@ -1,0 +1,575 @@
+<?xml version="1.0"?>
+<MonthlySettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Year="2016" Month="4" Title="Settings" xsi:noNamespaceSchemaLocation="Settings.xsd">
+  <DailySettings>
+    <Settings Day="30" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="CDZ UYR MRC HCU">
+      <Rotors>
+        <RotorSetting Name="II" RingSetting="13" />
+        <RotorSetting Name="IV" RingSetting="14" />
+        <RotorSetting Name="I" RingSetting="9" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="B" LetterB="Q" />
+        <PlugSetting LetterA="C" LetterB="X" />
+        <PlugSetting LetterA="E" LetterB="Z" />
+        <PlugSetting LetterA="F" LetterB="J" />
+        <PlugSetting LetterA="G" LetterB="H" />
+        <PlugSetting LetterA="I" LetterB="T" />
+        <PlugSetting LetterA="K" LetterB="U" />
+        <PlugSetting LetterA="L" LetterB="P" />
+        <PlugSetting LetterA="R" LetterB="Y" />
+        <PlugSetting LetterA="V" LetterB="W" />
+      </Plugs>
+    </Settings>
+    <Settings Day="29" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="EUG JVF QYT TII">
+      <Rotors>
+        <RotorSetting Name="III" RingSetting="5" />
+        <RotorSetting Name="I" RingSetting="21" />
+        <RotorSetting Name="IV" RingSetting="13" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="B" LetterB="N" />
+        <PlugSetting LetterA="C" LetterB="T" />
+        <PlugSetting LetterA="E" LetterB="X" />
+        <PlugSetting LetterA="G" LetterB="Z" />
+        <PlugSetting LetterA="H" LetterB="Y" />
+        <PlugSetting LetterA="I" LetterB="L" />
+        <PlugSetting LetterA="J" LetterB="V" />
+        <PlugSetting LetterA="K" LetterB="M" />
+        <PlugSetting LetterA="O" LetterB="R" />
+        <PlugSetting LetterA="U" LetterB="W" />
+      </Plugs>
+    </Settings>
+    <Settings Day="28" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="PFZ UWJ DCR YKT">
+      <Rotors>
+        <RotorSetting Name="III" RingSetting="23" />
+        <RotorSetting Name="II" RingSetting="24" />
+        <RotorSetting Name="V" RingSetting="7" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="V" />
+        <PlugSetting LetterA="B" LetterB="Q" />
+        <PlugSetting LetterA="E" LetterB="S" />
+        <PlugSetting LetterA="F" LetterB="M" />
+        <PlugSetting LetterA="G" LetterB="W" />
+        <PlugSetting LetterA="J" LetterB="K" />
+        <PlugSetting LetterA="L" LetterB="R" />
+        <PlugSetting LetterA="N" LetterB="Z" />
+        <PlugSetting LetterA="P" LetterB="T" />
+        <PlugSetting LetterA="U" LetterB="Y" />
+      </Plugs>
+    </Settings>
+    <Settings Day="27" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="IYX MUG HRD FEI">
+      <Rotors>
+        <RotorSetting Name="I" RingSetting="17" />
+        <RotorSetting Name="V" RingSetting="13" />
+        <RotorSetting Name="IV" RingSetting="10" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="G" />
+        <PlugSetting LetterA="C" LetterB="R" />
+        <PlugSetting LetterA="D" LetterB="P" />
+        <PlugSetting LetterA="E" LetterB="T" />
+        <PlugSetting LetterA="F" LetterB="J" />
+        <PlugSetting LetterA="H" LetterB="Q" />
+        <PlugSetting LetterA="L" LetterB="Z" />
+        <PlugSetting LetterA="M" LetterB="N" />
+        <PlugSetting LetterA="O" LetterB="W" />
+        <PlugSetting LetterA="X" LetterB="Y" />
+      </Plugs>
+    </Settings>
+    <Settings Day="26" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="TKV KUK ZJV QFS">
+      <Rotors>
+        <RotorSetting Name="I" RingSetting="17" />
+        <RotorSetting Name="IV" RingSetting="13" />
+        <RotorSetting Name="III" RingSetting="4" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="B" LetterB="O" />
+        <PlugSetting LetterA="D" LetterB="G" />
+        <PlugSetting LetterA="F" LetterB="Z" />
+        <PlugSetting LetterA="H" LetterB="X" />
+        <PlugSetting LetterA="I" LetterB="L" />
+        <PlugSetting LetterA="J" LetterB="U" />
+        <PlugSetting LetterA="K" LetterB="Y" />
+        <PlugSetting LetterA="M" LetterB="T" />
+        <PlugSetting LetterA="N" LetterB="V" />
+        <PlugSetting LetterA="Q" LetterB="W" />
+      </Plugs>
+    </Settings>
+    <Settings Day="25" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="RSU TEA CFK MBW">
+      <Rotors>
+        <RotorSetting Name="III" RingSetting="4" />
+        <RotorSetting Name="I" RingSetting="0" />
+        <RotorSetting Name="IV" RingSetting="19" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="F" />
+        <PlugSetting LetterA="B" LetterB="R" />
+        <PlugSetting LetterA="C" LetterB="M" />
+        <PlugSetting LetterA="D" LetterB="W" />
+        <PlugSetting LetterA="H" LetterB="S" />
+        <PlugSetting LetterA="I" LetterB="X" />
+        <PlugSetting LetterA="J" LetterB="U" />
+        <PlugSetting LetterA="K" LetterB="Q" />
+        <PlugSetting LetterA="L" LetterB="O" />
+        <PlugSetting LetterA="T" LetterB="V" />
+      </Plugs>
+    </Settings>
+    <Settings Day="24" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="HED MLR FKB QAL">
+      <Rotors>
+        <RotorSetting Name="III" RingSetting="8" />
+        <RotorSetting Name="V" RingSetting="4" />
+        <RotorSetting Name="IV" RingSetting="18" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="N" />
+        <PlugSetting LetterA="B" LetterB="D" />
+        <PlugSetting LetterA="C" LetterB="K" />
+        <PlugSetting LetterA="F" LetterB="Z" />
+        <PlugSetting LetterA="G" LetterB="U" />
+        <PlugSetting LetterA="H" LetterB="Q" />
+        <PlugSetting LetterA="I" LetterB="V" />
+        <PlugSetting LetterA="M" LetterB="T" />
+        <PlugSetting LetterA="O" LetterB="Y" />
+        <PlugSetting LetterA="P" LetterB="R" />
+      </Plugs>
+    </Settings>
+    <Settings Day="23" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="NSI HZB YRT FUC">
+      <Rotors>
+        <RotorSetting Name="IV" RingSetting="5" />
+        <RotorSetting Name="III" RingSetting="24" />
+        <RotorSetting Name="I" RingSetting="20" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="M" />
+        <PlugSetting LetterA="B" LetterB="H" />
+        <PlugSetting LetterA="D" LetterB="Q" />
+        <PlugSetting LetterA="F" LetterB="W" />
+        <PlugSetting LetterA="I" LetterB="X" />
+        <PlugSetting LetterA="J" LetterB="L" />
+        <PlugSetting LetterA="K" LetterB="Z" />
+        <PlugSetting LetterA="O" LetterB="S" />
+        <PlugSetting LetterA="R" LetterB="Y" />
+        <PlugSetting LetterA="U" LetterB="V" />
+      </Plugs>
+    </Settings>
+    <Settings Day="22" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="MON DCZ YGJ YCQ">
+      <Rotors>
+        <RotorSetting Name="II" RingSetting="10" />
+        <RotorSetting Name="V" RingSetting="8" />
+        <RotorSetting Name="III" RingSetting="16" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="B" LetterB="K" />
+        <PlugSetting LetterA="D" LetterB="F" />
+        <PlugSetting LetterA="G" LetterB="Q" />
+        <PlugSetting LetterA="H" LetterB="R" />
+        <PlugSetting LetterA="I" LetterB="O" />
+        <PlugSetting LetterA="J" LetterB="Z" />
+        <PlugSetting LetterA="L" LetterB="M" />
+        <PlugSetting LetterA="N" LetterB="P" />
+        <PlugSetting LetterA="S" LetterB="V" />
+        <PlugSetting LetterA="T" LetterB="X" />
+      </Plugs>
+    </Settings>
+    <Settings Day="21" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="GNX ELV QBR IFL">
+      <Rotors>
+        <RotorSetting Name="I" RingSetting="4" />
+        <RotorSetting Name="IV" RingSetting="25" />
+        <RotorSetting Name="III" RingSetting="10" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="B" LetterB="I" />
+        <PlugSetting LetterA="C" LetterB="Q" />
+        <PlugSetting LetterA="D" LetterB="W" />
+        <PlugSetting LetterA="E" LetterB="G" />
+        <PlugSetting LetterA="F" LetterB="J" />
+        <PlugSetting LetterA="K" LetterB="O" />
+        <PlugSetting LetterA="L" LetterB="T" />
+        <PlugSetting LetterA="M" LetterB="R" />
+        <PlugSetting LetterA="N" LetterB="V" />
+        <PlugSetting LetterA="P" LetterB="S" />
+      </Plugs>
+    </Settings>
+    <Settings Day="20" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="SVF JOJ DCJ BAW">
+      <Rotors>
+        <RotorSetting Name="I" RingSetting="17" />
+        <RotorSetting Name="V" RingSetting="11" />
+        <RotorSetting Name="IV" RingSetting="16" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="B" />
+        <PlugSetting LetterA="C" LetterB="F" />
+        <PlugSetting LetterA="D" LetterB="E" />
+        <PlugSetting LetterA="G" LetterB="R" />
+        <PlugSetting LetterA="H" LetterB="L" />
+        <PlugSetting LetterA="J" LetterB="M" />
+        <PlugSetting LetterA="K" LetterB="T" />
+        <PlugSetting LetterA="N" LetterB="S" />
+        <PlugSetting LetterA="Q" LetterB="V" />
+        <PlugSetting LetterA="W" LetterB="Z" />
+      </Plugs>
+    </Settings>
+    <Settings Day="19" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="EBH CRU BOQ RAM">
+      <Rotors>
+        <RotorSetting Name="V" RingSetting="3" />
+        <RotorSetting Name="III" RingSetting="21" />
+        <RotorSetting Name="II" RingSetting="9" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="Q" />
+        <PlugSetting LetterA="C" LetterB="L" />
+        <PlugSetting LetterA="D" LetterB="S" />
+        <PlugSetting LetterA="E" LetterB="G" />
+        <PlugSetting LetterA="F" LetterB="R" />
+        <PlugSetting LetterA="H" LetterB="K" />
+        <PlugSetting LetterA="I" LetterB="Z" />
+        <PlugSetting LetterA="J" LetterB="U" />
+        <PlugSetting LetterA="O" LetterB="T" />
+        <PlugSetting LetterA="P" LetterB="Y" />
+      </Plugs>
+    </Settings>
+    <Settings Day="18" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="DUF YOT LDI BLH">
+      <Rotors>
+        <RotorSetting Name="V" RingSetting="24" />
+        <RotorSetting Name="IV" RingSetting="19" />
+        <RotorSetting Name="III" RingSetting="9" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="C" />
+        <PlugSetting LetterA="B" LetterB="F" />
+        <PlugSetting LetterA="E" LetterB="P" />
+        <PlugSetting LetterA="G" LetterB="Z" />
+        <PlugSetting LetterA="I" LetterB="J" />
+        <PlugSetting LetterA="K" LetterB="O" />
+        <PlugSetting LetterA="N" LetterB="Q" />
+        <PlugSetting LetterA="S" LetterB="X" />
+        <PlugSetting LetterA="T" LetterB="W" />
+        <PlugSetting LetterA="U" LetterB="Y" />
+      </Plugs>
+    </Settings>
+    <Settings Day="17" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="TPS AUZ GFM BZJ">
+      <Rotors>
+        <RotorSetting Name="V" RingSetting="1" />
+        <RotorSetting Name="II" RingSetting="12" />
+        <RotorSetting Name="III" RingSetting="20" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="B" LetterB="W" />
+        <PlugSetting LetterA="C" LetterB="L" />
+        <PlugSetting LetterA="F" LetterB="Z" />
+        <PlugSetting LetterA="H" LetterB="P" />
+        <PlugSetting LetterA="I" LetterB="Q" />
+        <PlugSetting LetterA="J" LetterB="X" />
+        <PlugSetting LetterA="K" LetterB="M" />
+        <PlugSetting LetterA="R" LetterB="V" />
+        <PlugSetting LetterA="S" LetterB="U" />
+        <PlugSetting LetterA="T" LetterB="Y" />
+      </Plugs>
+    </Settings>
+    <Settings Day="16" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="NOJ XHR VAU TFT">
+      <Rotors>
+        <RotorSetting Name="III" RingSetting="25" />
+        <RotorSetting Name="II" RingSetting="14" />
+        <RotorSetting Name="IV" RingSetting="10" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="T" />
+        <PlugSetting LetterA="B" LetterB="V" />
+        <PlugSetting LetterA="C" LetterB="R" />
+        <PlugSetting LetterA="D" LetterB="Z" />
+        <PlugSetting LetterA="E" LetterB="P" />
+        <PlugSetting LetterA="G" LetterB="L" />
+        <PlugSetting LetterA="I" LetterB="Q" />
+        <PlugSetting LetterA="M" LetterB="N" />
+        <PlugSetting LetterA="S" LetterB="X" />
+        <PlugSetting LetterA="U" LetterB="Y" />
+      </Plugs>
+    </Settings>
+    <Settings Day="15" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="DFO QPW NCQ ZJC">
+      <Rotors>
+        <RotorSetting Name="I" RingSetting="1" />
+        <RotorSetting Name="V" RingSetting="12" />
+        <RotorSetting Name="III" RingSetting="13" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="J" />
+        <PlugSetting LetterA="B" LetterB="N" />
+        <PlugSetting LetterA="C" LetterB="D" />
+        <PlugSetting LetterA="E" LetterB="W" />
+        <PlugSetting LetterA="F" LetterB="O" />
+        <PlugSetting LetterA="H" LetterB="R" />
+        <PlugSetting LetterA="I" LetterB="P" />
+        <PlugSetting LetterA="L" LetterB="U" />
+        <PlugSetting LetterA="M" LetterB="Q" />
+        <PlugSetting LetterA="T" LetterB="V" />
+      </Plugs>
+    </Settings>
+    <Settings Day="14" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="BBT QKV ZCU WKA">
+      <Rotors>
+        <RotorSetting Name="V" RingSetting="6" />
+        <RotorSetting Name="II" RingSetting="7" />
+        <RotorSetting Name="I" RingSetting="2" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="G" />
+        <PlugSetting LetterA="B" LetterB="Y" />
+        <PlugSetting LetterA="C" LetterB="X" />
+        <PlugSetting LetterA="D" LetterB="L" />
+        <PlugSetting LetterA="F" LetterB="R" />
+        <PlugSetting LetterA="H" LetterB="V" />
+        <PlugSetting LetterA="M" LetterB="Z" />
+        <PlugSetting LetterA="N" LetterB="S" />
+        <PlugSetting LetterA="O" LetterB="T" />
+        <PlugSetting LetterA="P" LetterB="U" />
+      </Plugs>
+    </Settings>
+    <Settings Day="13" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="JOW RGK NZJ YWP">
+      <Rotors>
+        <RotorSetting Name="II" RingSetting="15" />
+        <RotorSetting Name="IV" RingSetting="21" />
+        <RotorSetting Name="I" RingSetting="8" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="B" LetterB="Q" />
+        <PlugSetting LetterA="C" LetterB="Z" />
+        <PlugSetting LetterA="D" LetterB="V" />
+        <PlugSetting LetterA="E" LetterB="O" />
+        <PlugSetting LetterA="F" LetterB="R" />
+        <PlugSetting LetterA="H" LetterB="W" />
+        <PlugSetting LetterA="I" LetterB="T" />
+        <PlugSetting LetterA="J" LetterB="S" />
+        <PlugSetting LetterA="K" LetterB="Y" />
+        <PlugSetting LetterA="P" LetterB="U" />
+      </Plugs>
+    </Settings>
+    <Settings Day="12" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="LQP QNX TOE GVF">
+      <Rotors>
+        <RotorSetting Name="V" RingSetting="12" />
+        <RotorSetting Name="II" RingSetting="19" />
+        <RotorSetting Name="III" RingSetting="1" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="O" />
+        <PlugSetting LetterA="B" LetterB="L" />
+        <PlugSetting LetterA="C" LetterB="S" />
+        <PlugSetting LetterA="D" LetterB="K" />
+        <PlugSetting LetterA="G" LetterB="T" />
+        <PlugSetting LetterA="H" LetterB="X" />
+        <PlugSetting LetterA="I" LetterB="J" />
+        <PlugSetting LetterA="N" LetterB="Q" />
+        <PlugSetting LetterA="U" LetterB="V" />
+        <PlugSetting LetterA="Y" LetterB="Z" />
+      </Plugs>
+    </Settings>
+    <Settings Day="11" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="XEQ ZUD ZHV OGB">
+      <Rotors>
+        <RotorSetting Name="II" RingSetting="13" />
+        <RotorSetting Name="III" RingSetting="24" />
+        <RotorSetting Name="I" RingSetting="15" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="B" LetterB="P" />
+        <PlugSetting LetterA="D" LetterB="M" />
+        <PlugSetting LetterA="E" LetterB="X" />
+        <PlugSetting LetterA="G" LetterB="K" />
+        <PlugSetting LetterA="H" LetterB="V" />
+        <PlugSetting LetterA="I" LetterB="U" />
+        <PlugSetting LetterA="J" LetterB="O" />
+        <PlugSetting LetterA="L" LetterB="N" />
+        <PlugSetting LetterA="R" LetterB="T" />
+        <PlugSetting LetterA="S" LetterB="Z" />
+      </Plugs>
+    </Settings>
+    <Settings Day="10" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="AWV FLJ TCE EEU">
+      <Rotors>
+        <RotorSetting Name="V" RingSetting="21" />
+        <RotorSetting Name="IV" RingSetting="22" />
+        <RotorSetting Name="III" RingSetting="22" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="T" />
+        <PlugSetting LetterA="C" LetterB="D" />
+        <PlugSetting LetterA="G" LetterB="I" />
+        <PlugSetting LetterA="H" LetterB="S" />
+        <PlugSetting LetterA="J" LetterB="K" />
+        <PlugSetting LetterA="L" LetterB="U" />
+        <PlugSetting LetterA="M" LetterB="Q" />
+        <PlugSetting LetterA="N" LetterB="W" />
+        <PlugSetting LetterA="P" LetterB="X" />
+        <PlugSetting LetterA="R" LetterB="V" />
+      </Plugs>
+    </Settings>
+    <Settings Day="9" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="FJO XCV VDS QTC">
+      <Rotors>
+        <RotorSetting Name="I" RingSetting="6" />
+        <RotorSetting Name="V" RingSetting="11" />
+        <RotorSetting Name="II" RingSetting="24" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="Y" />
+        <PlugSetting LetterA="B" LetterB="U" />
+        <PlugSetting LetterA="D" LetterB="W" />
+        <PlugSetting LetterA="E" LetterB="H" />
+        <PlugSetting LetterA="F" LetterB="Q" />
+        <PlugSetting LetterA="I" LetterB="N" />
+        <PlugSetting LetterA="J" LetterB="L" />
+        <PlugSetting LetterA="O" LetterB="S" />
+        <PlugSetting LetterA="P" LetterB="X" />
+        <PlugSetting LetterA="R" LetterB="Z" />
+      </Plugs>
+    </Settings>
+    <Settings Day="8" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="UNF FZP TXJ NPR">
+      <Rotors>
+        <RotorSetting Name="V" RingSetting="24" />
+        <RotorSetting Name="II" RingSetting="25" />
+        <RotorSetting Name="I" RingSetting="4" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="Y" />
+        <PlugSetting LetterA="D" LetterB="Q" />
+        <PlugSetting LetterA="F" LetterB="X" />
+        <PlugSetting LetterA="G" LetterB="T" />
+        <PlugSetting LetterA="H" LetterB="I" />
+        <PlugSetting LetterA="J" LetterB="R" />
+        <PlugSetting LetterA="K" LetterB="V" />
+        <PlugSetting LetterA="M" LetterB="Z" />
+        <PlugSetting LetterA="N" LetterB="P" />
+        <PlugSetting LetterA="O" LetterB="S" />
+      </Plugs>
+    </Settings>
+    <Settings Day="7" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="CNC VNS ATZ VTL">
+      <Rotors>
+        <RotorSetting Name="V" RingSetting="18" />
+        <RotorSetting Name="IV" RingSetting="23" />
+        <RotorSetting Name="III" RingSetting="13" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="O" />
+        <PlugSetting LetterA="B" LetterB="I" />
+        <PlugSetting LetterA="C" LetterB="K" />
+        <PlugSetting LetterA="D" LetterB="M" />
+        <PlugSetting LetterA="E" LetterB="F" />
+        <PlugSetting LetterA="G" LetterB="Q" />
+        <PlugSetting LetterA="J" LetterB="Y" />
+        <PlugSetting LetterA="L" LetterB="T" />
+        <PlugSetting LetterA="N" LetterB="R" />
+        <PlugSetting LetterA="V" LetterB="X" />
+      </Plugs>
+    </Settings>
+    <Settings Day="6" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="OCE ZSD JJC TLY">
+      <Rotors>
+        <RotorSetting Name="IV" RingSetting="5" />
+        <RotorSetting Name="V" RingSetting="12" />
+        <RotorSetting Name="I" RingSetting="2" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="E" />
+        <PlugSetting LetterA="B" LetterB="Y" />
+        <PlugSetting LetterA="C" LetterB="S" />
+        <PlugSetting LetterA="D" LetterB="M" />
+        <PlugSetting LetterA="F" LetterB="Z" />
+        <PlugSetting LetterA="H" LetterB="Q" />
+        <PlugSetting LetterA="I" LetterB="K" />
+        <PlugSetting LetterA="L" LetterB="U" />
+        <PlugSetting LetterA="N" LetterB="V" />
+        <PlugSetting LetterA="O" LetterB="R" />
+      </Plugs>
+    </Settings>
+    <Settings Day="5" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="END PKH KRT XVP">
+      <Rotors>
+        <RotorSetting Name="I" RingSetting="9" />
+        <RotorSetting Name="III" RingSetting="2" />
+        <RotorSetting Name="II" RingSetting="13" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="L" />
+        <PlugSetting LetterA="B" LetterB="T" />
+        <PlugSetting LetterA="C" LetterB="D" />
+        <PlugSetting LetterA="E" LetterB="Y" />
+        <PlugSetting LetterA="H" LetterB="V" />
+        <PlugSetting LetterA="J" LetterB="S" />
+        <PlugSetting LetterA="K" LetterB="W" />
+        <PlugSetting LetterA="M" LetterB="N" />
+        <PlugSetting LetterA="O" LetterB="Z" />
+        <PlugSetting LetterA="Q" LetterB="R" />
+      </Plugs>
+    </Settings>
+    <Settings Day="4" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="TAP ZPA CYT TRX">
+      <Rotors>
+        <RotorSetting Name="II" RingSetting="8" />
+        <RotorSetting Name="V" RingSetting="23" />
+        <RotorSetting Name="I" RingSetting="11" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="U" />
+        <PlugSetting LetterA="B" LetterB="O" />
+        <PlugSetting LetterA="C" LetterB="I" />
+        <PlugSetting LetterA="E" LetterB="Y" />
+        <PlugSetting LetterA="F" LetterB="M" />
+        <PlugSetting LetterA="G" LetterB="L" />
+        <PlugSetting LetterA="K" LetterB="W" />
+        <PlugSetting LetterA="N" LetterB="P" />
+        <PlugSetting LetterA="R" LetterB="X" />
+        <PlugSetting LetterA="T" LetterB="V" />
+      </Plugs>
+    </Settings>
+    <Settings Day="3" MachineType="M3" ReflectorType="B" Grund="" Kenngruppen="KTE GEF OIC EQA">
+      <Rotors>
+        <RotorSetting Name="II" RingSetting="5" />
+        <RotorSetting Name="IV" RingSetting="18" />
+        <RotorSetting Name="I" RingSetting="3" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="C" LetterB="O" />
+        <PlugSetting LetterA="D" LetterB="S" />
+        <PlugSetting LetterA="E" LetterB="T" />
+        <PlugSetting LetterA="F" LetterB="N" />
+        <PlugSetting LetterA="G" LetterB="J" />
+        <PlugSetting LetterA="I" LetterB="P" />
+        <PlugSetting LetterA="K" LetterB="V" />
+        <PlugSetting LetterA="L" LetterB="Q" />
+        <PlugSetting LetterA="R" LetterB="X" />
+        <PlugSetting LetterA="U" LetterB="Z" />
+      </Plugs>
+    </Settings>
+    <Settings Day="2" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="PLI SLC RRG PGS">
+      <Rotors>
+        <RotorSetting Name="II" RingSetting="0" />
+        <RotorSetting Name="III" RingSetting="19" />
+        <RotorSetting Name="V" RingSetting="22" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="B" LetterB="Y" />
+        <PlugSetting LetterA="C" LetterB="H" />
+        <PlugSetting LetterA="D" LetterB="W" />
+        <PlugSetting LetterA="E" LetterB="X" />
+        <PlugSetting LetterA="G" LetterB="N" />
+        <PlugSetting LetterA="J" LetterB="V" />
+        <PlugSetting LetterA="M" LetterB="R" />
+        <PlugSetting LetterA="P" LetterB="S" />
+        <PlugSetting LetterA="Q" LetterB="U" />
+        <PlugSetting LetterA="T" LetterB="Z" />
+      </Plugs>
+    </Settings>
+    <Settings Day="1" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="OKU CQM EKV GER">
+      <Rotors>
+        <RotorSetting Name="II" RingSetting="13" />
+        <RotorSetting Name="IV" RingSetting="8" />
+        <RotorSetting Name="III" RingSetting="13" />
+      </Rotors>
+      <Plugs>
+        <PlugSetting LetterA="A" LetterB="Q" />
+        <PlugSetting LetterA="B" LetterB="I" />
+        <PlugSetting LetterA="C" LetterB="H" />
+        <PlugSetting LetterA="D" LetterB="E" />
+        <PlugSetting LetterA="F" LetterB="T" />
+        <PlugSetting LetterA="G" LetterB="P" />
+        <PlugSetting LetterA="L" LetterB="S" />
+        <PlugSetting LetterA="N" LetterB="X" />
+        <PlugSetting LetterA="R" LetterB="U" />
+        <PlugSetting LetterA="V" LetterB="Y" />
+      </Plugs>
+    </Settings>
+  </DailySettings>
+</MonthlySettings>
