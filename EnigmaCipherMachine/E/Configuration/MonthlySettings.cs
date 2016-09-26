@@ -119,6 +119,7 @@ namespace Enigma.Configuration
 
         }
 
+        #region IEquatable Interface
         public bool Equals(MonthlySettings other)
         {
             if (other == null) return false;
@@ -131,7 +132,7 @@ namespace Enigma.Configuration
 
             if (DailySettings.Count != other.DailySettings.Count) return false;
 
-            for(int i=0; i<DailySettings.Count; i++)
+            for (int i = 0; i < DailySettings.Count; i++)
             {
                 if (DailySettings[i] != other.DailySettings[i])
                 {
@@ -156,12 +157,16 @@ namespace Enigma.Configuration
         {
             return ToString().GetHashCode();
         }
+        #endregion
 
+        #region ICloneable Interface
         public object Clone()
         {
             return MonthlySettings.Parse(this.ToString());
         }
+        #endregion
 
+        #region Operator Implementations
         public static bool operator ==(MonthlySettings a, MonthlySettings b)
         {
             if (System.Object.ReferenceEquals(a, b))
@@ -182,6 +187,7 @@ namespace Enigma.Configuration
         {
             return !(a == b);
         }
+        #endregion
 
         //this is a kludge to get the xml serializer to include the schema location when serializing to xml        
         [XmlAttribute(Form = System.Xml.Schema.XmlSchemaForm.Qualified, Namespace = "http://www.w3.org/2001/XMLSchema-instance")]

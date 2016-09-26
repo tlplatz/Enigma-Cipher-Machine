@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Enigma;
 using Enigma.Configuration;
-using Enigma.Enums;
 
 namespace Messaging
 {
@@ -38,13 +33,13 @@ namespace Messaging
             Message m = new Message(s);
             char[,] indic = new char[4, 2];
 
-            if(s.MachineType == Enigma.Enums.MachineType.M3K)
+            if (s.MachineType == Enigma.Enums.MachineType.M3K)
             {
                 StartPosition = Utility.GetRandomString(3);
                 MessageKey = Utility.GetRandomString(3);
-                ActualMessageKey = m.Encrypt(MessageKey, StartPosition);                
+                ActualMessageKey = m.Encrypt(MessageKey, StartPosition);
 
-                for(int i=0; i<StartPosition.Length;i++)
+                for (int i = 0; i < StartPosition.Length; i++)
                 {
                     indic[i, 0] = StartPosition[i];
                     indic[i + 1, 1] = MessageKey[i];
@@ -71,13 +66,13 @@ namespace Messaging
             }
 
             string[] combinedDigrams = new string[4];
-            for(int i=0; i<4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 combinedDigrams[i] = string.Concat(indic[i, 0], indic[i, 1]);
             }
 
             string[] encryptedDigrams = new string[4];
-            for(int i=0; i<4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 int x = Utility.ALPHA.IndexOf(combinedDigrams[i][0]);
                 int y = Utility.ALPHA.IndexOf(combinedDigrams[i][1]);

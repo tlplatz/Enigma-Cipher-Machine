@@ -245,12 +245,12 @@ namespace Enigma.Util
             }
             else
             {
-                
+
                 result.MachineType = MachineType.M3;
 
                 if (indicatorValues.Any())
                 {
-                    if(indicatorValues.Length == 4)
+                    if (indicatorValues.Length == 4)
                     {
                         result.Kenngruppen.AddRange(indicatorValues);
                         result.MachineType = MachineType.M3;
@@ -261,7 +261,7 @@ namespace Enigma.Util
                         result.MachineType = MachineType.M3K;
                     }
                 }
-                    
+
 
                 if (ukw == "B")
                 {
@@ -312,7 +312,7 @@ namespace Enigma.Util
             result.Month = ParseMonth(titleTokens[2]);
             result.Year = int.Parse(titleTokens[3]);
 
-            foreach(string s in days)
+            foreach (string s in days)
             {
                 result.DailySettings.Add(Settings.ParseSettingLine(s));
             }

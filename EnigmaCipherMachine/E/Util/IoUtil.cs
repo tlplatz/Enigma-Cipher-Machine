@@ -79,7 +79,7 @@ namespace Enigma.Util
             filePath = Path.Combine(folder, fileName);
             s.Save(filePath);
 
-            if(t != MachineType.M3)
+            if (t != MachineType.M3)
             {
                 SaveDigraphTable(year, month, folder);
             }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Enigma;
 using Enigma.Configuration;
 
@@ -29,7 +25,7 @@ namespace Messaging
             MessageKey = Utility.GetRandomString(3);
             Index = index + 1;
             Count = count;
-            
+
             Message m = new Message(s);
             ActualMessageKey = m.Encrypt(MessageKey, StartPosition);
 

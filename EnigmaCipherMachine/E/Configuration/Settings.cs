@@ -198,7 +198,7 @@ namespace Enigma.Configuration
             Settings result = new Settings();
 
             result.MachineType = m;
-            result.ReflectorType = mach.AvailableReflectors[ RandomUtil._rand.Next(mach.AvailableReflectors.Count)].ReflectorType;
+            result.ReflectorType = mach.AvailableReflectors[RandomUtil._rand.Next(mach.AvailableReflectors.Count)].ReflectorType;
 
             List<RotorName> availableNames = mach.AvailableRotors.Select(r => r.RotorName).ToList();
 
@@ -297,6 +297,7 @@ namespace Enigma.Configuration
             }
         }
 
+        #region IEquatable Interface
         public bool Equals(Settings other)
         {
             if (other == null) return false;
@@ -341,12 +342,16 @@ namespace Enigma.Configuration
         {
             return ToString().GetHashCode();
         }
+        #endregion
 
+        #region ICloneable Interface
         public object Clone()
         {
             return Settings.ParseSettingLine(this.ToString());
         }
+        #endregion
 
+        #region Operator Implementation
         public static bool operator ==(Settings a, Settings b)
         {
             if (System.Object.ReferenceEquals(a, b))
@@ -367,5 +372,6 @@ namespace Enigma.Configuration
         {
             return !(a == b);
         }
+        #endregion
     }
 }

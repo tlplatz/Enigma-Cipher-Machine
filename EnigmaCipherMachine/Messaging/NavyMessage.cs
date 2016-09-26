@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Enigma.Configuration;
 
 namespace Messaging
@@ -144,7 +142,7 @@ namespace Messaging
                 digs.Add(indicator2.Substring(2, 2));
 
                 List<string> encDigs = new List<string>();
-                foreach(string s in digs)
+                foreach (string s in digs)
                 {
                     int x = Utility.ALPHA.IndexOf(s[0]);
                     int y = Utility.ALPHA.IndexOf(s[1]);
