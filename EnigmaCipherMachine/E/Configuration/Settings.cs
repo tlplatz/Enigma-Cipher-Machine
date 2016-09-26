@@ -11,8 +11,6 @@ namespace Enigma.Configuration
     [Serializable]
     public class Settings : IEquatable<Settings>, ICloneable
     {
-        private static Random _rnd = new Random();
-
         [XmlAttribute]
         public int Day { get; set; }
         [XmlAttribute]
@@ -200,7 +198,7 @@ namespace Enigma.Configuration
             Settings result = new Settings();
 
             result.MachineType = m;
-            result.ReflectorType = mach.AvailableReflectors[_rnd.Next(mach.AvailableReflectors.Count)].ReflectorType;
+            result.ReflectorType = mach.AvailableReflectors[ RandomUtil._rand.Next(mach.AvailableReflectors.Count)].ReflectorType;
 
             List<RotorName> availableNames = mach.AvailableRotors.Select(r => r.RotorName).ToList();
 
@@ -209,27 +207,27 @@ namespace Enigma.Configuration
                 availableNames.Remove(RotorName.Beta);
                 availableNames.Remove(RotorName.Gamma);
 
-                if (_rnd.Next(2) == 1)
+                if (RandomUtil._rand.Next(2) == 1)
                 {
-                    result.Rotors.Add(new RotorSetting { Name = RotorName.Beta, RingSetting = _rnd.Next(Constants.ALPHABET.Length) });
+                    result.Rotors.Add(new RotorSetting { Name = RotorName.Beta, RingSetting = RandomUtil._rand.Next(Constants.ALPHABET.Length) });
                 }
                 else
                 {
-                    result.Rotors.Add(new RotorSetting { Name = RotorName.Gamma, RingSetting = _rnd.Next(Constants.ALPHABET.Length) });
+                    result.Rotors.Add(new RotorSetting { Name = RotorName.Gamma, RingSetting = RandomUtil._rand.Next(Constants.ALPHABET.Length) });
                 }
             }
 
             for (int i = 0; i < 3; i++)
             {
-                RotorName name = availableNames[_rnd.Next(availableNames.Count)];
-                result.Rotors.Add(new RotorSetting { Name = name, RingSetting = _rnd.Next(Constants.ALPHABET.Length) });
+                RotorName name = availableNames[RandomUtil._rand.Next(availableNames.Count)];
+                result.Rotors.Add(new RotorSetting { Name = name, RingSetting = RandomUtil._rand.Next(Constants.ALPHABET.Length) });
                 availableNames.Remove(name);
             }
 
             List<Tuple<string, double>> letters = new List<Tuple<string, double>>();
             foreach (char c in Constants.ALPHABET)
             {
-                letters.Add(new Tuple<string, double>(c.ToString(), _rnd.NextDouble()));
+                letters.Add(new Tuple<string, double>(c.ToString(), RandomUtil._rand.NextDouble()));
             }
             letters.Sort((a, b) => a.Item2.CompareTo(b.Item2));
 
