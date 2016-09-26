@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Messaging
 {
@@ -19,7 +17,7 @@ namespace Messaging
         public static string GetRandomString(int length)
         {
             char[] result = new char[length];
-            for(int i=0; i<length; i++)
+            for (int i = 0; i < length; i++)
             {
                 result[i] = GetRandomCharacter();
             }
@@ -38,7 +36,7 @@ namespace Messaging
 
             string[] result = new string[count];
 
-            for(int i=0; i<count; i++)
+            for (int i = 0; i < count; i++)
             {
                 if (i != count - 1)
                 {
@@ -69,20 +67,20 @@ namespace Messaging
             int groupCounter = 0;
             int rowCounter = 0;
 
-            foreach(char c  in input)
+            foreach (char c in input)
             {
                 sb.Append(c);
 
                 groupCounter++;
 
-                if(groupCounter == groupSize)
+                if (groupCounter == groupSize)
                 {
                     sb.Append("\t");
                     groupCounter = 0;
 
                     rowCounter++;
 
-                    if(rowCounter == perRow)
+                    if (rowCounter == perRow)
                     {
                         sb.Append("\r\n");
                         rowCounter = 0;

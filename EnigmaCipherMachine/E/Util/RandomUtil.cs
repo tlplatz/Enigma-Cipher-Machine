@@ -193,11 +193,11 @@ namespace Enigma.Util
         }
 
         private class Digraph
-        {           
-            public char PlainTextX { get; set; }            
+        {
+            public char PlainTextX { get; set; }
             public char PlainTextY { get; set; }
-            
-            public char CipherTextX { get; set; }            
+
+            public char CipherTextX { get; set; }
             public char CipherTextY { get; set; }
 
             public string PlainText { get { return string.Concat(PlainTextX, PlainTextY); } }
