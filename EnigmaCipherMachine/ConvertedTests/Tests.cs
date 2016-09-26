@@ -708,12 +708,18 @@ Or to thyself at least kind-hearted prove:
                 string xsdPath = Path.Combine(path, Enigma.Util.IoUtil.XsdFileName(y, mo));
                 Assert.AreEqual(true, File.Exists(xsdPath));
 
+                string digPath = Path.Combine(monthFolderName, Enigma.Util.IoUtil.DigraphFileName(y, mo));
+                Assert.AreEqual(true, File.Exists(digPath));
+
                 File.Delete(xsdPath);
                 File.Delete(xmlPath);
                 File.Delete(txtPath);
+                File.Delete(digPath);
 
                 Directory.Delete(monthFolderName);
             }
+
+            File.Delete(Path.Combine(path, "KeySheet.txt"));
 
             Directory.Delete(path);
         }
