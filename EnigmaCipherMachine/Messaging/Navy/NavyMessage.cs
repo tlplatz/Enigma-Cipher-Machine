@@ -135,7 +135,7 @@ namespace Messaging.Navy
                 parts[partIndex].Add(s);
             }
 
-            return parts.Select(s=>s.ToArray()).ToList();
+            return parts.Select(s => s.ToArray()).ToList();
         }
 
         private static string DecryptPart(string header, MonthlySettings monSet, string[] groups, string[,] digraphs)

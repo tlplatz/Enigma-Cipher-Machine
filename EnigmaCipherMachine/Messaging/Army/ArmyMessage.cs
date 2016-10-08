@@ -89,7 +89,7 @@ namespace Messaging.Army
 
         private static string[] BreakMessageIntoGroups(string input)
         {
-            return input.Split(new string[] { "\r", "\n", "\t" }, StringSplitOptions.RemoveEmptyEntries);;
+            return input.Split(new string[] { "\r", "\n", "\t" }, StringSplitOptions.RemoveEmptyEntries); ;
         }
 
         private static string[] GetHeaders(string[] lines)
