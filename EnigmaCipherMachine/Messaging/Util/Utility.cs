@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace Messaging
+namespace Messaging.Util
 {
     internal static class Utility
     {
