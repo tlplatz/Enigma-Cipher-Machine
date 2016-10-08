@@ -41,7 +41,7 @@ namespace Messaging.Army
 
             if (before)
             {
-                return  string.Concat(Utility.GetRandomString(2), k);
+                return string.Concat(Utility.GetRandomString(2), k);
             }
             else
             {
