@@ -53,8 +53,8 @@ namespace Messaging.Navy
                     indic[i + 1, 0] = StartPosition[i];
                 }
 
-                //_XYZ              --> last char is random
-                //ABC_              --> first char is random
+                //_XYZ              --> first char is random
+                //ABC_              --> last char is random
 
 
                 indic[0, 0] = Utility.GetRandomCharacter();
