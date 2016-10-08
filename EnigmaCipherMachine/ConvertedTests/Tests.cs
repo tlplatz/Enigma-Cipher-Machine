@@ -9,6 +9,9 @@ using Enigma;
 using Enigma.Configuration;
 using Enigma.Enums;
 using Enigma.Util;
+using Messaging.Army;
+using Messaging.Navy;
+using Messaging.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace ConvertedTests
@@ -816,12 +819,12 @@ Or to thyself at least kind-hearted prove:
 
             monSet.Save(xmlFullPath);
 
-            Messaging.ArmyMessage msg = new Messaging.ArmyMessage(xmlFullPath, LONG_TEST_PLAIN_TEXT, DateTime.Now.Day);
+            ArmyMessage msg = new ArmyMessage(xmlFullPath, LONG_TEST_PLAIN_TEXT, DateTime.Now.Day);
 
             string messageText = msg.ToString();
 
-            string decrypted = Messaging.ArmyMessage.Decrypt(xmlFullPath, messageText);
-            string cleanPlain = Messaging.Utility.GetPaddedString(Messaging.Utility.CleanString(LONG_TEST_PLAIN_TEXT), 5);
+            string decrypted = ArmyMessage.Decrypt(xmlFullPath, messageText);
+            string cleanPlain = Utility.GetPaddedString(Utility.CleanString(LONG_TEST_PLAIN_TEXT), 5);
 
             Assert.AreEqual(decrypted, cleanPlain);
 
@@ -843,12 +846,12 @@ Or to thyself at least kind-hearted prove:
             monSet.Save(xmlFullPath);
             IoUtil.SaveDigraphTable(DateTime.Now.Year, DateTime.Now.Month, folder);
 
-            Messaging.NavyMessage msg = new Messaging.NavyMessage(xmlFullPath, digraphFullPath, LONG_TEST_PLAIN_TEXT, DateTime.Now.Day, "XYZ");
+            NavyMessage msg = new NavyMessage(xmlFullPath, digraphFullPath, LONG_TEST_PLAIN_TEXT, DateTime.Now.Day, "XYZ");
 
             string messageText = msg.ToString();
 
-            string decrypted = Messaging.NavyMessage.Decrypt(xmlFullPath, digraphFullPath, messageText);
-            string cleanPlain = Messaging.Utility.GetPaddedString(Messaging.Utility.CleanString(LONG_TEST_PLAIN_TEXT), 4);
+            string decrypted = NavyMessage.Decrypt(xmlFullPath, digraphFullPath, messageText);
+            string cleanPlain = Utility.GetPaddedString(Utility.CleanString(LONG_TEST_PLAIN_TEXT), 4);
 
             Assert.AreEqual(decrypted, cleanPlain);
 
@@ -871,12 +874,12 @@ Or to thyself at least kind-hearted prove:
             monSet.Save(xmlFullPath);
             IoUtil.SaveDigraphTable(DateTime.Now.Year, DateTime.Now.Month, folder);
 
-            Messaging.NavyMessage msg = new Messaging.NavyMessage(xmlFullPath, digraphFullPath, LONG_TEST_PLAIN_TEXT, DateTime.Now.Day, "XYZ");
+            NavyMessage msg = new NavyMessage(xmlFullPath, digraphFullPath, LONG_TEST_PLAIN_TEXT, DateTime.Now.Day, "XYZ");
 
             string messageText = msg.ToString();
 
-            string decrypted = Messaging.NavyMessage.Decrypt(xmlFullPath, digraphFullPath, messageText);
-            string cleanPlain = Messaging.Utility.GetPaddedString(Messaging.Utility.CleanString(LONG_TEST_PLAIN_TEXT), 4);
+            string decrypted = NavyMessage.Decrypt(xmlFullPath, digraphFullPath, messageText);
+            string cleanPlain = Utility.GetPaddedString(Utility.CleanString(LONG_TEST_PLAIN_TEXT), 4);
 
             Assert.AreEqual(decrypted, cleanPlain);
 

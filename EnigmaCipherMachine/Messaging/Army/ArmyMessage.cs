@@ -3,18 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Enigma.Configuration;
+using Messaging.Util;
 
-namespace Messaging
+namespace Messaging.Army
 {
-    public class ArmyMessage
+    public class ArmyMessage : BaseMessage
     {
-        private MonthlySettings _monthlySettings;
-
-        public string MonthlySettingsFileName { get; private set; }
-        public string PlainText { get; private set; }
-        public int Day { get; private set; }
-
-        public List<ArmyMessagePart> Parts { get; private set; }
 
         public ArmyMessage(string settingsFileName, string input, int day)
         {
@@ -22,7 +16,7 @@ namespace Messaging
             PlainText = input;
             Day = day;
 
-            Parts = new List<ArmyMessagePart>();
+            List<ArmyMessagePart> _innerParts = new List<ArmyMessagePart>();
 
             FileInfo fi = new FileInfo(MonthlySettingsFileName);
 
@@ -49,8 +43,10 @@ namespace Messaging
 
             for (int i = 0; i < parts.Length; i++)
             {
-                Parts.Add(new ArmyMessagePart(s, parts[i], i, parts.Length));
+                _innerParts.Add(new ArmyMessagePart(s, parts[i], i, parts.Length));
             }
+
+            Parts = _innerParts;
         }
 
         public override string ToString()
@@ -77,10 +73,32 @@ namespace Messaging
                 }
             }
 
-            string[] tokens = message.Split(new string[] { "\r", "\n", "\t" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] tokens = BreakMessageIntoGroups(message);
+            string[] headers = GetHeaders(tokens);
+            List<string[]> parts = GetParts(headers, tokens);
 
-            string[] headers = tokens.Where(t => t.Contains("=")).ToArray();
+            List<string> decrypted = new List<string>();
 
+            for (int i = 0; i < headers.Length; i++)
+            {
+                decrypted.Add(DecryptPart(headers[i], parts[i], _monthlySettings));
+            }
+
+            return string.Concat(decrypted);
+        }
+
+        private static string[] BreakMessageIntoGroups(string input)
+        {
+            return input.Split(new string[] { "\r", "\n", "\t" }, StringSplitOptions.RemoveEmptyEntries);;
+        }
+
+        private static string[] GetHeaders(string[] lines)
+        {
+            return lines.Where(t => t.Contains("=")).ToArray();
+        }
+
+        private static List<string[]> GetParts(string[] headers, string[] lines)
+        {
             List<List<string>> parts = new List<List<string>>();
 
             for (int i = 0; i < headers.Length; i++)
@@ -91,7 +109,7 @@ namespace Messaging
             int partIndex = 0;
             bool first = true;
 
-            foreach (string s in tokens)
+            foreach (string s in lines)
             {
                 if (s.Contains("="))
                 {
@@ -112,32 +130,27 @@ namespace Messaging
                 parts[partIndex].Add(s);
             }
 
+            return parts.Select(p => p.ToArray()).ToList();
+        }
 
-            List<string> decrypted = new List<string>();
+        private static string DecryptPart(string header, string[] groups, MonthlySettings settings)
+        {
+            string[] headerTokens = header.Split(new string[] { "=" }, StringSplitOptions.RemoveEmptyEntries);
 
-            for (int i = 0; i < headers.Length; i++)
-            {
-                string hdr = headers[i];
-                string[] header_tokens = hdr.Split(new string[] { "=" }, StringSplitOptions.RemoveEmptyEntries);
+            string last = headerTokens.Last().Trim();
+            string[] messageRotorSettings = last.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
 
-                string last = header_tokens.Last().Trim();
-                string[] messageRotorSettings = last.Split(new string[] { " " }, StringSplitOptions.RemoveEmptyEntries);
+            string rotorPos = messageRotorSettings[0];
+            string indicator = messageRotorSettings[1];
 
-                string rotorPos = messageRotorSettings[0];
-                string indicator = messageRotorSettings[1];
+            Settings partSettings = GetSettingsByKenngruppen(settings, groups[0]);
 
-                Settings partSettings = GetSettingsByKenngruppen(_monthlySettings, parts[i][0]);
+            Enigma.Message msg = new Enigma.Message(partSettings);
+            string msgKey = msg.Encrypt(indicator, rotorPos);
 
-                Enigma.Message msg = new Enigma.Message(partSettings);
-                string msgKey = msg.Encrypt(indicator, rotorPos);
+            string partBody = string.Concat(groups.Skip(1).Take(groups.Length - 1));
 
-                string partBody = string.Concat(parts[i].Skip(1).Take(parts[i].Count - 1));
-
-                decrypted.Add(msg.Decrypt(partBody, msgKey));
-
-            }
-
-            return string.Concat(decrypted);
+            return msg.Decrypt(partBody, msgKey);
         }
 
         private static Settings GetSettingsByKenngruppen(MonthlySettings monSet, string kg)

@@ -1,22 +1,15 @@
 ﻿using System;
 using Enigma;
 using Enigma.Configuration;
+using Messaging.Util;
 
-namespace Messaging
+namespace Messaging.Navy
 {
-    public class NavyMessagePart
+    public class NavyMessagePart : BaseMessagePart
     {
-        public DateTime Timestamp { get; private set; }
-        public string StartPosition { get; private set; }
-        public string MessageKey { get; private set; }
-        public string ActualMessageKey { get; private set; }
         public string EncryptedStartPosition { get; private set; }
         public string EncryptedMessageKey { get; private set; }
         public string CallSign { get; private set; }
-        public int Index { get; private set; }
-        public int Count { get; private set; }
-        public string PlainText { get; private set; }
-        public string CipherText { get; private set; }
 
         private int GroupCount { get; set; }
 
@@ -31,6 +24,21 @@ namespace Messaging
             int inputLen = input.Length;
 
             Message m = new Message(s);
+
+            string cleanPlaintext = Utility.CleanString(input);
+            string encryptedIndicators = CreateIndicators(s, m, digrams);
+            string rawEncryption = m.Encrypt(cleanPlaintext, ActualMessageKey);
+            string cleanRawEncryption = Utility.CleanString(rawEncryption);
+
+            GroupCount = (cleanRawEncryption.Length / 4) + 4;
+
+            string cleanWithIndicators = encryptedIndicators + cleanRawEncryption + encryptedIndicators;
+
+            CipherText = Utility.GetGroups(cleanWithIndicators, 4, 10);
+        }
+
+        private string CreateIndicators(Settings s, Message m, string[,] digrams)
+        {
             char[,] indic = new char[4, 2];
 
             if (s.MachineType == Enigma.Enums.MachineType.M3K)
@@ -41,16 +49,16 @@ namespace Messaging
 
                 for (int i = 0; i < StartPosition.Length; i++)
                 {
-                    indic[i, 0] = StartPosition[i];
-                    indic[i + 1, 1] = MessageKey[i];
+                    indic[i, 1] = MessageKey[i];
+                    indic[i + 1, 0] = StartPosition[i];
                 }
 
-                //XYZ_              --> last char is random
-                //_ABC              --> first char is random
+                //_XYZ              --> last char is random
+                //ABC_              --> first char is random
 
 
-                indic[3, 0] = Utility.GetRandomCharacter();
-                indic[0, 1] = Utility.GetRandomCharacter();
+                indic[0, 0] = Utility.GetRandomCharacter();
+                indic[3, 1] = Utility.GetRandomCharacter();
             }
             else
             {
@@ -65,6 +73,11 @@ namespace Messaging
                 }
             }
 
+            return EncryptIndicators(indic, digrams);
+        }
+
+        private string EncryptIndicators(char[,] indic, string[,] digrams)
+        {
             string[] combinedDigrams = new string[4];
             for (int i = 0; i < 4; i++)
             {
@@ -84,29 +97,15 @@ namespace Messaging
             EncryptedStartPosition = encryptedIndicators.Substring(0, 4);
             EncryptedMessageKey = encryptedIndicators.Substring(4);
 
-            string cleanPlaintext = Utility.CleanString(input);
-            string rawEncryption = m.Encrypt(cleanPlaintext, ActualMessageKey);
-            string cleanRawEncryption = Utility.CleanString(rawEncryption);
-
-            GroupCount = (cleanRawEncryption.Length / 4) + 4;
-
-            string cleanWithIndicators = encryptedIndicators + cleanRawEncryption + encryptedIndicators;
-
-            CipherText = Utility.GetGroups(cleanWithIndicators, 4, 10);
-
+            return encryptedIndicators;
         }
 
-        internal string Header
+        protected override string Header
         {
             get
             {
                 return string.Format("{0} {1:HHmm}/{2}/{3}/{4} {5}", CallSign, Timestamp, Timestamp.Day, Index, Count, GroupCount);
             }
-        }
-
-        public override string ToString()
-        {
-            return string.Join("\r\n", Header, CipherText);
         }
     }
 }
