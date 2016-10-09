@@ -909,7 +909,7 @@ Or to thyself at least kind-hearted prove:
         public void TestM3GetEnigmaSimSettings()
         {
             Settings s = Settings.ParseSettingLine(M3_SETTING_LINE);
-            string es = s.EnigmaSimFormat;
+            string es = s.EnigmaSim;
             Assert.AreEqual(es, M3_ENIGMA_SIM);
         }
 
@@ -917,7 +917,7 @@ Or to thyself at least kind-hearted prove:
         public void TestM3KGetEnigmaSimSettings()
         {
             Settings s = Settings.ParseSettingLine(M3K_SETTING_LINE);
-            string es = s.EnigmaSimFormat;
+            string es = s.EnigmaSim;
             Assert.AreEqual(es, M3K_ENIGMA_SIM);
         }
 
@@ -925,7 +925,7 @@ Or to thyself at least kind-hearted prove:
         public void TestM4KGetEnigmaSimSettings()
         {
             Settings s = Settings.ParseSettingLine(M4K_SETTING_LINE);
-            string es = s.EnigmaSimFormat;
+            string es = s.EnigmaSim;
             Assert.AreEqual(es, M4K_ENIGMA_SIM);
         }
 
@@ -933,7 +933,7 @@ Or to thyself at least kind-hearted prove:
         public void TestM3KSetEnigmaSimValue()
         {
             Settings s = new Settings();
-            s.EnigmaSimFormat = M3K_ENIGMA_SIM;
+            s.EnigmaSim = M3K_ENIGMA_SIM;
 
             Settings check = Settings.ParseSettingLine(M3K_SETTING_LINE);
 
@@ -944,7 +944,7 @@ Or to thyself at least kind-hearted prove:
         public void TestM3SetEnigmaSimValue()
         {
             Settings s = new Settings();
-            s.EnigmaSimFormat = M3_ENIGMA_SIM;
+            s.EnigmaSim = M3_ENIGMA_SIM;
 
             Settings check = Settings.ParseSettingLine(M3_SETTING_LINE);
 
@@ -955,7 +955,7 @@ Or to thyself at least kind-hearted prove:
         public void TestM4KSetEnigmaSimValue()
         {
             Settings s = new Settings();
-            s.EnigmaSimFormat = M4K_ENIGMA_SIM;
+            s.EnigmaSim = M4K_ENIGMA_SIM;
 
             Settings check = Settings.ParseSettingLine(M4K_SETTING_LINE);
 
