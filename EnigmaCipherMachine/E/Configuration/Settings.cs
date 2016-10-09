@@ -373,5 +373,165 @@ namespace Enigma.Configuration
             return !(a == b);
         }
         #endregion
+
+        [XmlIgnore]
+        public string EnigmaSimFormat
+        {
+            get
+            {
+                Stecker s = new Stecker();
+                s.PlugSettings = string.Join(" ", Plugs);
+
+                string plugWiring = s.Wiring;
+
+                string reflector = null;
+
+                if (MachineType == MachineType.M4K)
+                {
+                    if (ReflectorType == ReflectorType.B_Dunn)
+                    {
+                        reflector = "05";
+                    }
+                    else
+                    {
+                        reflector = "06";
+                    }
+                }
+
+                if (MachineType == MachineType.M3K)
+                {
+                    if (ReflectorType == ReflectorType.B)
+                    {
+                        reflector = "03";
+                    }
+                    else
+                    {
+                        reflector = "04";
+                    }
+                }
+
+                if(MachineType == MachineType.M3)
+                {
+                    if (ReflectorType == ReflectorType.B)
+                    {
+                        reflector = "01";
+                    }
+                    else
+                    {
+                        reflector = "02";
+                    }
+                }
+
+                string rotors = string.Concat(Rotors.Select(r => r.Name).Reverse().Select(r => ((int)r + 1).ToString("00")));
+                string rings = string.Concat(Rotors.Select(r => r.RingSetting).Reverse().Select(r => r.ToString("00")));
+
+                if(MachineType == MachineType.M4K)
+                {
+                    return string.Format("ENIGMASIM{0}{1}{2}{3}", plugWiring, reflector, rotors, rings);
+                }
+                return string.Format("ENIGMASIM{0}{1}{2}00{3}00", plugWiring, reflector, rotors, rings);
+            }
+            set
+            {
+                string plugWiring = value.Substring(9, 26);
+                string reflector = value.Substring(35, 2);
+                string rotors = value.Substring(37, 8);
+                string rings = value.Substring(45, 8);
+
+                List<string> plugs = new List<string>();
+
+                List<char> check = Constants.ALPHABET.Select(c => c).ToList(); 
+
+                for(int i=0; i<Constants.ALPHABET.Length; i++)
+                {
+                    if(plugWiring[i] == Constants.ALPHABET[i])
+                    {
+                        check.Remove(plugWiring[i]);
+                    }
+                    else
+                    {
+                        if(check.Contains(plugWiring[i]) && check.Contains(Constants.ALPHABET[i]))
+                        {
+                            if (plugWiring[i] < Constants.ALPHABET[i])
+                            {
+                                plugs.Add(string.Format("{0}{1}", plugWiring[i], Constants.ALPHABET[i]));
+                            }
+                            else
+                            {
+                                plugs.Add(string.Format("{0}{1}", Constants.ALPHABET[i], plugWiring[i]));
+                            }                            
+
+                            check.Remove(plugWiring[i]);
+                            check.Remove(Constants.ALPHABET[i]);
+                        }
+                    }
+                }
+
+
+                Plugs.Clear();
+                Plugs.AddRange(plugs.OrderBy(p=>p).Select(s => new PlugSetting(s)));
+
+                switch (reflector)
+                {
+                    case "01":
+                        MachineType = MachineType.M3;
+                        ReflectorType = ReflectorType.B;
+                        break;
+                    case "02":
+                        MachineType = MachineType.M3;
+                        ReflectorType = ReflectorType.C;
+                        break;
+                    case "03":
+                        MachineType = MachineType.M3K;
+                        ReflectorType = ReflectorType.B;
+                        break;
+                    case "04":
+                        MachineType = MachineType.M3K;
+                        ReflectorType = ReflectorType.C;
+                        break;
+                    case "05":
+                        MachineType = MachineType.M4K;
+                        ReflectorType = ReflectorType.B_Dunn;
+                        break;
+                    case "06":
+                        MachineType = MachineType.M4K;
+                        ReflectorType = ReflectorType.C_Dunn;
+                        break;
+                }
+
+                List<RotorName> rotorList = new List<RotorName>();
+                for(int i=0; i<8; i += 2)
+                {
+                    string s = rotors.Substring(i, 2);
+                    int rn = int.Parse(s) - 1;
+                    rotorList.Add((RotorName)rn);
+                }
+                rotorList.Reverse();
+                if(MachineType!= MachineType.M4K)
+                {
+                    rotorList.RemoveAt(0);
+                }
+
+                List<int> ringList = new List<int>();
+                for (int i = 0; i < 8; i += 2)
+                {
+                    string s = rings.Substring(i, 2);
+                    int rn = int.Parse(s);
+                    ringList.Add(rn);
+                }
+                ringList.Reverse();
+                if (MachineType != MachineType.M4K)
+                {
+                    ringList.RemoveAt(0);
+                }
+
+                Rotors.Clear();
+
+                for(int i=0; i<rotorList.Count; i++)
+                {
+                    Rotors.Add(new RotorSetting(rotorList[i], ringList[i]));
+                }
+            }
+        }
     }
 }

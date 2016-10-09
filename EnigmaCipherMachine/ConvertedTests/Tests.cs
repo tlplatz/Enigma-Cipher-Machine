@@ -45,6 +45,11 @@ Or to thyself at least kind-hearted prove:
    Make thee another self for love of me,
    That beauty still may live in thine or thee.";
 
+        public const string M3_ENIGMA_SIM = "ENIGMASIMABQVSOTHURMYKWFPCJEGIDNXLZ020403010023051800";
+        public const string M3K_ENIGMA_SIM = "ENIGMASIMGIUDSTAZBPOLXNKJQWEFCVRMYH030207080012111100";
+        public const string M4K_ENIGMA_SIM = "ENIGMASIMAIQKUYGHBSDTMPONCZJLEXWVFR050105020908181907";
+
+
 
         [TestMethod]
         public void SettingsConstructorWithFullSettingsMatchesExpectedValue()
@@ -69,6 +74,20 @@ Or to thyself at least kind-hearted prove:
                 ReflectorType.B,
                 RotorName.Beta, 7, RotorName.II, 19, RotorName.V, 18, RotorName.I, 8,
                 "BI", "CQ", "DK", "EU", "FY", "JS", "LT", "NP", "RZ", "VX");
+
+            Enigma.Configuration.Settings s2 = Enigma.Configuration.Settings.ParseSettingLine(M4K_SETTING_LINE);
+
+            Assert.AreEqual(s.ToString(), s2.ToString());
+        }
+
+        [TestMethod]
+        public void SettingsConstructorWithParamArrayArgsInAnyOrderMatchesExpectedValue()
+        {
+            Enigma.Configuration.Settings s = new Settings(
+                MachineType.M4K,
+                ReflectorType.B,
+                RotorName.Beta, RotorName.II, RotorName.V, RotorName.I, 
+                "BI", "CQ", "DK", "EU", "FY", "JS", "LT", "NP", "RZ", "VX", 7, 19, 18, 8);
 
             Enigma.Configuration.Settings s2 = Enigma.Configuration.Settings.ParseSettingLine(M4K_SETTING_LINE);
 
@@ -885,5 +904,63 @@ Or to thyself at least kind-hearted prove:
             File.Delete(xmlFullPath);
             File.Delete(digraphFullPath);
         }
+
+        [TestMethod]
+        public void TestM3GetEnigmaSimSettings()
+        {
+            Settings s = Settings.ParseSettingLine(M3_SETTING_LINE);
+            string es = s.EnigmaSimFormat;
+            Assert.AreEqual(es, M3_ENIGMA_SIM);
+        }
+
+        [TestMethod]
+        public void TestM3KGetEnigmaSimSettings()
+        {
+            Settings s = Settings.ParseSettingLine(M3K_SETTING_LINE);
+            string es = s.EnigmaSimFormat;
+            Assert.AreEqual(es, M3K_ENIGMA_SIM);
+        }
+
+        [TestMethod]
+        public void TestM4KGetEnigmaSimSettings()
+        {
+            Settings s = Settings.ParseSettingLine(M4K_SETTING_LINE);
+            string es = s.EnigmaSimFormat;
+            Assert.AreEqual(es, M4K_ENIGMA_SIM);
+        }
+
+        [TestMethod]
+        public void TestM3KSetEnigmaSimValue()
+        {
+            Settings s = new Settings();
+            s.EnigmaSimFormat = M3K_ENIGMA_SIM;
+
+            Settings check = Settings.ParseSettingLine(M3K_SETTING_LINE);
+
+            Assert.AreEqual(s, check);
+        }
+
+        [TestMethod]
+        public void TestM3SetEnigmaSimValue()
+        {
+            Settings s = new Settings();
+            s.EnigmaSimFormat = M3_ENIGMA_SIM;
+
+            Settings check = Settings.ParseSettingLine(M3_SETTING_LINE);
+
+            Assert.AreEqual(s, check);
+        }
+
+        [TestMethod]
+        public void TestM4KSetEnigmaSimValue()
+        {
+            Settings s = new Settings();
+            s.EnigmaSimFormat = M4K_ENIGMA_SIM;
+
+            Settings check = Settings.ParseSettingLine(M4K_SETTING_LINE);
+
+            Assert.AreEqual(s, check);
+        }
+
     }
 }

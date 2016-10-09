@@ -57,6 +57,14 @@ namespace Enigma
         {
             return Plugs.FirstOrDefault(p => p.LetterA == a && p.LetterB == b);
         }
+
+        public string Wiring
+        {
+            get
+            {
+                return string.Concat(_contacts.Select(c => Constants.ALPHABET[c.WireLeft]));
+            }
+        }
     }
 
 }
