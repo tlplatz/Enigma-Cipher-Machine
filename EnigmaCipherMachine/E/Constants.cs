@@ -37,36 +37,36 @@ namespace Enigma
 
         public static List<string> Rotors = new List<string>()
         {
-            "EKMFLGDQVZNTOWYHXUSPAIBRCJ",
-            "AJDKSIRUXBLHWTMCQGZNPYFVOE",
-            "BDFHJLCPRTXVZNYEIWGAKMUSQO",
-            "ESOVPZJAYQUIRHXLNFTGKDCMWB",
-            "VZBRGITYUPSDNHLXAWMJQOFECK",
-            "JPGVOUMFYQBENHZRDKASXLICTW",
-            "NZJHGRCXMYSWBOUFAIVLPEKQDT",
-            "FKQHTLXOCBJSPDZRAMEWNIUYGV",
-            "LEYJVCNIXWPBQMDRTAKZGFUHOS",
-            "FSOKANUERHMBTIYCWLQPZXVGJD"
+            "EKMFLGDQVZNTOWYHXUSPAIBRCJ",                       //I
+            "AJDKSIRUXBLHWTMCQGZNPYFVOE",                       //II
+            "BDFHJLCPRTXVZNYEIWGAKMUSQO",                       //III
+            "ESOVPZJAYQUIRHXLNFTGKDCMWB",                       //IV
+            "VZBRGITYUPSDNHLXAWMJQOFECK",                       //V
+            "JPGVOUMFYQBENHZRDKASXLICTW",                       //VI
+            "NZJHGRCXMYSWBOUFAIVLPEKQDT",                       //VII
+            "FKQHTLXOCBJSPDZRAMEWNIUYGV",                       //VIII
+            "LEYJVCNIXWPBQMDRTAKZGFUHOS",                       //Beta
+            "FSOKANUERHMBTIYCWLQPZXVGJD"                        //Gamma
         };
 
         public static List<string> Reflectors = new List<string>()
         {
-            "YRUHQSLDPXNGOKMIEBFZCWVJAT",
-            "FVPJIAOYEDRZXWGCTKUQSBNMHL",
-            "ENKQAUYWJICOPBLMDXZVFTHRGS",
-            "RDOBJNTKVEHMLFCWZAXGYIPSUQ"
+            "YRUHQSLDPXNGOKMIEBFZCWVJAT",                       //B
+            "FVPJIAOYEDRZXWGCTKUQSBNMHL",                       //C
+            "ENKQAUYWJICOPBLMDXZVFTHRGS",                       //Thin B
+            "RDOBJNTKVEHMLFCWZAXGYIPSUQ"                        //Thin C
         };
 
         public static List<int[]> Notches = new List<int[]>()
         {
-            new int[] {Constants.ALPHABET.IndexOf('Q')},
-            new int[] {Constants.ALPHABET.IndexOf('E')},
-            new int[] {Constants.ALPHABET.IndexOf('V')},
-            new int[] {Constants.ALPHABET.IndexOf('J')},
-            new int[] {Constants.ALPHABET.IndexOf('Z')},
-            new int[] {Constants.ALPHABET.IndexOf('M'), Constants.ALPHABET.IndexOf('Z')},
-            new int[] {Constants.ALPHABET.IndexOf('M'), Constants.ALPHABET.IndexOf('Z')},
-            new int[] {Constants.ALPHABET.IndexOf('M'), Constants.ALPHABET.IndexOf('Z')},
+            new int[] {ALPHABET.IndexOf('Q')},
+            new int[] {ALPHABET.IndexOf('E')},
+            new int[] {ALPHABET.IndexOf('V')},
+            new int[] {ALPHABET.IndexOf('J')},
+            new int[] {ALPHABET.IndexOf('Z')},
+            new int[] {ALPHABET.IndexOf('M'), ALPHABET.IndexOf('Z')},
+            new int[] {ALPHABET.IndexOf('M'), ALPHABET.IndexOf('Z')},
+            new int[] {ALPHABET.IndexOf('M'), ALPHABET.IndexOf('Z')},
             new int[0],
             new int[0]
         };
