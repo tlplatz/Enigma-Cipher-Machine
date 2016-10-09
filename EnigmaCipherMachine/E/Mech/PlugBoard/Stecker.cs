@@ -58,7 +58,7 @@ namespace Enigma
             return Plugs.FirstOrDefault(p => p.LetterA == a && p.LetterB == b);
         }
 
-        public string Wiring
+        internal string Wiring
         {
             get
             {
