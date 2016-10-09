@@ -375,7 +375,7 @@ namespace Enigma.Configuration
         #endregion
 
         [XmlIgnore]
-        public string EnigmaSimFormat
+        public string EnigmaSim
         {
             get
             {
