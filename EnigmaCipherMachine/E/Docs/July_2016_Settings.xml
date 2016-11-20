@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<MonthlySettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Year="2016" Month="7" xsi:noNamespaceSchemaLocation="Settings.xsd">
+<MonthlySettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Year="2016" Month="7" Title="Settings" xsi:noNamespaceSchemaLocation="Settings.xsd">
   <DailySettings>
     <Settings Day="31" MachineType="M3" ReflectorType="C" Grund="" Kenngruppen="GZB NPN HUS FXD">
       <Rotors>
