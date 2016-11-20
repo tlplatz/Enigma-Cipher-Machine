@@ -107,22 +107,22 @@ Or to thyself at least kind-hearted prove:
 
             m.RotorSettings = "AAA";
 
-            Assert.AreEqual(m.Encipher("A"), "B");
-            Assert.AreEqual(m.Encipher("A"), "D");
-            Assert.AreEqual(m.Encipher("A"), "Z");
-            Assert.AreEqual(m.Encipher("A"), "G");
-            Assert.AreEqual(m.Encipher("A"), "O");
+            Assert.AreEqual(m.Encipher('A'), 'B');
+            Assert.AreEqual(m.Encipher('A'), 'D');
+            Assert.AreEqual(m.Encipher('A'), 'Z');
+            Assert.AreEqual(m.Encipher('A'), 'G');
+            Assert.AreEqual(m.Encipher('A'), 'O');
 
             //BDZGO
 
             m.SteckerSettings = "BQ  DU  ZI  GC  OK";
             m.RotorSettings = "AAA";
 
-            Assert.AreEqual(m.Encipher("A"), "Q");
-            Assert.AreEqual(m.Encipher("A"), "U");
-            Assert.AreEqual(m.Encipher("A"), "I");
-            Assert.AreEqual(m.Encipher("A"), "C");
-            Assert.AreEqual(m.Encipher("A"), "K");
+            Assert.AreEqual(m.Encipher('A'), 'Q');
+            Assert.AreEqual(m.Encipher('A'), 'U');
+            Assert.AreEqual(m.Encipher('A'), 'I');
+            Assert.AreEqual(m.Encipher('A'), 'C');
+            Assert.AreEqual(m.Encipher('A'), 'K');
 
         }
 
@@ -139,11 +139,11 @@ Or to thyself at least kind-hearted prove:
 
             m.RotorSettings = "AAA";
 
-            Assert.AreEqual(m.Encipher("A"), "E");
-            Assert.AreEqual(m.Encipher("A"), "W");
-            Assert.AreEqual(m.Encipher("A"), "T");
-            Assert.AreEqual(m.Encipher("A"), "Y");
-            Assert.AreEqual(m.Encipher("A"), "X");
+            Assert.AreEqual(m.Encipher('A'), 'E');
+            Assert.AreEqual(m.Encipher('A'), 'W');
+            Assert.AreEqual(m.Encipher('A'), 'T');
+            Assert.AreEqual(m.Encipher('A'), 'Y');
+            Assert.AreEqual(m.Encipher('A'), 'X');
 
             //EWTYX
 
@@ -151,11 +151,11 @@ Or to thyself at least kind-hearted prove:
 
             m.RotorSettings = "AAA";
 
-            Assert.AreEqual(m.Encipher("A"), "Q");
-            Assert.AreEqual(m.Encipher("A"), "U");
-            Assert.AreEqual(m.Encipher("A"), "I");
-            Assert.AreEqual(m.Encipher("A"), "C");
-            Assert.AreEqual(m.Encipher("A"), "K");
+            Assert.AreEqual(m.Encipher('A'), 'Q');
+            Assert.AreEqual(m.Encipher('A'), 'U');
+            Assert.AreEqual(m.Encipher('A'), 'I');
+            Assert.AreEqual(m.Encipher('A'), 'C');
+            Assert.AreEqual(m.Encipher('A'), 'K');
         }
 
         [TestMethod]
