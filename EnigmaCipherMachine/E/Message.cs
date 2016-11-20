@@ -48,7 +48,7 @@ namespace Enigma
             StringBuilder sb = new StringBuilder();
             foreach (char c in clean)
             {
-                sb.Append(_machine.Encipher(c.ToString()));
+                sb.Append(_machine.Encipher(c));
             }
 
             if (_settings.MachineType == Enums.MachineType.M3)
@@ -89,7 +89,7 @@ namespace Enigma
             StringBuilder sb = new StringBuilder();
             foreach (char c in clean)
             {
-                sb.Append(_machine.Encipher(c.ToString()));
+                sb.Append(_machine.Encipher(c));
             }
 
             _plain = sb.ToString();

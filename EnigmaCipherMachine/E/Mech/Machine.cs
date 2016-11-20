@@ -109,11 +109,11 @@ namespace Enigma
             set { _stecker.PlugSettings = value; }
         }
 
-        public string Encipher(string input)
+        public char Encipher(char input)
         {
             AdvanceRotors();
 
-            int wire = StringToWire(input);
+            int wire = CharToWire(input);
 
             wire = _stecker.WireLeft(wire);
 
@@ -131,7 +131,7 @@ namespace Enigma
 
             wire = _stecker.WireRight(wire);
 
-            return WireToString(wire);
+            return WireToChar(wire);
         }
 
         public Settings Settings
@@ -192,13 +192,13 @@ namespace Enigma
                 _rotors[2].Advance();
             }
         }
-        private int StringToWire(string s)
+        private int CharToWire(char c)
         {
-            return Constants.ALPHABET.IndexOf(s);
+            return Constants.ALPHABET.IndexOf(c);
         }
-        private string WireToString(int wire)
+        private char WireToChar(int wire)
         {
-            return Constants.ALPHABET[wire].ToString();
+            return Constants.ALPHABET[wire];
         }
     }
 }
